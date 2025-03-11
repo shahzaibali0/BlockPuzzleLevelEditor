@@ -4,6 +4,10 @@
 
 ![Showcase](https://github.com/user-attachments/assets/45458fb3-892f-4144-8af7-055744ad7b11)
 
+### See the editor in action:
+* App Store: https://apps.apple.com/tr/app/block-slide-sort/id6742429510
+* Google Play Store: https://play.google.com/store/apps/details?id=com.BugraCetinel.BlockSlideJam
+
 # Special Features
 1. **Procedural Generation Algorithm**  
    - Automatically spawns puzzle borders, container blocks, and lids using an adjacency‐based bitmasking technique.  
