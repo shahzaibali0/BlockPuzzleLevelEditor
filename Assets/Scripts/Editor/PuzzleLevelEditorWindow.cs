@@ -240,10 +240,7 @@ public class PuzzleLevelEditorWindow : EditorWindow
     {
         EditorGUILayout.LabelField("Shape ID / Block Color / BlockType", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
-        EditorGUI.BeginChangeCheck();
         _currentShapeID = EditorGUILayout.IntField("Shape ID:", _currentShapeID);
-        if (EditorGUI.EndChangeCheck())
-            _currentBlockType = BlockType.Regular;
         _currentBlockColor = (BlockColor)EditorGUILayout.EnumPopup("Block Color:", _currentBlockColor);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
