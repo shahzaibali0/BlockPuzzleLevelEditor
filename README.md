@@ -1,6 +1,6 @@
-# PuzzleLevelEditor
+# BlockPuzzleLevelEditor
 
-**PuzzleLevelEditor** is a custom Unity Editor tool designed to facilitate puzzle level creation within a grid layout. It combines several modes—block placement, item placement, prefab placement, and unavailability—to define a puzzle’s shape, interactive pieces, and special blockers. A **procedural generation algorithm** is used to automatically instantiate 3D puzzle geometry based on this layout—ensuring borders, container blocks, and lids are properly generated and saved as a prefab for final use in your game.
+**BlockPuzzleLevelEditor** is a custom Unity Editor tool designed to facilitate puzzle level creation within a grid layout. It combines several modes—block placement, item placement, prefab placement, and unavailability—to define a puzzle’s shape, interactive pieces, and special blockers. A **procedural generation algorithm** is used to automatically instantiate 3D puzzle geometry based on this layout—ensuring borders, container blocks, and lids are properly generated and saved as a prefab for final use in your game.
 
 ![Showcase](https://github.com/user-attachments/assets/45458fb3-892f-4144-8af7-055744ad7b11)
 
