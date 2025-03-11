@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6717183981253300666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3995130401588057820}
+  - component: {fileID: 9149124707352373206}
+  m_Layer: 0
+  m_Name: LevelVisualizationManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3995130401588057820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6717183981253300666}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9149124707352373206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6717183981253300666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dbc0a91e1fe4fdaa33dfe9c5620970a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cellSize: 0.5
+  _levelVisualizationData: {fileID: 11400000, guid: 02be64245ba7a8e409b490dd1015a959,
+    type: 2}
+  _containerBlockSet: {fileID: 11400000, guid: db1a0ecde8b4b8e4a829a39ca34c2a3d, type: 2}
+  _gridBorderPrefabSet: {fileID: 11400000, guid: 0b0f5db7999616b449b059084b64f86d,
+    type: 2}
+  _containerBorderPrefabSet: {fileID: 11400000, guid: df699667f88cccd4d822d50e14346409,
+    type: 2}
+  _lidsBorderPrefabSet: {fileID: 11400000, guid: 966680ae880b6c04db56afcbf580e07b,
+    type: 2}
+  _lockedLidsBorderPrefabSet: {fileID: 11400000, guid: cccafe019751b5c46900ebbc6bbc87d9,
+    type: 2}
+  _containerItemSet: {fileID: 11400000, guid: 28fe76e67743d2f4a99f1d3a2ced47e3, type: 2}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cecf466755482c99e5325bee43aaf5, type: 3}
+  m_Name: GridBorderData
+  m_EditorClassIdentifier: 
+  _baseDataArray:
+  - Type: 0
+    Data: {fileID: 0}
+  - Type: 1
+    Data: {fileID: 2546380743256405314, guid: 5ff6c8586bf914246ae8be3043294d75, type: 3}
+  - Type: 2
+    Data: {fileID: -4868710778916618899, guid: c7ebeb9c2ab58ee44b567e238b725cfd, type: 3}
+  - Type: 3
+    Data: {fileID: 372620245602534947, guid: 1b2eedb4985337d408315d90b48ac696, type: 3}
+  - Type: 4
+    Data: {fileID: 4331562755865447696, guid: 051c81c51a0ff074c9ec17076b082d84, type: 3}
+  - Type: 5
+    Data: {fileID: 0}

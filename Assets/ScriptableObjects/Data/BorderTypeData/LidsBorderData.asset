@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0cecf466755482c99e5325bee43aaf5, type: 3}
+  m_Name: LidsBorderData
+  m_EditorClassIdentifier: 
+  _baseDataArray:
+  - Type: 0
+    Data: {fileID: 0}
+  - Type: 1
+    Data: {fileID: 8960905442844167966, guid: deb028326bd229d408423b030f846ceb, type: 3}
+  - Type: 2
+    Data: {fileID: 3971916610780769536, guid: ae890f19d534f90488f0aa6af7a94fd8, type: 3}
+  - Type: 3
+    Data: {fileID: 7748402938803056328, guid: e522c020f82adca4bb7e2555432f6137, type: 3}
+  - Type: 4
+    Data: {fileID: 1551029555700595675, guid: 5d9365a681e7e0d43909b0997c0349a4, type: 3}
+  - Type: 5
+    Data: {fileID: 9080834598469030926, guid: 9c9061e250bbe1c4e81be36cd0445709, type: 3}

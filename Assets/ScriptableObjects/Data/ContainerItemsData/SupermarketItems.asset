@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 104e4ee9e99b47f2a9a3587cbfffcc5d, type: 3}
+  m_Name: SupermarketItems
+  m_EditorClassIdentifier: 
+  _baseDataArray:
+  - Type: 0
+    Data: {fileID: 0}
+  - Type: 1
+    Data: {fileID: 2633491962145509208, guid: 3e94ab5263a1b3a45903611418e9526b, type: 3}
+  - Type: 2
+    Data: {fileID: 3425137960845710057, guid: 0e1d6643048e176408eca8d8736d8db2, type: 3}
+  - Type: 3
+    Data: {fileID: 5336329146740457292, guid: d72ce003c8146c044b4c08cb94a0c415, type: 3}
+  - Type: 4
+    Data: {fileID: 7794349221903230614, guid: 8008d0268538f2f4b8b1eb7558113626, type: 3}
+  - Type: 5
+    Data: {fileID: 3015115807678710518, guid: 221ab0a55c2534f47b58112a15363793, type: 3}

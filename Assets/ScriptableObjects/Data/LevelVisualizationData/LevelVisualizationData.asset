@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: accd727994fd49d28749dc1e8f0a7644, type: 3}
+  m_Name: LevelVisualizationData
+  m_EditorClassIdentifier: 
+  _groundItem: {fileID: 759005352417362385, guid: ce052fd6a9841bf42b20b03a04c71a4a,
+    type: 3}
+  _containerBlockPrefab: {fileID: 7446747976132932945, guid: ea9464f5b4569bd44b9cebdc1daecf1c,
+    type: 3}
+  _containerPrefab: {fileID: 9150067346619945134, guid: 54b5eb6e9c857a741846c6dda3d7e8a2,
+    type: 3}
+  _borderPrefabs:
+    End: {fileID: -7091833098583520325, guid: 7e536092ca4672645b4f295df115e84f, type: 3}
+    Straight: {fileID: 3321831586335244485, guid: 7e536092ca4672645b4f295df115e84f,
+      type: 3}
+    CornerOuter: {fileID: 6090036429379216047, guid: 7e536092ca4672645b4f295df115e84f,
+      type: 3}
+    U: {fileID: 4673518507685902577, guid: 7e536092ca4672645b4f295df115e84f, type: 3}
+    Cross: {fileID: 0}
