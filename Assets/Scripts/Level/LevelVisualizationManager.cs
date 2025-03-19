@@ -28,12 +28,12 @@ namespace PuzzleLevelEditor.LevelVisualization
         [SerializeField] private BorderPrefabSet _lidsBorderPrefabSet;
         [SerializeField] private BorderPrefabSet _lockedLidsBorderPrefabSet;
         [SerializeField] private ContainerItemSet _containerItemSet;
- 
+
         private readonly float _cellSize = 0.5f;
-    
+
         private readonly BorderSpawner _borderSpawner = new();
         private readonly LevelSerializer _levelSerializer = new();
-    
+
         private static string s_savePath = "Assets/Prefabs/Levels/";
         private static string s_relativePath = "/Prefabs/Levels/";
 
@@ -41,21 +41,21 @@ namespace PuzzleLevelEditor.LevelVisualization
         public void VisualizeLevel(TextAsset levelAsset)
         {
             //Try to find if the asset is already in the project
-            var guids = AssetDatabase.FindAssets("t:Prefab", new []{s_savePath});
+            var guids = AssetDatabase.FindAssets("t:Prefab", new[] { s_savePath });
 
             foreach (var guid in guids)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guid);
                 var l = AssetDatabase.LoadAssetAtPath<GameLevel>(path);
-            
+
                 if (!l || l.LevelAsset != levelAsset) continue;
 
                 PrefabUtility.InstantiatePrefab(l);
                 return;
             }
-        
+
             //If not we spawn and save it
-        
+
             var level = _levelSerializer.ParseData(levelAsset.text);
             var grid = level.CellGrid;
 
@@ -64,13 +64,13 @@ namespace PuzzleLevelEditor.LevelVisualization
             else
                 Debug.LogWarning("Cannot parse grid");
         }
-    
+
         public void SpawnSelectedPieces(Grid<CellData> cellGrid)
         {
 #if UNITY_EDITOR
             if (!AssetDatabase.IsValidFolder("Assets/Prefabs/Levels"))
                 s_savePath = EditorUtility.OpenFolderPanel("Select Save Path", "", "");
-        
+
             if (string.IsNullOrWhiteSpace(s_savePath))
                 return;
 
@@ -81,7 +81,7 @@ namespace PuzzleLevelEditor.LevelVisualization
             GameObject levelObject = new GameObject(SceneManager.GetActiveScene().name);
             PuzzleGridManager gridManager = levelObject.AddComponent<PuzzleGridManager>();
             GameLevel level = levelObject.AddComponent<GameLevel>();
-        
+
             Grid<Container.Container> containerGrid = new Grid<Container.Container>(width, height);
 
             // 1) Instantiate ground for each playable cell
@@ -101,18 +101,41 @@ namespace PuzzleLevelEditor.LevelVisualization
 
                     if (_levelVisualizationData.GroundItem != null)
                     {
-                        var groundGO = PrefabUtility.InstantiatePrefab(_levelVisualizationData.GroundItem, 
-                            gridManager.transform) as GameObject;
-                        groundGO.transform.position = worldPosition;
-                        groundGO.name = $"Ground_{x}_{y}";
+                        // Find or Create Parent inside the prefab
+                        GameObject parentGO = levelObject.transform.Find("GroundParent")?.gameObject;
+
+                        if (parentGO == null)
+                        {
+                            parentGO = new GameObject("GroundParent");
+                            parentGO.transform.SetParent(levelObject.transform); // Set as a child of the prefab
+                        }
+
+
+                        // Instantiate the Ground Object as a Child of Parent
+                        var groundGO = PrefabUtility.InstantiatePrefab(_levelVisualizationData.GroundItem, parentGO.transform) as GameObject;
+
+                        if (groundGO != null)
+                        {
+                            groundGO.transform.position = worldPosition;
+                            groundGO.name = $"Ground_{x}_{y}";
+                        }
                     }
 
                     var borderInfo = _borderSpawner.GetBorderTypeWithRotation(cellGrid, coords);
                     var borderPrefab = _gridBorderPrefabSet.GetDataByEnum(borderInfo.Item1);
 
+                    // Find or Create Parent inside the prefab
+                    GameObject BorderParent = levelObject.transform.Find("BorderParent")?.gameObject;
+
+                    if (BorderParent == null)
+                    {
+                        BorderParent = new GameObject("BorderParent");
+                        BorderParent.transform.SetParent(levelObject.transform); // Set as a child of the prefab
+                    }
+
                     if (borderPrefab != null)
                     {
-                        var border = PrefabUtility.InstantiatePrefab(borderPrefab, gridManager.transform)
+                        var border = PrefabUtility.InstantiatePrefab(borderPrefab, BorderParent.transform)
                             as BorderMesh;
 
                         border.transform.position = worldPosition;
@@ -122,9 +145,9 @@ namespace PuzzleLevelEditor.LevelVisualization
 
                     if (cellData.PlacedPrefab != null)
                     {
-                        var placeableGridItem = PrefabUtility.InstantiatePrefab(cellData.PlacedPrefab, 
+                        var placeableGridItem = PrefabUtility.InstantiatePrefab(cellData.PlacedPrefab,
                             gridManager.transform) as PlaceableGridItem;
-                    
+
                         placeableGridItem.transform.position = worldPosition;
                         placeableGridItem.GridCoords = coords;
                         containerGrid.SetAvailability(coords, false);
@@ -166,38 +189,38 @@ namespace PuzzleLevelEditor.LevelVisualization
                 // 3a) compute anchor + offsets
                 Vector2Int anchor = GetMinXY(coordsList);
                 List<Vector2Int> offsets = coordsList.Select(c => c - anchor).ToList();
-            
+
                 var currentCell = cellGrid.GetItem(anchor + offsets[0]);
                 var blockInformation = currentCell.BlockRelatedInformation;
-            
+
                 // 3b) instantiate ContainerBlock
                 ContainerBlock blockInstance =
-                    PrefabUtility.InstantiatePrefab(_containerBlockSet.GetDataByEnum(blockInformation.Type), 
+                    PrefabUtility.InstantiatePrefab(_containerBlockSet.GetDataByEnum(blockInformation.Type),
                             gridManager.transform)
                         as ContainerBlock;
-            
+
                 blockInstance.name = $"ContainerBlock_ID_{shapeID}";
 
                 // set anchor
                 blockInstance.GridCoords = anchor;
                 blockInstance.Transform.position = GetWorldPosition(anchor, width, height, _cellSize);
-            
+
                 blockInstance.SetBlockInformation(blockInformation);
-            
+
                 Grid<PlainGridItem> blockGrid = new Grid<PlainGridItem>(GetGridSize(offsets));
 
                 for (int i = 0; i < blockGrid.Width; i++)
-                for (int j = 0; j < blockGrid.Height; j++) 
-                    blockGrid.SetAvailability(new Vector2Int(i, j), false);
-            
-                foreach(var off in offsets)
+                    for (int j = 0; j < blockGrid.Height; j++)
+                        blockGrid.SetAvailability(new Vector2Int(i, j), false);
+
+                foreach (var off in offsets)
                     blockGrid.SetAvailability(off, true);
 
                 // 3c) create sub-containers for each offset
                 for (int i = 0; i < offsets.Count; i++)
                 {
                     Vector2Int offset = offsets[i];
-                    Container.Container containerChild = PrefabUtility.InstantiatePrefab(_levelVisualizationData.ContainerPrefab, 
+                    Container.Container containerChild = PrefabUtility.InstantiatePrefab(_levelVisualizationData.ContainerPrefab,
                             blockInstance.transform)
                         as Container.Container;
                     containerChild.name = $"Container_{offset.x}_{offset.y}";
@@ -209,37 +232,40 @@ namespace PuzzleLevelEditor.LevelVisualization
                     // register in the block
                     containerChild.SetContainerInfo(new ContainerInfo(blockInstance, offset: offsets[i]));
                     blockInstance.AddSubContainer(containerChild);
-                
+
                     // Mark the container occupant in containerGrid => 
                     // so we have an initial arrangement
                     Vector2Int cellCoords = anchor + offset;
                     containerGrid.SetItem(cellCoords, containerChild);
-                
+
                     currentCell = cellGrid.GetItem(cellCoords);
-                
+
                     var localBorderInfo = _borderSpawner.GetBorderTypeWithRotation(blockGrid, offset);
                     var borderPrefab = _containerBorderPrefabSet.GetDataByEnum(localBorderInfo.Item1);
 
                     if (borderPrefab != null)
                     {
-                        BorderMesh containerBorder = PrefabUtility.InstantiatePrefab(borderPrefab, blockInstance.transform) 
+                        BorderMesh containerBorder = PrefabUtility.InstantiatePrefab(borderPrefab, blockInstance.transform)
                             as BorderMesh;
-                    
+
                         containerBorder.transform.localPosition = localPos;
                         containerBorder.transform.localRotation = localBorderInfo.Item2;
                         containerBorder.SetBorderColor(blockInformation.Color);
+                        blockInstance.AddBorders(containerBorder);
+
                     }
-                
+
                     var lidsBorderPrefab = _lidsBorderPrefabSet.GetDataByEnum(localBorderInfo.Item1);
 
                     if (lidsBorderPrefab != null)
                     {
-                        BorderMesh lidsBorder = PrefabUtility.InstantiatePrefab(lidsBorderPrefab, blockInstance.LidsBorderParent) 
+                        BorderMesh lidsBorder = PrefabUtility.InstantiatePrefab(lidsBorderPrefab, blockInstance.LidsBorderParent)
                             as BorderMesh;
-                    
+
                         lidsBorder.transform.localPosition = localPos;
                         lidsBorder.transform.localRotation = localBorderInfo.Item2;
                         lidsBorder.SetBorderColor(blockInformation.Color);
+
                     }
 
                     if (blockInformation.Type == BlockType.Locked && blockInstance.TryGetComponent(out LockedContainer lockedContainer))
@@ -248,16 +274,16 @@ namespace PuzzleLevelEditor.LevelVisualization
 
                         if (lockedLidsBorderPrefab != null)
                         {
-                            BorderMesh lockedLidsBorder = PrefabUtility.InstantiatePrefab(lockedLidsBorderPrefab, 
-                                    lockedContainer.LockedPartParentTransform) 
+                            BorderMesh lockedLidsBorder = PrefabUtility.InstantiatePrefab(lockedLidsBorderPrefab,
+                                    lockedContainer.LockedPartParentTransform)
                                 as BorderMesh;
-                    
+
                             lockedLidsBorder.transform.localPosition = localPos;
                             lockedLidsBorder.transform.localRotation = localBorderInfo.Item2;
                             lockedLidsBorder.SetBorderColor(blockInformation.Color);
                         }
                     }
-                
+
                     for (int j = 0; j < currentCell.ItemStack.Count; j++)
                     {
                         var containerItem = PrefabUtility.InstantiatePrefab(
@@ -268,13 +294,13 @@ namespace PuzzleLevelEditor.LevelVisualization
                     }
                 }
             }
-        
+
             gridManager.SetGridInformation(containerGrid, _cellSize);
 
             var levelName = $"{gridManager.name}_{GUID.Generate()}";
-            var textAsset = LevelSerializer.SaveLevel(new LevelData(cellGrid), 
+            var textAsset = LevelSerializer.SaveLevel(new LevelData(cellGrid),
                 System.IO.Path.Combine(s_relativePath, levelName));
-        
+
             level.SetLevelAsset(textAsset);
 
             // Save as prefab
@@ -282,7 +308,7 @@ namespace PuzzleLevelEditor.LevelVisualization
                 levelObject,
                 System.IO.Path.Combine(s_savePath, $"{levelName}.prefab")
             );
-        
+
             PrefabUtility.InstantiatePrefab(savedPrefab);
 
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
@@ -292,17 +318,17 @@ namespace PuzzleLevelEditor.LevelVisualization
 
         private Vector2Int GetGridSize(List<Vector2Int> offsets)
         {
-            int minX=offsets.Min(o=>o.x);
-            int maxX=offsets.Max(o=>o.x);
-            int minY=offsets.Min(o=>o.y);
-            int maxY=offsets.Max(o=>o.y);
+            int minX = offsets.Min(o => o.x);
+            int maxX = offsets.Max(o => o.x);
+            int minY = offsets.Min(o => o.y);
+            int maxY = offsets.Max(o => o.y);
 
-            int w = (maxX-minX)+1;
-            int h = (maxY-minY)+1;
+            int w = (maxX - minX) + 1;
+            int h = (maxY - minY) + 1;
 
             return new Vector2Int(w, h);
         }
-    
+
         private Vector3 GetWorldPosition(Vector2Int coords, int width, int height, float cellSize)
         {
             float worldX = -(width - 1) * cellSize + coords.x * cellSize;
@@ -313,7 +339,7 @@ namespace PuzzleLevelEditor.LevelVisualization
 
             return new Vector3(worldX, 0f, worldZ);
         }
-    
+
         private Vector2Int GetMinXY(List<Vector2Int> coordsList)
         {
             int minX = int.MaxValue;
