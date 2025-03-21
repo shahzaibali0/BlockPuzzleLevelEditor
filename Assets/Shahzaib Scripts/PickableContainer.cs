@@ -8,11 +8,28 @@ using System.Collections;
 public class PickableContainer : MonoBehaviour
 {
 
-    [SerializeField, ReadOnly] private ContainerBlock containerBlock;
+    [SerializeField, ReadOnly] private ContainerBlock _containerBlock;
+    private bool _OneTime = false;
 
+    public bool OneTime
+
+    {
+        get { return _OneTime; }
+        set { _OneTime = value; }
+    }
+    public ContainerBlock ContainerBlock
+
+    {
+        get
+        {
+            return _containerBlock;
+        }
+
+        set { _containerBlock = value; }
+    }
     private void Start()
     {
-        containerBlock = GetComponent<ContainerBlock>();
+        _containerBlock = GetComponent<ContainerBlock>();
     }
 
     public Vector3 Move(RaycastDirections direction, float value)
@@ -37,7 +54,7 @@ public class PickableContainer : MonoBehaviour
                 break;
         }
         Debug.Log("Move Vector" + moveVector);
-        if (containerBlock.CanProceedInDirection(direction))
+        if (_containerBlock.CanProceedInDirection(direction))
         {
             transform.position += moveVector;
 
@@ -49,60 +66,31 @@ public class PickableContainer : MonoBehaviour
 
     public Vector3 Move(RaycastDirections direction, Vector3 value)
     {
-
-
-        if (containerBlock.CanProceedInDirection(direction))
+        if (_containerBlock.CanProceedInDirection(direction))
         {
             transform.position = value;
 
         }
-
-
         return new Vector3(transform.position.x, 0, transform.position.z);
     }
 
-    public Vector3 Move(RaycastDirections direction, float value, Action callback = null)
+
+    public IEnumerator ExitFromGrid(Vector3 direction, float moveDistance, float duration)
     {
-        if (!containerBlock.CanProceedInDirection(direction) || isMoving)
-            return transform.position;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + (direction.normalized * moveDistance);
 
-        Vector3 moveVector = Vector3.zero;
-        value = Mathf.Abs(value);
-
-        switch (direction)
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
         {
-            case RaycastDirections.Left: moveVector = Vector3.left * value; break;
-            case RaycastDirections.Right: moveVector = Vector3.right * value; break;
-            case RaycastDirections.Front: moveVector = Vector3.forward * value; break;
-            case RaycastDirections.Down: moveVector = Vector3.back * value; break;
-        }
+            float t = elapsedTime / duration; // Normalize time (0 to 1)
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
 
-        Vector3 targetPosition = transform.position + moveVector;
-
-        // Stop previous movement coroutine and start a new one
-        StopAllCoroutines();
-        StartCoroutine(SmoothMove(targetPosition, 0.2f));
-
-        return targetPosition;
-    }
-
-    private bool isMoving = false;
-
-    private IEnumerator SmoothMove(Vector3 target, float duration)
-    {
-        isMoving = true; // Prevent multiple movements at the same time
-        Vector3 start = transform.position;
-        float elapsed = 0;
-
-        while (elapsed < duration)
-        {
-            transform.position = Vector3.Lerp(start, target, elapsed / duration);
-            elapsed += Time.deltaTime;
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        transform.position = target; // Ensure exact position
-        isMoving = false; // Allow new movement
+        //transform.position = targetPosition; // Ensure it reaches exactly
     }
 
 

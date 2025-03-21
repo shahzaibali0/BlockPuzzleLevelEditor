@@ -30,7 +30,7 @@ public class CellRaycast : MonoBehaviour
         // Debug to verify
         foreach (var entry in classifiedObjects)
         {
-            Debug.Log($"Object: {entry.obj.name} is in {entry.direction} direction.");
+            //Debug.Log($"Object: {entry.obj.name} is in {entry.direction} direction.");
         }
     }
 

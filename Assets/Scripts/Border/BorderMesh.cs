@@ -25,6 +25,8 @@ namespace PuzzleLevelEditor.BorderLogic
 
         public Transform RayData(RaycastDirections raycastDirections)
         {
+            cellRaycast = transform.GetComponent<CellRaycast>();
+
             return cellRaycast.GetRayData(raycastDirections);
         }
     }

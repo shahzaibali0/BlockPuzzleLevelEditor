@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PuzzleLevelEditor.BorderLogic;
 using PuzzleLevelEditor.GridItem;
 using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace PuzzleLevelEditor.Container.Block
@@ -76,7 +77,6 @@ namespace PuzzleLevelEditor.Container.Block
             }
 
         }
-        public int rayCount = 0;
 
         public List<Transform> rays;
         public bool CanProceedInDirection(RaycastDirections directions)
@@ -128,9 +128,127 @@ namespace PuzzleLevelEditor.Container.Block
                 }
 
             }
-            rayCount = 0;
             return CanProceed;
         }
+
+
+        public List<Transform> BlockExitRays;
+
+        public void EmitRayCastFromAllSides()
+        {
+
+            Dictionary<string, List<Transform>> raycastPairs = new Dictionary<string, List<Transform>>()
+            {
+        { "RightDirRays", RightDirRays },
+        { "LeftDirRays", LeftDirRays },
+        { "FrontDirRays", FrontDirRays },
+        { "DownDirRays", DownDirRays }
+            };
+
+            float rayLength = 0.5f; // Increased for testing
+            foreach (var pair in raycastPairs)
+            {
+                string listName = pair.Key;
+                List<Transform> directionRays = pair.Value;
+
+                if (directionRays.Count == 0)
+                {
+                    Debug.LogWarning("No objects in " + listName);
+                    continue; // Skip empty lists
+                }
+
+                foreach (var item in directionRays)
+                {
+                    if (item == null)
+                    {
+                        Debug.LogError("Null transform in " + listName);
+                        continue;
+                    }
+
+                    RaycastHit hit;
+                    Ray raycast = new Ray(item.position, item.forward);
+
+                    if (Physics.Raycast(raycast, out hit, rayLength))
+                    {
+                        Debug.Log("total pairs__B" + listName);
+
+                        //   Debug.Log("Raycast hit in: " + listName + " - Hit: " + hit.collider.name);
+                        //   Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.red, 2f);
+
+                        if (hit.collider.GetComponent<ExtrationSide>())
+                        {
+                            Debug.Log("ExtrationSide Found in: " + listName + " and saving now");
+                            BlockExitRays = directionRays;
+                            //  Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.green, 10f);
+                        }
+                    }
+                    else
+                    {
+                        //  Debug.Log("Raycast missed in: " + listName);
+                        //Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.black, 10f);
+
+                    }
+                }
+            }
+
+
+            HitForExtration();
+        }
+
+
+        [Button(ButtonSizes.Medium)]
+        private void HitForExtration()
+        {
+            if (BlockExitRays == null || BlockExitRays.Count == 0)
+            {
+                Debug.LogWarning("Hit__E: BlockExitRays is empty!");
+                return;
+            }
+
+            int TotalSideFound = 0;
+            //  Debug.Log("Hit__E: Total Rays = " + BlockExitRays.Count);
+            float RayLength = 0.25f; // Reset per ray
+
+            foreach (var item in BlockExitRays)
+            {
+                if (item == null)
+                {
+                    //  Debug.LogError("Null transform found in BlockExitRays");
+                    continue;
+                }
+
+                //    Debug.Log("Hit__E: Checking Ray: " + item.name + " Ray Length " + RayLength);
+
+                Ray raycast = new Ray(item.position, item.forward);
+                RaycastHit hit;
+
+                if (Physics.Raycast(raycast, out hit, RayLength))
+                {
+                    // Debug.Log("Hit__E: Raycast Hit: " + hit.collider.name);
+                    Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.black, 8);
+                    RayLength += 0.6f;
+                    if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
+                    {
+                        //  Debug.Log("Hit__E:  - ExtrationSide Found");
+                        TotalSideFound++;
+                    }
+                }
+                else
+                {
+                    //  Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.red, 8);
+                    // Debug.Log("Hit__E: Raycast Missed: " + item.name);
+                }
+            }
+
+            //      Debug.Log("Hit__E: Total ExtrationSides Found: " + TotalSideFound);
+
+            if (TotalSideFound == BlockExitRays.Count)
+            {
+                Debug.Log("Move Object To Where it should");
+            }
+        }
+
+
 
     }
 }

@@ -14,7 +14,9 @@ public class IntractableSystem : MonoBehaviour
     private Vector3 LastgrabObjPosition;
     private Vector3 lastMousePosition;
     private Vector3 CurrentGrabPos;
-    private void Update()
+    private Rigidbody grabbedRb;
+    private bool isSnapping = false;
+    private void Update_Old()
     {
         if (Input.GetMouseButton(0))
         {
@@ -89,74 +91,149 @@ public class IntractableSystem : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            TryGrabObject();
+        }
+
+        if (grabbedRb != null && Input.GetMouseButton(0))
+        {
+            MoveObjectWithMouse();
+        }
+
+        if (Input.GetMouseButtonUp(0) && grabbedRb != null)
+        {
+            StartSnapping();
+            grabbedObject.ContainerBlock.EmitRayCastFromAllSides();
+        }
+    }
+
+    private void TryGrabObject()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if (hit.collider.TryGetComponent<Rigidbody>(out grabbedRb))
+            {
+
+                grabbedObject = hit.collider.GetComponent<PickableContainer>();
+                grabbedRb.isKinematic = false; // Enable physics movement
+                grabbedRb.useGravity = false;  // Disable gravity while moving
+
+                objectDistance = Vector3.Distance(Camera.main.transform.position, hit.point);
+                grabOffset = grabbedRb.position - hit.point;
+            }
+        }
+    }
+    public float Speed;
+
+    private void MoveObjectWithMouse()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, objectDistance));
+        Vector3 targetPos = new Vector3(worldPoint.x + grabOffset.x, grabbedRb.position.y, worldPoint.z + grabOffset.z);
+
+        Vector3 direction = targetPos - grabbedRb.position;
+        float speed = direction.magnitude * Speed; // Adjust speed for smoother movement1
+
+        grabbedRb.velocity = direction.normalized * speed;
+    }
+
+    private void StartSnapping()
+    {
+        isSnapping = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isSnapping && grabbedRb != null)
+        {
+            Vector3 snappedPos = GetSnappedPosition(grabbedRb.position);
+            Vector3 direction = snappedPos - grabbedRb.position;
+            float snapSpeed = 10f; // Speed of snapping
+
+            grabbedRb.velocity = direction.normalized * snapSpeed;
+
+            if (direction.magnitude < 0.05f)
+            {
+                grabbedRb.velocity = Vector3.zero;
+                grabbedRb.useGravity = true;
+                grabbedRb.isKinematic = true;
+                //grabbedRb.position = snappedPos;
+
+
+                grabbedObject.transform.position = new Vector3(snappedPos.x, 0, snappedPos.z);
+                grabbedRb = null;
+                isSnapping = false;
+            }
+        }
+    }
+
     private Vector3 GetSnappedPosition(Vector3 currentPos)
     {
         float snappedX = GetSnappedCoordinate(currentPos.x);
         float snappedZ = GetSnappedCoordinate(currentPos.z);
-
         return new Vector3(snappedX, 0, snappedZ);
     }
 
     private float GetSnappedCoordinate(float value)
     {
-        float baseValue = Mathf.Floor(value); // Get the integer base (e.g., -1, 0, 1)
-        float remainder = value - baseValue;  // Get the decimal part (e.g., 0.6 from 1.6)
-
-        // If remainder is closer to 0.75, snap to 0.75; if closer to 0.25, snap to 0.25
-        if (remainder >= 0.5f) return baseValue + 0.75f;
-        else return baseValue + 0.25f;
+        float baseValue = Mathf.Floor(value);
+        float remainder = value - baseValue;
+        return remainder >= 0.5f ? baseValue + 0.75f : baseValue + 0.25f;
     }
 
-    private float movementThreshold = 10f;
 
     private void DetectMouseMovementDirection(Vector3 currentMousePosition, Vector3 GrabbedObjPos)
     {
         Vector3 delta = currentMousePosition - lastMousePosition;
         //if (delta.magnitude > movementThreshold)
         //{
-            if (grabbedObject != null)
+        if (grabbedObject != null)
+        {
+            if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
             {
-                if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
+
+                if (delta.x > 0)
                 {
 
-                    if (delta.x > 0)
-                    {
+                    Debug.Log("Right Direction");
 
-                        Debug.Log("Right Direction");
-
-                        LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Right, GrabbedObjPos);
-                    }
-                    else
-                    {
-                        Debug.Log("Left Direction");
-
-                        LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Left, GrabbedObjPos);
-
-                    }
+                    LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Right, GrabbedObjPos);
                 }
                 else
                 {
-                    if (delta.y > 0)
-                    {
+                    Debug.Log("Left Direction");
 
-                        Debug.Log("Front Direction");
+                    LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Left, GrabbedObjPos);
 
-                        LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Front, GrabbedObjPos);
-
-                    }
-                    else
-                    {
-
-                        Debug.Log("Down Direction");
-
-                        LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Down, GrabbedObjPos);
-
-                    }
                 }
             }
-            lastMousePosition = currentMousePosition;
+            else
+            {
+                if (delta.y > 0)
+                {
+
+                    Debug.Log("Front Direction");
+
+                    LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Front, GrabbedObjPos);
+
+                }
+                else
+                {
+
+                    Debug.Log("Down Direction");
+
+                    LastgrabObjPosition = grabbedObject.Move(RaycastDirections.Down, GrabbedObjPos);
+
+                }
+            }
         }
+        lastMousePosition = currentMousePosition;
     }
+}
 
 
 //}
