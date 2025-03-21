@@ -107,6 +107,8 @@ public class IntractableSystem : MonoBehaviour
         {
             StartSnapping();
             grabbedObject.ContainerBlock.EmitRayCastFromAllSides();
+
+
         }
     }
 
@@ -167,6 +169,8 @@ public class IntractableSystem : MonoBehaviour
                 grabbedObject.transform.position = new Vector3(snappedPos.x, 0, snappedPos.z);
                 grabbedRb = null;
                 isSnapping = false;
+                grabbedObject = null;
+
             }
         }
     }

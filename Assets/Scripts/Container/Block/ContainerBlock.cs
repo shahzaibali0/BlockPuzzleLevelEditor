@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using PuzzleLevelEditor.BorderLogic;
 using PuzzleLevelEditor.GridItem;
@@ -30,7 +31,15 @@ namespace PuzzleLevelEditor.Container.Block
         public MovementConstraint MovementConstraint => _movementConstraint;
         public BlockColor Color => _blockColor;
         public BlockType BlockType => _blockType;
+        private List<Transform> rays;
+        private List<Transform> BlockExitRays;
+        private Dictionary<RaycastDirections, List<Transform>> BlockExitRayData = new Dictionary<RaycastDirections, List<Transform>>();
+        private RaycastDirections raycastDirections;
 
+        private void Start()
+        {
+            GetRayData();
+        }
         public void SetBlockInformation(BlockRelatedInformation information)
         {
             _blockColor = information.Color;
@@ -47,13 +56,6 @@ namespace PuzzleLevelEditor.Container.Block
             if (!_Borders.Contains(c))
                 _Borders.Add(c);
         }
-
-        private void Start()
-        {
-            GetRayData();
-        }
-
-        [Button(ButtonSizes.Medium)]
         public void GetRayData()
         {
             RightDirRays.Clear();
@@ -77,8 +79,6 @@ namespace PuzzleLevelEditor.Container.Block
             }
 
         }
-
-        public List<Transform> rays;
         public bool CanProceedInDirection(RaycastDirections directions)
         {
 
@@ -130,74 +130,59 @@ namespace PuzzleLevelEditor.Container.Block
             }
             return CanProceed;
         }
-
-
-        public List<Transform> BlockExitRays;
-
         public void EmitRayCastFromAllSides()
         {
-
-            Dictionary<string, List<Transform>> raycastPairs = new Dictionary<string, List<Transform>>()
-            {
-        { "RightDirRays", RightDirRays },
-        { "LeftDirRays", LeftDirRays },
-        { "FrontDirRays", FrontDirRays },
-        { "DownDirRays", DownDirRays }
-            };
-
+            Dictionary<RaycastDirections, List<Transform>> raycastPairs = new Dictionary<RaycastDirections, List<Transform>>()
+    {
+        { RaycastDirections.Right, RightDirRays },
+        { RaycastDirections.Left, LeftDirRays },
+        { RaycastDirections.Front, FrontDirRays },
+        { RaycastDirections.Down, DownDirRays }
+    };
             float rayLength = 0.5f; // Increased for testing
             foreach (var pair in raycastPairs)
             {
-                string listName = pair.Key;
+                RaycastDirections direction = pair.Key;
                 List<Transform> directionRays = pair.Value;
 
                 if (directionRays.Count == 0)
                 {
-                    Debug.LogWarning("No objects in " + listName);
+                    Debug.LogWarning("No objects in " + direction);
                     continue; // Skip empty lists
                 }
-
                 foreach (var item in directionRays)
                 {
                     if (item == null)
                     {
-                        Debug.LogError("Null transform in " + listName);
+                        Debug.LogError("Null transform in " + direction);
                         continue;
                     }
-
                     RaycastHit hit;
                     Ray raycast = new Ray(item.position, item.forward);
 
                     if (Physics.Raycast(raycast, out hit, rayLength))
                     {
-                        Debug.Log("total pairs__B" + listName);
-
-                        //   Debug.Log("Raycast hit in: " + listName + " - Hit: " + hit.collider.name);
-                        //   Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.red, 2f);
+                        Debug.Log("total pairs__B " + direction);
 
                         if (hit.collider.GetComponent<ExtrationSide>())
                         {
-                            Debug.Log("ExtrationSide Found in: " + listName + " and saving now");
-                            BlockExitRays = directionRays;
-                            //  Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.green, 10f);
-                        }
-                    }
-                    else
-                    {
-                        //  Debug.Log("Raycast missed in: " + listName);
-                        //Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.black, 10f);
+                            Debug.Log("ExtrationSide Found in: " + direction + " and saving now");
 
+                            // Save the rays and direction in a dictionary
+                            if (!BlockExitRayData.ContainsKey(direction))
+                            {
+                                raycastDirections = direction;
+                                BlockExitRays = new List<Transform>(directionRays);
+                                BlockExitRayData[direction] = new List<Transform>(directionRays);
+                            }
+                        }
                     }
                 }
             }
-
-
             HitForExtration();
         }
-
-
-        [Button(ButtonSizes.Medium)]
-        private void HitForExtration()
+        ExtrationSide extrationSide;
+        protected void HitForExtration()
         {
             if (BlockExitRays == null || BlockExitRays.Count == 0)
             {
@@ -206,7 +191,7 @@ namespace PuzzleLevelEditor.Container.Block
             }
 
             int TotalSideFound = 0;
-            //  Debug.Log("Hit__E: Total Rays = " + BlockExitRays.Count);
+            //Debug.Log("Hit__E: Total Rays = " + BlockExitRays.Count);
             float RayLength = 0.25f; // Reset per ray
 
             foreach (var item in BlockExitRays)
@@ -217,7 +202,7 @@ namespace PuzzleLevelEditor.Container.Block
                     continue;
                 }
 
-                //    Debug.Log("Hit__E: Checking Ray: " + item.name + " Ray Length " + RayLength);
+                //Debug.Log("Hit__E: Checking Ray: " + item.name + " Ray Length " + RayLength);
 
                 Ray raycast = new Ray(item.position, item.forward);
                 RaycastHit hit;
@@ -229,7 +214,8 @@ namespace PuzzleLevelEditor.Container.Block
                     RayLength += 0.6f;
                     if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
                     {
-                        //  Debug.Log("Hit__E:  - ExtrationSide Found");
+                        // Debug.Log("Hit__E:  - ExtrationSide Found");
+                        extrationSide = component;
                         TotalSideFound++;
                     }
                 }
@@ -240,15 +226,62 @@ namespace PuzzleLevelEditor.Container.Block
                 }
             }
 
-            //      Debug.Log("Hit__E: Total ExtrationSides Found: " + TotalSideFound);
+            Debug.Log("Hit__E: Total ExtrationSides Found: " + TotalSideFound);
 
-            if (TotalSideFound == BlockExitRays.Count)
+            if (TotalSideFound == BlockExitRays.Count && extrationSide.BlockColor == _blockColor)
             {
                 Debug.Log("Move Object To Where it should");
+                MoveOutfromGrid();
+            }
+            else
+            {
+                Debug.LogError("Extrartion Point Not Matched");
             }
         }
 
+        private void MoveOutfromGrid()
+        {
 
+            Debug.Log("MoveOutfromGrid");
+            Vector3 Dir = Vector3.zero;
+
+            switch (raycastDirections)
+            {
+                case RaycastDirections.Right:
+                    Dir = Vector3.right;
+                    break;
+                case RaycastDirections.Left:
+                    Dir = Vector3.left;
+                    break;
+                case RaycastDirections.Front:
+                    Dir = Vector3.forward;
+                    break;
+                case RaycastDirections.Down:
+                    Dir = Vector3.down;
+                    break;
+                default:
+                    break;
+            }
+            Debug.Log("MoveOutfromGrid__");
+            StartCoroutine(ExitFromGrid(Dir, 5, 0.85f));
+        }
+        private IEnumerator ExitFromGrid(Vector3 direction, float moveDistance, float duration)
+        {
+            Vector3 startPosition = transform.position;
+            Vector3 targetPosition = startPosition + (direction.normalized * moveDistance);
+
+            float elapsedTime = 0f;
+            while (elapsedTime < duration)
+            {
+                float t = elapsedTime / duration; // Normalize time (0 to 1)
+                transform.position = Vector3.Lerp(startPosition, targetPosition, t);
+
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            transform.position = targetPosition; // Ensure it reaches exactly
+        }
 
     }
 }

@@ -13403,12 +13403,17 @@ PrefabInstance:
     - target: {fileID: 2185444399254115213, guid: 5ff6c8586bf914246ae8be3043294d75,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8218729583617881626, guid: 5ff6c8586bf914246ae8be3043294d75,
         type: 3}
       propertyPath: m_Name
       value: Border0_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8218729583617881626, guid: 5ff6c8586bf914246ae8be3043294d75,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8738421087768538272, guid: 5ff6c8586bf914246ae8be3043294d75,
         type: 3}
