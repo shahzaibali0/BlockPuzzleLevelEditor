@@ -10,7 +10,7 @@ public class LevelInfo : MonoBehaviour
     public List<PickableContainer> container = new List<PickableContainer>();
 
     public Action BlockPass;
-    public int WidthBlocks, HeightBlocks;
+    public float WidthBlocks, HeightBlocks;
     private void OnEnable()
     {
         BlockPass += AllBlockspassed;

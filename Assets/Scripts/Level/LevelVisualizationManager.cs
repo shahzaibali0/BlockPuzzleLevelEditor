@@ -85,8 +85,8 @@ namespace PuzzleLevelEditor.LevelVisualization
             PuzzleGridManager gridManager = levelObject.AddComponent<PuzzleGridManager>();
             GameLevel level = levelObject.AddComponent<GameLevel>();
             LevelInfo levelInfo = levelObject.AddComponent<LevelInfo>();
-            levelInfo.WidthBlocks = width;
-            levelInfo.HeightBlocks = height;
+            levelInfo.WidthBlocks = (float)width;
+            levelInfo.HeightBlocks = (float)height;
             Grid<Container.Container> containerGrid = new Grid<Container.Container>(width, height);
 
             // 1) Instantiate ground for each playable cell
