@@ -116,6 +116,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7401399897321726511}
   - component: {fileID: 7446747976132932945}
+  - component: {fileID: -626299014921517599}
+  - component: {fileID: 4120833599143196389}
   m_Layer: 0
   m_Name: ContainerBlockParent
   m_TagString: Untagged
@@ -157,7 +159,53 @@ MonoBehaviour:
   _lidsBorderParent: {fileID: 626094291596660386}
   _movementConstraint: 0
   _blockColor: 0
+  _blockType: 0
   _subContainers: []
+  _Borders: []
+  RightDirRays: []
+  LeftDirRays: []
+  FrontDirRays: []
+  DownDirRays: []
+--- !u!54 &-626299014921517599
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571117608388677115}
+  serializedVersion: 4
+  m_Mass: 0.5
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 1
+  m_Constraints: 112
+  m_CollisionDetection: 2
+--- !u!114 &4120833599143196389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571117608388677115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aadb6415e0f0984a9ffb250a661831f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerBlock: {fileID: 0}
 --- !u!1 &626094291596660386
 GameObject:
   m_ObjectHideFlags: 0

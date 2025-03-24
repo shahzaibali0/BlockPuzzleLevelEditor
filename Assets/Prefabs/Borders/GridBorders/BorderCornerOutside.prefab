@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5514573431498825501}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: 0.088, z: -0.00009}
-  m_LocalScale: {x: 0.10254641, y: 0.3686403, z: 0.49961156}
+  m_LocalPosition: {x: 0.3, y: -0.02291, z: -0.0001}
+  m_LocalScale: {x: 0.10254641, y: 0.1473057, z: 0.49961156}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3653340340522306720}
@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.75, z: 1}
-  m_Center: {x: 0, y: 0.36, z: 0}
+  m_Size: {x: 1, y: 3.2206118, z: 1}
+  m_Center: {x: 0, y: 1.0953057, z: 0}
 --- !u!1 &7805882389364024793
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,8 +133,8 @@ Transform:
   m_GameObject: {fileID: 7805882389364024793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.0492, y: 0.08759999, z: 0.3}
-  m_LocalScale: {x: 0.10021705, y: 0.36864, z: 0.6000857}
+  m_LocalPosition: {x: 0.0492, y: -0.02307, z: 0.3}
+  m_LocalScale: {x: 0.10021705, y: 0.14730558, z: 0.6000857}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3653340340522306720}
@@ -208,8 +208,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.75, z: 1}
-  m_Center: {x: 0, y: 0.36, z: 0}
+  m_Size: {x: 1, y: 3.2206118, z: 0.9999999}
+  m_Center: {x: 0, y: 1.0953071, z: 0}
 --- !u!1001 &3835374543112940363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -218,6 +218,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 22597a27fcdfde340b64ea9f41cd4d74,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22597a27fcdfde340b64ea9f41cd4d74,
         type: 3}
       propertyPath: m_LocalPosition.x

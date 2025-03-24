@@ -13,7 +13,6 @@ public class CellRaycast : MonoBehaviour
     RaycastHit hit;
     private void Start()
     {
-        ClassifyObjects();
     }
 
     [Button(ButtonSizes.Medium)]
@@ -36,6 +35,8 @@ public class CellRaycast : MonoBehaviour
 
     private RaycastDirections GetObjectDirection(Transform obj)
     {
+
+
         // Convert world position to LOCAL SPACE relative to this object
         Vector3 localPos1 = obj.forward;
         // Compare with LOCAL AXES
@@ -64,6 +65,9 @@ public class CellRaycast : MonoBehaviour
 
     public Transform GetRayData(RaycastDirections raycastDirections)
     {
+        ClassifyObjects();
+
+
         foreach (var item in classifiedObjects)
         {
             if (item.direction == raycastDirections)

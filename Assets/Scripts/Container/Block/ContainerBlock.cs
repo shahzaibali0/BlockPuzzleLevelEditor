@@ -31,6 +31,7 @@ namespace PuzzleLevelEditor.Container.Block
         public MovementConstraint MovementConstraint => _movementConstraint;
         public BlockColor Color => _blockColor;
         public BlockType BlockType => _blockType;
+        public bool BlockPass;
         private List<Transform> rays;
         private List<Transform> BlockExitRays;
         private Dictionary<RaycastDirections, List<Transform>> BlockExitRayData = new Dictionary<RaycastDirections, List<Transform>>();
@@ -192,7 +193,7 @@ namespace PuzzleLevelEditor.Container.Block
 
             int TotalSideFound = 0;
             //Debug.Log("Hit__E: Total Rays = " + BlockExitRays.Count);
-            float RayLength = 0.25f; // Reset per ray
+            float RayLength = 0.35f; // Reset per ray
 
             foreach (var item in BlockExitRays)
             {
@@ -257,13 +258,13 @@ namespace PuzzleLevelEditor.Container.Block
                     Dir = Vector3.forward;
                     break;
                 case RaycastDirections.Down:
-                    Dir = Vector3.down;
+                    Dir = Vector3.back;
                     break;
                 default:
                     break;
             }
             Debug.Log("MoveOutfromGrid__");
-            StartCoroutine(ExitFromGrid(Dir, 5, 0.85f));
+            StartCoroutine(ExitFromGrid(Dir, 3, 0.5f));
         }
         private IEnumerator ExitFromGrid(Vector3 direction, float moveDistance, float duration)
         {
@@ -279,8 +280,12 @@ namespace PuzzleLevelEditor.Container.Block
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
+            BlockPass = true;
 
-            transform.position = targetPosition; // Ensure it reaches exactly
+            LevelManager.Instance.LevelInfo.BlockPass?.Invoke();
+
+            gameObject.SetActive(false);
+            //transform.position = targetPosition; // Ensure it reaches exactly
         }
 
     }

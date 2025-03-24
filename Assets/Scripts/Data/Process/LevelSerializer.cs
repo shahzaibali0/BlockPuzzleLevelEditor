@@ -18,10 +18,14 @@ namespace PuzzleLevelEditor.Data.Process
 #if UNITY_EDITOR        
             EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
             AssetDatabase.Refresh();
-#endif
+
             return AssetDatabase.LoadAssetAtPath<TextAsset>($"Assets/{relativeDirectory}.json");
+
+#endif
+
+            return null;
         }
-   
+
         public LevelData ParseData(string file)
         {
             return JsonUtility.FromJson<LevelData>(file);

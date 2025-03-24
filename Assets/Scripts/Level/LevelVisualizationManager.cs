@@ -41,6 +41,8 @@ namespace PuzzleLevelEditor.LevelVisualization
         public void VisualizeLevel(TextAsset levelAsset)
         {
             //Try to find if the asset is already in the project
+
+#if UNITY_EDITOR
             var guids = AssetDatabase.FindAssets("t:Prefab", new[] { s_savePath });
 
             foreach (var guid in guids)
@@ -54,6 +56,7 @@ namespace PuzzleLevelEditor.LevelVisualization
                 return;
             }
 
+#endif
             //If not we spawn and save it
 
             var level = _levelSerializer.ParseData(levelAsset.text);
@@ -81,7 +84,9 @@ namespace PuzzleLevelEditor.LevelVisualization
             GameObject levelObject = new GameObject(SceneManager.GetActiveScene().name);
             PuzzleGridManager gridManager = levelObject.AddComponent<PuzzleGridManager>();
             GameLevel level = levelObject.AddComponent<GameLevel>();
-
+            LevelInfo levelInfo = levelObject.AddComponent<LevelInfo>();
+            levelInfo.WidthBlocks = width;
+            levelInfo.HeightBlocks = height;
             Grid<Container.Container> containerGrid = new Grid<Container.Container>(width, height);
 
             // 1) Instantiate ground for each playable cell
