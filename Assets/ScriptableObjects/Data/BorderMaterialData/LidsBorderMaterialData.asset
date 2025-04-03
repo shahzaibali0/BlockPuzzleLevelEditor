@@ -37,3 +37,11 @@ MonoBehaviour:
     Data:
       Materials:
       - {fileID: 2100000, guid: a1e2050a0880840439863e8b91f40622, type: 2}
+  - Type: 6
+    Data:
+      Materials:
+      - {fileID: 2100000, guid: fa57ee7bde18b864ca5511f6f221a9f9, type: 2}
+  - Type: 7
+    Data:
+      Materials:
+      - {fileID: 2100000, guid: 86ea4dda58c28324fb6af562f49310fa, type: 2}

@@ -9,7 +9,7 @@ namespace PuzzleLevelEditor.Data
         where TEnum : Enum
     {
         [SerializeField, 
-         ListDrawerSettings(HideAddButton = true, HideRemoveButton = true, DraggableItems = false, ShowFoldout = false)]
+         ListDrawerSettings(HideAddButton = false, HideRemoveButton = true, DraggableItems = false, ShowFoldout = false)]
         private BaseDataParent[] _baseDataArray;
 
         private void Reset()
@@ -31,7 +31,7 @@ namespace PuzzleLevelEditor.Data
         [Serializable]
         private class BaseDataParent
         {
-            [ReadOnly] 
+            //[ReadOnly] 
             public TEnum Type;
             public TData Data;
 

@@ -43,7 +43,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _RampThreshold: 0.736
+    - _UseMatCap: 0
     m_Colors:
-    - _BaseColor: {r: 0.95283014, g: 0.74028665, b: 0, a: 1}
+    - _BaseColor: {r: 0.08235294, g: 0.59607846, b: 0.09019608, a: 1}
+    - _SColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   m_BuildTextureStacks: []

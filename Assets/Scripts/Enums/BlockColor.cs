@@ -5,5 +5,7 @@ public enum BlockColor
     Red,
     Green,
     Yellow,
-    Orange
+    Orange,
+    DarkGreen,
+    Purple
 }

@@ -661,8 +661,11 @@ public class PuzzleLevelEditorWindow : EditorWindow
             case BlockColor.Green: return new Color(0.3f, 0.9f, 0.3f);
             case BlockColor.Orange: return new Color(1f, 0.5f, 0f);
             case BlockColor.Yellow: return new Color(0.9f, 0.9f, 0.2f);
+            case BlockColor.DarkGreen: return new Color(0.05f, 0.31f, 0.12f); // #0D501F
+            case BlockColor.Purple: return new Color(0.46f, 0.27f, 0.85f); // #7546D9
             default:
             case BlockColor.None: return Color.gray;
+
         }
     }
 
