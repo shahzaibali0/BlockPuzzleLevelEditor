@@ -25,7 +25,7 @@ public class IntractableSystem : MonoBehaviour
     private float cellSize = 0.5f;
     [Header("Drag Settings")]
     public LayerMask groundLayer;
-
+    private MovementConstraint movementConstraint;
     [Button(ButtonSizes.Medium)]
     private void Start()
     {
@@ -53,7 +53,11 @@ public class IntractableSystem : MonoBehaviour
         {
 
             Debug.Log("Mouse Up");
-            IsExtratPoint = grabbedObject.ContainerBlock.EmitRayCastFromAllSides();
+            grabbedObject.ContainerBlock.StartEmitRayCastFromAllSides((bool result) =>
+            {
+                Debug.Log("Final Raycast Result: " + result);
+                IsExtratPoint = result;
+            }); ;
             if (!IsExtratPoint)
             {
                 StartSnapping();
@@ -71,6 +75,7 @@ public class IntractableSystem : MonoBehaviour
             {
 
                 grabbedObject = hit.collider.GetComponent<PickableContainer>();
+                movementConstraint = grabbedObject.ContainerBlock.MovementConstraint;
                 grabbedRb.isKinematic = false; // Enable physics movement
                 grabbedRb.useGravity = false;  // Disable gravity while moving
 
@@ -81,7 +86,7 @@ public class IntractableSystem : MonoBehaviour
     }
     public float Speed;
 
-    private void MoveObjectWithMouse()
+    private void MoveObjectWithMouse_Old()
     {
         Vector3 mousePos = Input.mousePosition;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, objectDistance));
@@ -89,6 +94,35 @@ public class IntractableSystem : MonoBehaviour
 
         Vector3 direction = targetPos - grabbedRb.position;
         float speed = direction.magnitude * Speed; // Adjust speed for smoother movement1
+
+        grabbedRb.velocity = direction.normalized * speed;
+    }
+
+    private void MoveObjectWithMouse()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, objectDistance));
+
+        // Determine target position based on movement constraint
+        Vector3 targetPos = grabbedRb.position;
+
+        switch (movementConstraint)
+        {
+            case MovementConstraint.None:
+                targetPos = new Vector3(worldPoint.x + grabOffset.x, grabbedRb.position.y, worldPoint.z + grabOffset.z);
+                break;
+
+            case MovementConstraint.Horizontal:
+                targetPos = new Vector3(worldPoint.x + grabOffset.x, grabbedRb.position.y, grabbedRb.position.z); // Only move in X
+                break;
+
+            case MovementConstraint.Vertical:
+                targetPos = new Vector3(grabbedRb.position.x, grabbedRb.position.y, worldPoint.z + grabOffset.z); // Only move in Z
+                break;
+        }
+
+        Vector3 direction = targetPos - grabbedRb.position;
+        float speed = direction.magnitude * Speed; // Adjust speed for smoother movement
 
         grabbedRb.velocity = direction.normalized * speed;
     }
@@ -126,9 +160,8 @@ public class IntractableSystem : MonoBehaviour
                 // Snap precisely to final position
                 grabbedRb.position = snappedPos;
 
-                Debug.Log("Mouse Up__Fixed Update");
 
-                IsExtratPoint = grabbedObject.ContainerBlock.EmitRayCastFromAllSides();
+                //IsExtratPoint = grabbedObject.ContainerBlock.EmitRayCastFromAllSides();
                 IsExtratPoint = false;
                 grabbedRb = null;
                 isSnapping = false;

@@ -4111,6 +4111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7446747976132932945, guid: ea9464f5b4569bd44b9cebdc1daecf1c,
         type: 3}
+      propertyPath: _movementConstraint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446747976132932945, guid: ea9464f5b4569bd44b9cebdc1daecf1c,
+        type: 3}
       propertyPath: _Borders.Array.data[0]
       value: 
       objectReference: {fileID: 224161273651443678}

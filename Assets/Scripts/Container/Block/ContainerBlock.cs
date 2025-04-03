@@ -132,7 +132,9 @@ namespace PuzzleLevelEditor.Container.Block
             }
             return CanProceed;
         }
-        public bool EmitRayCastFromAllSides()
+
+        int tryagain = 0;
+        public bool EmitRayCastFromAllSides_Old()
         {
             Debug.Log("Mouse Up__EmitRayCastFromAllSides");
 
@@ -172,7 +174,7 @@ namespace PuzzleLevelEditor.Container.Block
                     RaycastHit hit;
                     Ray raycast = new Ray(item.position, item.forward);
 
-                    if (Physics.Raycast(raycast, out hit, rayLength , LayerMask))
+                    if (Physics.Raycast(raycast, out hit, rayLength, LayerMask))
                     {
                         if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide extrationSide))
                         {
@@ -199,8 +201,13 @@ namespace PuzzleLevelEditor.Container.Block
                     }
                     else
                     {
-                        Debug.Log("Mouse Up__EmitRayCastFromAllSides_Not hit");
 
+                        if(tryagain < 3)
+                        {
+                            tryagain++;
+                        }
+                        Debug.Log("Mouse Up__EmitRayCastFromAllSides_Not hit");
+                        return false;
                     }
                 }
             }
@@ -209,6 +216,104 @@ namespace PuzzleLevelEditor.Container.Block
             PointFound = HitForExtration();
             return PointFound;
         }
+        public void StartEmitRayCastFromAllSides(Action<bool> callback)
+        {
+            StartCoroutine(EmitRayCastFromAllSides(callback));
+        }
+
+        private IEnumerator EmitRayCastFromAllSides(Action<bool> callback)
+        {
+            Debug.Log("Mouse Up__EmitRayCastFromAllSides");
+
+            BlockExitRayData.Clear();
+            BlockExitRays.Clear();
+            bool PointFound = false;
+            int maxRetries = 3; // Maximum number of retries
+            int retryCount = 0;
+
+            Dictionary<RaycastDirections, List<Transform>> raycastPairs = new Dictionary<RaycastDirections, List<Transform>>()
+    {
+        { RaycastDirections.Right, RightDirRays },
+        { RaycastDirections.Left, LeftDirRays },
+        { RaycastDirections.Front, FrontDirRays },
+        { RaycastDirections.Down, DownDirRays }
+    };
+
+            Debug.Log("Mouse Up__EmitRayCastFromAllSides_A");
+
+            float rayLength = 0.25f; // Increased for testing
+
+            while (retryCount <= maxRetries)
+            {
+                bool hitSomething = false;
+
+                foreach (var pair in raycastPairs)
+                {
+                    RaycastDirections direction = pair.Key;
+                    List<Transform> directionRays = pair.Value;
+
+                    if (directionRays.Count == 0)
+                    {
+                        Debug.LogWarning("No objects in " + direction);
+                        continue;
+                    }
+
+                    foreach (var item in directionRays)
+                    {
+                        if (item == null)
+                        {
+                            Debug.LogError("Null transform in " + direction);
+                            continue;
+                        }
+
+                        RaycastHit hit;
+                        Ray raycast = new Ray(item.position, item.forward);
+
+                        if (Physics.Raycast(raycast, out hit, rayLength, LayerMask))
+                        {
+                            if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide extrationSide))
+                            {
+                                if (extrationSide.BlockColor == _blockColor)
+                                {
+                                    Debug.Log("ExtrationSide Found in: " + direction + " and saving now");
+                                    Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.red, 2);
+
+                                    if (!BlockExitRayData.ContainsKey(direction))
+                                    {
+                                        raycastDirections = direction;
+                                        BlockExitRays = new List<Transform>(directionRays);
+                                        BlockExitRayData[direction] = new List<Transform>(directionRays);
+                                    }
+
+                                    PointFound = true;
+                                    hitSomething = true;
+                                }
+                            }
+                            else
+                            {
+                                Debug.DrawRay(item.position, item.forward * rayLength, UnityEngine.Color.gray, 2);
+                            }
+                        }
+                        else
+                        {
+                            Debug.Log("RayCast Not hitting ");
+                        }
+                    }
+                }
+
+                if (hitSomething) break; // Exit loop if we hit something
+
+                retryCount++;
+                Debug.Log($"Retrying raycast attempt {retryCount}/{maxRetries}...");
+                yield return new WaitForSeconds(0.15f); // Delay before retrying
+            }
+
+            PointFound = HitForExtration();
+
+            // Call the callback function with the result
+            callback?.Invoke(PointFound);
+        }
+
 
 
 
@@ -241,7 +346,7 @@ namespace PuzzleLevelEditor.Container.Block
                 Ray raycast = new Ray(item.position, item.forward);
                 RaycastHit hit;
 
-                if (Physics.Raycast(raycast, out hit, RayLength , LayerMask))
+                if (Physics.Raycast(raycast, out hit, RayLength, LayerMask))
                 {
                     // Debug.Log("Hit__E: Raycast Hit: " + hit.collider.name);
                     Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.black, 8);
