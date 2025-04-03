@@ -202,7 +202,7 @@ namespace PuzzleLevelEditor.Container.Block
                     else
                     {
 
-                        if(tryagain < 3)
+                        if (tryagain < 3)
                         {
                             tryagain++;
                         }
@@ -218,7 +218,8 @@ namespace PuzzleLevelEditor.Container.Block
         }
         public void StartEmitRayCastFromAllSides(Action<bool> callback)
         {
-            StartCoroutine(EmitRayCastFromAllSides(callback));
+            if (gameObject.activeInHierarchy)
+                StartCoroutine(EmitRayCastFromAllSides(callback));
         }
 
         private IEnumerator EmitRayCastFromAllSides(Action<bool> callback)
@@ -305,7 +306,7 @@ namespace PuzzleLevelEditor.Container.Block
 
                 retryCount++;
                 Debug.Log($"Retrying raycast attempt {retryCount}/{maxRetries}...");
-                yield return new WaitForSeconds(0.15f); // Delay before retrying
+                yield return new WaitForSeconds(0.1f); // Delay before retrying
             }
 
             PointFound = HitForExtration();

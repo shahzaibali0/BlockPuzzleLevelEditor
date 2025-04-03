@@ -3,36 +3,56 @@
   "WorkspaceRootPath": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts\\data\\datasets\\containerblockset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\datasets\\containerblockset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{70A5E319-F9EC-F063-C31E-F16A28EE2B5E}|Assembly-CSharp-Editor.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts\\editor\\puzzleleveleditorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{70A5E319-F9EC-F063-C31E-F16A28EE2B5E}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\scripts\\editor\\puzzleleveleditorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\intractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\intractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts\\container\\block\\containerblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\container\\block\\containerblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\draggablegridobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\draggablegridobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts\\data\\datasets\\basedataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\datasets\\basedataset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts\\data\\datasets\\bordermaterialdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\datasets\\bordermaterialdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts\\border\\bordermesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\border\\bordermesh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\getpointdistance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\getpointdistance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{70A5E319-F9EC-F063-C31E-F16A28EE2B5E}|Assembly-CSharp-Editor.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts\\editor\\puzzleleveleditorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{70A5E319-F9EC-F063-C31E-F16A28EE2B5E}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\scripts\\editor\\puzzleleveleditorwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\extrationside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\extrationside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts\\data\\datasets\\containeritemset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\datasets\\containeritemset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts\\level\\levelvisualizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\level\\levelvisualizationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts\\data\\datasets\\containerblockset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\datasets\\containerblockset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\intractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\intractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\draggablegridobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\draggablegridobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\getpointdistance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\getpointdistance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,14 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts\\data\\leveldata\\celldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\data\\leveldata\\celldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\extrationside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\extrationside.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\grid\\cellraycast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,11 +106,236 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BorderMaterialData.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BorderMaterialData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\DataSets\\BorderMaterialData.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BorderMaterialData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\DataSets\\BorderMaterialData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T12:24:20.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BaseDataSet.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BaseDataSet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\DataSets\\BaseDataSet.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BaseDataSet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\DataSets\\BaseDataSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T12:20:15.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContainerItemSet.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\ContainerItemSet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\DataSets\\ContainerItemSet.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\ContainerItemSet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\DataSets\\ContainerItemSet.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T12:15:31.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LevelSerializer.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T06:38:21.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LevelInfo.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelInfo.cs",
+              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\LevelInfo.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelInfo.cs",
+              "RelativeToolTip": "Assets\\Shahzaib Scripts\\LevelInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T12:00:07.421Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LevelManager.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\LevelManager.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelManager.cs",
+              "RelativeToolTip": "Assets\\Shahzaib Scripts\\LevelManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T11:47:51.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ContainerBlock.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
+              "ViewState": "AgIAAOEAAAAAAAAAAAAiwCMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T08:21:24.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ExtrationSide.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\ExtrationSide.cs",
+              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\ExtrationSide.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\ExtrationSide.cs",
+              "RelativeToolTip": "Assets\\Shahzaib Scripts\\ExtrationSide.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T11:25:11.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CellCube.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
+              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
+              "RelativeToolTip": "Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T08:54:33.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CellData.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\CellData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\LevelData\\CellData.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\CellData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\LevelData\\CellData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:33:36.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "BorderPrefabData.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:28:33.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PuzzleGridManager.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:12:10.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LevelVisualizationData.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-17T07:11:59.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PuzzleLevelEditorWindow.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
+              "ViewState": "AgIAAIsBAAAAAAAAAAAcwKEBAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:29:20.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BorderMesh.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Border\\BorderMesh.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Border\\BorderMesh.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Border\\BorderMesh.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Border\\BorderMesh.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:28:34.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GetPointDistance.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\GetPointDistance.cs",
+              "RelativeDocumentMoniker": "Assets\\GetPointDistance.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\GetPointDistance.cs",
+              "RelativeToolTip": "Assets\\GetPointDistance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T09:46:34.031Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DraggableGridObject.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\DraggableGridObject.cs",
+              "RelativeDocumentMoniker": "Assets\\DraggableGridObject.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\DraggableGridObject.cs",
+              "RelativeToolTip": "Assets\\DraggableGridObject.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAwwCMAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T12:13:32.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LevelVisualizationManager.cs",
+              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
+              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwB0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T07:16:31.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "ContainerBlockSet.cs",
               "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\ContainerBlockSet.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\DataSets\\ContainerBlockSet.cs",
@@ -111,153 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DraggableGridObject.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\DraggableGridObject.cs",
-              "RelativeDocumentMoniker": "Assets\\DraggableGridObject.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\DraggableGridObject.cs",
-              "RelativeToolTip": "Assets\\DraggableGridObject.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwCMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T12:13:32.342Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GetPointDistance.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\GetPointDistance.cs",
-              "RelativeDocumentMoniker": "Assets\\GetPointDistance.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\GetPointDistance.cs",
-              "RelativeToolTip": "Assets\\GetPointDistance.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T09:46:34.031Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LevelSerializer.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data\\Process\\LevelSerializer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T06:38:21.738Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LevelInfo.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelInfo.cs",
-              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\LevelInfo.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelInfo.cs",
-              "RelativeToolTip": "Assets\\Shahzaib Scripts\\LevelInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T12:00:07.421Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LevelManager.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\LevelManager.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\LevelManager.cs",
-              "RelativeToolTip": "Assets\\Shahzaib Scripts\\LevelManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T11:47:51.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ContainerBlock.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Container\\Block\\ContainerBlock.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAADgv5IAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T08:21:24.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ExtrationSide.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\ExtrationSide.cs",
-              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\ExtrationSide.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\ExtrationSide.cs",
-              "RelativeToolTip": "Assets\\Shahzaib Scripts\\ExtrationSide.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T11:25:11.794Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "CellCube.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
-              "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
-              "RelativeToolTip": "Assets\\Shahzaib Scripts\\Grid\\CellCube.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T08:54:33.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CellData.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\CellData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\LevelData\\CellData.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\CellData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data\\LevelData\\CellData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:33:36.23Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BorderPrefabData.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data\\DataSets\\BorderPrefabData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:28:33.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PuzzleGridManager.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gameplay\\PuzzleGridManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:12:10.327Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "LevelVisualizationData.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Data\\LevelData\\LevelVisualizationData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-17T07:11:59.569Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "CellRaycast.cs",
               "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\Grid\\CellRaycast.cs",
               "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\Grid\\CellRaycast.cs",
@@ -269,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "Container.cs",
               "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Container\\Container.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Container\\Container.cs",
@@ -281,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "PickableContainer.cs",
               "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\PickableContainer.cs",
               "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\PickableContainer.cs",
@@ -293,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Intractable.cs",
               "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\Intractable.cs",
               "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\Intractable.cs",
@@ -301,38 +392,11 @@
               "RelativeToolTip": "Assets\\Shahzaib Scripts\\Intractable.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAIAwwB8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T08:39:31.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T08:39:31.202Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PuzzleLevelEditorWindow.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Editor\\PuzzleLevelEditorWindow.cs",
-              "ViewState": "AgIAAH4CAAAAAAAAAAApwJYCAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T07:29:20.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BorderMesh.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Border\\BorderMesh.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Border\\BorderMesh.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Border\\BorderMesh.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Border\\BorderMesh.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T07:28:34.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "MovementConstraint.cs",
               "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Enums\\MovementConstraint.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enums\\MovementConstraint.cs",
@@ -341,18 +405,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAA6wAAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T07:16:20.58Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "LevelVisualizationManager.cs",
-              "DocumentMoniker": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
-              "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Level\\LevelVisualizationManager.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAnwFgAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T07:16:31.035Z"
             }
           ]
         }

@@ -52,10 +52,8 @@ public class IntractableSystem : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && grabbedRb != null)
         {
 
-            Debug.Log("Mouse Up");
             grabbedObject.ContainerBlock.StartEmitRayCastFromAllSides((bool result) =>
             {
-                Debug.Log("Final Raycast Result: " + result);
                 IsExtratPoint = result;
             }); ;
             if (!IsExtratPoint)
@@ -81,24 +79,56 @@ public class IntractableSystem : MonoBehaviour
 
                 objectDistance = Vector3.Distance(Camera.main.transform.position, hit.point);
                 grabOffset = grabbedRb.position - hit.point;
+
             }
         }
     }
     public float Speed;
+  
 
-    private void MoveObjectWithMouse_Old()
+    private void MoveObjectWithMouse()
     {
         Vector3 mousePos = Input.mousePosition;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, objectDistance));
-        Vector3 targetPos = new Vector3(worldPoint.x + grabOffset.x, grabbedRb.position.y, worldPoint.z + grabOffset.z);
+
+        Vector3 targetPos = grabbedRb.position;
+        switch (movementConstraint)
+        {
+            case MovementConstraint.None:
+                targetPos = new Vector3(worldPoint.x + grabOffset.x, grabbedRb.position.y, worldPoint.z + grabOffset.z);
+                break;
+            case MovementConstraint.Horizontal:
+                targetPos = new Vector3(worldPoint.x + grabOffset.x, grabbedRb.position.y, grabbedRb.position.z);
+                break;
+            case MovementConstraint.Vertical:
+                targetPos = new Vector3(grabbedRb.position.x, grabbedRb.position.y, worldPoint.z + grabOffset.z);
+                break;
+        }
 
         Vector3 direction = targetPos - grabbedRb.position;
-        float speed = direction.magnitude * Speed; // Adjust speed for smoother movement1
 
-        grabbedRb.velocity = direction.normalized * speed;
+
+        float speed_x = direction.x * Speed;
+        float speed_y = direction.z * Speed;
+
+
+        //Vector3 velocity = direction.normalized * speed;
+        Vector3 velocity = new Vector3(speed_x, 0, speed_y);
+
+        //Debug.Log($"Velocity Components - X: {velocity.x.ToString("F2")}, " +
+        //          $"Y: {velocity.y.ToString("F2")}, " +
+        //          $"Z: {velocity.z.ToString("F2")} | " +
+        //          $"Resultant Magnitude: {velocity.magnitude.ToString("F2")}");
+
+        grabbedRb.velocity = velocity;
     }
 
-    private void MoveObjectWithMouse()
+    private void StartSnapping()
+    {
+        isSnapping = true;
+    }
+
+    private void MoveObjectWithMouse__()
     {
         Vector3 mousePos = Input.mousePosition;
         Vector3 worldPoint = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, objectDistance));
@@ -126,13 +156,6 @@ public class IntractableSystem : MonoBehaviour
 
         grabbedRb.velocity = direction.normalized * speed;
     }
-
-    private void StartSnapping()
-    {
-        isSnapping = true;
-    }
-
-
 
     private void FixedUpdate()
     {
@@ -228,28 +251,6 @@ public class IntractableSystem : MonoBehaviour
 
         return new Vector3(gridX, worldPosition.y, gridZ);
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.cyan;
-
-        float cellSizeX = gridWorldSize.x / gridSize.x;
-        float cellSizeZ = gridWorldSize.y / gridSize.y;
-
-        Vector3 origin = transform.position - new Vector3(gridWorldSize.x * 0.5f, 0, gridWorldSize.y * 0.5f);
-
-        for (int x = 0; x <= gridSize.x; x++)
-        {
-            for (int z = 0; z <= gridSize.y; z++)
-            {
-                Vector3 point = origin + new Vector3(x * cellSizeX, 0, z * cellSizeZ);
-                Gizmos.DrawWireCube(point, new Vector3(0.1f, 0.01f, 0.1f));
-            }
-        }
-    }
-
-
-
 
     #region Movement based On transform
 
