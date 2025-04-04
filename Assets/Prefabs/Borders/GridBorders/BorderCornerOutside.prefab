@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 1952625406829398463}
   - component: {fileID: 4417644917146406379}
   - component: {fileID: 3308746020507600650}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6238711267212993874
 Transform:
   m_ObjectHideFlags: 0
@@ -117,13 +117,13 @@ GameObject:
   - component: {fileID: 2577297002761430964}
   - component: {fileID: 2216178685285226282}
   - component: {fileID: 4601709674912048473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8443184967342211526
 Transform:
   m_ObjectHideFlags: 0
@@ -277,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BorderCornerOutside
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 22597a27fcdfde340b64ea9f41cd4d74,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

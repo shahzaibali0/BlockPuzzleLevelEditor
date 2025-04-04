@@ -518,7 +518,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 20, y: 0, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
@@ -567,11 +567,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Levels:
+  - {fileID: 249343737081699957, guid: b7988a1ff169fdc40b2d987923c4711d, type: 3}
   - {fileID: 7180863270110451992, guid: d48bfead07461db438eb7be00c7f4f46, type: 3}
   - {fileID: 8136333987586433126, guid: b61bdd5c46a4ff54c8e9d8aba0223525, type: 3}
   - {fileID: 8527220761897033194, guid: 2e866bea58aa4794dbf7cdf4248eee05, type: 3}
   - {fileID: 1861671314698605576, guid: ca0a3beaef7c8b54e89b8825c8baf5b2, type: 3}
   - {fileID: 6926434839164394292, guid: 6accfd5f63f4a584886e5333152bbff9, type: 3}
+  - {fileID: 2932743327785403396, guid: ea840a22d2b5c9446aebaa4bc5677eb9, type: 3}
+  - {fileID: 2653052624319568465, guid: 635dd4a8205ab6c47bdde4025d6c4fa9, type: 3}
+  - {fileID: 2620874102455670745, guid: 58b387da182ad43418465797bce65a63, type: 3}
+  - {fileID: 5940397842887606168, guid: 81ecb69548acfab4690b26ebae234ef3, type: 3}
   LevelInfo: {fileID: 0}
 --- !u!1 &1078385917
 GameObject:
@@ -670,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1225015815
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -699,7 +704,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225015814}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -751,8 +756,8 @@ Transform:
   m_GameObject: {fileID: 1225015814}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0006, y: -0.3, z: 0.0032}
-  m_LocalScale: {x: 3.22028, y: 0.59261, z: 3.21557}
+  m_LocalPosition: {x: -0.0006, y: -0.4, z: 0.0032}
+  m_LocalScale: {x: 4.2166343, y: 0.7759635, z: 4.2104673}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -848,6 +853,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3091151998134256072, guid: 40295b1b72d1535408ea6912563d0d96,
         type: 3}
+      propertyPath: field of view
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3091151998134256072, guid: 40295b1b72d1535408ea6912563d0d96,
+        type: 3}
       propertyPath: far clip plane
       value: 500
       objectReference: {fileID: 0}
@@ -900,6 +910,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863334563942497612, guid: 40295b1b72d1535408ea6912563d0d96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

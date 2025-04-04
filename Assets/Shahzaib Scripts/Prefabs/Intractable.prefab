@@ -53,4 +53,4 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 247
-  Speed: 35
+  Speed: 40

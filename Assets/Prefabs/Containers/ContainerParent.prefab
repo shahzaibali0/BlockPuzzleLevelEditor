@@ -56,7 +56,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _moveTweenDuration: 0.15
   _parts:
   - {fileID: 3968778420347102660}
   - {fileID: 6913930896978081358}
@@ -113,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8284745785052751677
 Transform:
   m_ObjectHideFlags: 0
@@ -212,6 +211,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ContainerHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 61e43c7bc1729ca4a961afdbe43bce0a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

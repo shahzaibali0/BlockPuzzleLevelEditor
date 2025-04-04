@@ -322,7 +322,6 @@ namespace PuzzleLevelEditor.Container.Block
         protected bool HitForExtration()
         {
             bool NotFound = false;
-
             if (BlockExitRays == null || BlockExitRays.Count == 0)
             {
                 Debug.LogWarning("Hit__E: BlockExitRays is empty!");
@@ -331,38 +330,81 @@ namespace PuzzleLevelEditor.Container.Block
             }
 
             int TotalSideFound = 0;
-            //Debug.Log("Hit__E: Total Rays = " + BlockExitRays.Count);
-            float RayLength = 0.35f; // Reset per ray
 
             foreach (var item in BlockExitRays)
             {
+
+                float RayLength = 0.25f;
+
                 if (item == null)
                 {
-                    //  Debug.LogError("Null transform found in BlockExitRays");
                     continue;
                 }
-
-                //Debug.Log("Hit__E: Checking Ray: " + item.name + " Ray Length " + RayLength);
 
                 Ray raycast = new Ray(item.position, item.forward);
                 RaycastHit hit;
 
                 if (Physics.Raycast(raycast, out hit, RayLength, LayerMask))
                 {
-                    // Debug.Log("Hit__E: Raycast Hit: " + hit.collider.name);
+                    Debug.Log("War gae panday vich" + hit.collider.name);
                     Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.black, 8);
-                    RayLength += 0.6f;
-                    if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
+                    if (hit.collider.TryGetComponent<ContainerBlock>(out ContainerBlock component1))
                     {
-                        // Debug.Log("Hit__E:  - ExtrationSide Found");
-                        extrationSide = component;
-                        TotalSideFound++;
+                        Debug.Log("War gae panday vich__B" + hit.collider.name);
+
+                        NotFound = false;
+                        break;
+                    }
+                    else
+                    {
+                        Debug.Log("War gae panday vich_A " + hit.collider.name);
+
+                        RayLength += 0.6f;
+                        if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
+                        {
+                            extrationSide = component;
+                            TotalSideFound++;
+                        }
                     }
                 }
                 else
                 {
-                    //  Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.red, 8);
-                    // Debug.Log("Hit__E: Raycast Missed: " + item.name);
+
+                    Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.red, 8);
+                    Debug.Log("War gae panday vich__C" + item.name);
+
+                    if (Physics.Raycast(raycast, out hit, RayLength))
+                    {
+                        Debug.Log("War gae panday vich__D" + hit.collider.name);
+
+                        if (hit.collider.TryGetComponent<ContainerBlock>(out ContainerBlock component1))
+                        {
+                            Debug.Log("War gae panday vich__E" + hit.collider.name);
+
+                            NotFound = false;
+                            break;
+
+                        }
+                        else
+                        {
+                            Debug.Log("War gae panday vich__F" + hit.collider.name);
+
+                            RayLength += 0.6f;
+
+                            if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
+                            {
+                                Debug.Log("War gae panday vich__G" + hit.collider.name);
+
+                                extrationSide = component;
+                                TotalSideFound++;
+                            }
+                        }
+                    }
+                    else
+                    {
+                         Debug.Log("War gae panday vich__ Raycast Missed: " + item.name);
+
+                    }
                 }
             }
 
@@ -378,7 +420,7 @@ namespace PuzzleLevelEditor.Container.Block
             else
             {
                 NotFound = false;
-                Debug.LogError("Extrartion Point Not Matched");
+                Debug.Log("Extrartion Point Not Matched");
             }
 
             return NotFound;

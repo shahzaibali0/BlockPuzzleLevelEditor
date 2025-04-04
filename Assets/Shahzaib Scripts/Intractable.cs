@@ -67,7 +67,7 @@ public class IntractableSystem : MonoBehaviour
     private void TryGrabObject()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit , groundLayer))
         {
             if (hit.collider.TryGetComponent<Rigidbody>(out grabbedRb))
             {

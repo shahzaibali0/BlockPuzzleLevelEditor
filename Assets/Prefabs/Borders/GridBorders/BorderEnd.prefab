@@ -11,14 +11,14 @@ GameObject:
   - component: {fileID: 3783493788141013260}
   - component: {fileID: 5220236041904428925}
   - component: {fileID: 1189966384359237034}
-  - component: {fileID: 7656454489926835840}
-  m_Layer: 0
+  - component: {fileID: 3135323557038485157}
+  m_Layer: 10
   m_Name: Cube_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3783493788141013260
 Transform:
   m_ObjectHideFlags: 0
@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 2185444399254115213}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001, y: -0.01984, z: 0.3001}
-  m_LocalScale: {x: 0.15778494, y: 0.09966701, z: 0.5011208}
+  m_LocalPosition: {x: 0.00016087294, y: -0.07008, z: 0.29983336}
+  m_LocalScale: {x: 0.059843276, y: 0.09966701, z: 0.4996786}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8738421087768538272}
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7656454489926835840
+--- !u!65 &3135323557038485157
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.36494702, y: 1, z: 1}
-  m_Center: {x: -0.30752596, y: 1.6489748e-14, z: 0.000000037514436}
+  m_Size: {x: 0.99999994, y: 1, z: 0.99999994}
+  m_Center: {x: 0.00000011920929, y: 0, z: 0}
 --- !u!1001 &9137701196558273355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,10 +168,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 70172069959775c4da711d27b01118cf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 70172069959775c4da711d27b01118cf,
         type: 3}
       propertyPath: m_Name
       value: BorderEnd
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 70172069959775c4da711d27b01118cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
