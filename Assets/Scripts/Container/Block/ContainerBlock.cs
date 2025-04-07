@@ -372,8 +372,9 @@ namespace PuzzleLevelEditor.Container.Block
 
                     Debug.DrawRay(item.position, item.forward * RayLength, UnityEngine.Color.red, 8);
                     Debug.Log("War gae panday vich__C" + item.name);
+                    RayLength += 0.6f;
 
-                    if (Physics.Raycast(raycast, out hit, RayLength))
+                    if (Physics.Raycast(raycast, out hit, RayLength, LayerMask))
                     {
                         Debug.Log("War gae panday vich__D" + hit.collider.name);
 
@@ -389,7 +390,6 @@ namespace PuzzleLevelEditor.Container.Block
                         {
                             Debug.Log("War gae panday vich__F" + hit.collider.name);
 
-                            RayLength += 0.6f;
 
                             if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
                             {
@@ -402,7 +402,7 @@ namespace PuzzleLevelEditor.Container.Block
                     }
                     else
                     {
-                         Debug.Log("War gae panday vich__ Raycast Missed: " + item.name);
+                        Debug.Log("War gae panday vich__ Raycast Missed: " + item.name);
 
                     }
                 }
