@@ -362,8 +362,11 @@ namespace PuzzleLevelEditor.Container.Block
                         RayLength += 0.6f;
                         if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
                         {
-                            extrationSide = component;
-                            TotalSideFound++;
+                            if (component.BlockColor == _blockColor)
+                            {
+                                extrationSide = component;
+                                TotalSideFound++;
+                            }
                         }
                     }
                 }
@@ -394,9 +397,11 @@ namespace PuzzleLevelEditor.Container.Block
                             if (hit.collider.TryGetComponent<ExtrationSide>(out ExtrationSide component))
                             {
                                 Debug.Log("War gae panday vich__G" + hit.collider.name);
-
-                                extrationSide = component;
-                                TotalSideFound++;
+                                if (component.BlockColor == _blockColor)
+                                {
+                                    extrationSide = component;
+                                    TotalSideFound++;
+                                }
                             }
                         }
                     }
