@@ -56,7 +56,7 @@ public class BuildingManager : MonoBehaviour
 
 
     [Button(ButtonSizes.Medium)]
-    public void Gether_Buidinginfo_Data()
+    public void CollectAllBuildings()
     {
         building_Infos.Clear();
         ornaments_Infos.Clear();
@@ -82,7 +82,7 @@ public class BuildingManager : MonoBehaviour
     }
 
     [Button(ButtonSizes.Medium)]
-    public void TotalNumberOfBrickInBuilding()
+    public void TotalBricks()
     {
         TotalBricksInBuilding = 0;
 
@@ -113,7 +113,7 @@ public class BuildingManager : MonoBehaviour
     }
 
     [Button(ButtonSizes.Medium)]
-    public void OFFBuilding()
+    public void OffBuilding()
     {
         for (int i = 0; i < building_Infos.Count; i++)
         {
@@ -123,7 +123,7 @@ public class BuildingManager : MonoBehaviour
 
 
     [Button(ButtonSizes.Medium)]
-    public void OnCurrenBuildingInfo()
+    public void OnCurrentBuilding()
     {
         //PlayerPrefs.DeleteAll();
 
@@ -309,7 +309,7 @@ public class BuildingManager : MonoBehaviour
             BuildingInfo_BrickNumber = building_Info1.Objs.Count - 1;
         }
 
-        OnCurrenBuildingInfo();
+        OnCurrentBuilding();
 
         TotalBrickActive = BuildingInfo_BrickNumber;
 
