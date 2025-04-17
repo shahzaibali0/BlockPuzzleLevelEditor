@@ -254,6 +254,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building-01
       objectReference: {fileID: 0}
+    - target: {fileID: 7523840629136778928, guid: 6744c5891f9345e4c8fdbda6f2e56a58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7523840629136778929, guid: 6744c5891f9345e4c8fdbda6f2e56a58,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -413,6 +418,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Burj ul Arab
+      objectReference: {fileID: 0}
+    - target: {fileID: 8843137028067098501, guid: d215d9174b07ec74ab7fdd8dab73eda4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8843137028067098506, guid: d215d9174b07ec74ab7fdd8dab73eda4,
         type: 3}

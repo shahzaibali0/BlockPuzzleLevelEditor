@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts_new\\_building\\building_info.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts_new\\_building\\building_info.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts_new\\_building\\building_info.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts_new\\_building\\buildingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts_new\\_building\\buildingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts_new\\_building\\buildingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -129,8 +129,7 @@
               "RelativeToolTip": "Assets\\scripts_New\\_Building\\BuildingManager.cs",
               "ViewState": "AgIAAEgBAAAAAAAAAAAmwGgBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T12:37:30.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T12:37:30.471Z"
             },
             {
               "$type": "Document",
@@ -142,8 +141,7 @@
               "RelativeToolTip": "..\\..\\Projects\\Shape-Crusher-Repo\\Shape-Crusher\\Assets\\scripts_New\\_Building\\Building_Info.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T11:05:00.894Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T11:05:00.894Z"
             },
             {
               "$type": "Document",
