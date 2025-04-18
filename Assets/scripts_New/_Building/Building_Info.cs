@@ -4,22 +4,82 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UnityEngine.Events;
 using DG.Tweening;
+using System.Linq;
 
 
 public class Building_Info : MonoBehaviour
 {
 
     public RawMaterial rawMaterial;
-
+    public string FloorType;
     public List<BuildingSinglePiece> Objs = new List<BuildingSinglePiece>();
-    public int currentActive = 0;
+    public List<IndividualBrick> individualBrick = new List<IndividualBrick>();
 
+    public int currentActive = 0;
+    public int TotalBricks;
     public bool IsBuilding = false;
 
-
-    public int GetAppliedBrickCount()
+    [Button(ButtonSizes.Medium)]
+    public void ProcessActiveBricks()
     {
-      
+        individualBrick.Clear(); // Reset the list
+
+        // First filter for only ACTIVE and valid objects
+        var activeBricks = Objs.Where(obj =>
+            obj != null &&
+            obj.gameObject.activeInHierarchy && // Only include ACTIVE bricks
+            obj.BrickType != null
+        );
+
+        // Group by brick type and count ACTIVE bricks only
+        var brickGroups = activeBricks
+            .GroupBy(obj => obj.BrickType)
+            .Select(group => new {
+                Type = group.Key,
+                Count = group.Count()
+            });
+
+        // Create IndividualBrick entries only for ACTIVE brick types
+        foreach (var group in brickGroups)
+        {
+            individualBrick.Add(new IndividualBrick()
+            {
+                RequriedBrickType = group.Type,
+                TotalBrick = group.Count,    // Only counts ACTIVE bricks
+                RemainingBrick = group.Count, // All are remaining initially
+                BrickPlaced = 0
+            });
+        }
+
+        Debug.Log($"Processed {activeBricks.Count()} active bricks of {brickGroups.Count()} types");
+    }
+
+    // Call this when a brick is placed to update counts
+    public void OnBrickPlaced(BrickType brickType)
+    {
+        var individualBrick = this.individualBrick.FirstOrDefault(b => b.RequriedBrickType == brickType);
+        if (individualBrick != null)
+        {
+            individualBrick.BrickPlaced++;
+            individualBrick.RemainingBrick = individualBrick.TotalBrick - individualBrick.BrickPlaced;
+        }
+    }
+
+    // Call this when a brick is removed to update counts
+    public void OnBrickRemoved(BrickType brickType)
+    {
+        var individualBrick = this.individualBrick.FirstOrDefault(b => b.RequriedBrickType == brickType);
+        if (individualBrick != null && individualBrick.BrickPlaced > 0)
+        {
+            individualBrick.BrickPlaced--;
+            individualBrick.RemainingBrick = individualBrick.TotalBrick - individualBrick.BrickPlaced;
+        }
+    }
+
+
+public int GetAppliedBrickCount()
+    {
+
         return PlayerPrefs.GetInt(BuildingManager.instance.BuildingPref + "_" + "CurrentBrick", 0);
 
     }
@@ -28,8 +88,14 @@ public class Building_Info : MonoBehaviour
     {
 
         PlayerPrefs.SetInt(BuildingManager.instance.BuildingPref + "_" + "CurrentBrick", BrickCount);
- 
 
+
+    }
+
+    public string GetFloorBrick()
+    {
+        FloorType = gameObject.transform.name;
+        return FloorType;
     }
 
     bool isCompleted = false;
@@ -41,7 +107,7 @@ public class Building_Info : MonoBehaviour
         GameObject CurrentObj = Objs[currentActive].gameObject;
         CurrentObj.SetActive(true);
 
-       
+
 
 
         if (currentActive < Objs.Count)
@@ -126,7 +192,7 @@ public class Building_Info : MonoBehaviour
 
     public Material GetBrickMat()
     {
-       
+
         return Objs[currentActive].GetComponent<Renderer>().material;
 
     }
@@ -161,6 +227,12 @@ public class Building_Info : MonoBehaviour
         }
     }
 
+    public int GetBricks()
+    {
+        return TotalBricks = Objs.Count;
+
+    }
+
     [Button(ButtonSizes.Medium)]
     public void ActivateAll()
     {
@@ -168,6 +240,7 @@ public class Building_Info : MonoBehaviour
         {
             item.gameObject.SetActive(true);
         }
+
     }
 
     [Button(ButtonSizes.Medium)]
@@ -184,6 +257,8 @@ public class Building_Info : MonoBehaviour
     {
         IsBuilding = true;
     }
+
+
 
 }
 
