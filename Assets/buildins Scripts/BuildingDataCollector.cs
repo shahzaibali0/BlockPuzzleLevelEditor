@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BuildingDataCollector : MonoBehaviour
@@ -10,46 +11,55 @@ public class BuildingDataCollector : MonoBehaviour
     public BuildingManager BuildingManager;
 
     [Button(ButtonSizes.Medium)]
-
-
     public void CollectData()
     {
-        allBuildingsData.bricksDataHolder.Clear();
-        GetDataOfBuildings();
+        allBuildingsData = GetDataOfBuildings();
     }
 
     public AllBuildingsData GetDataOfBuildings()
     {
-        allBuildingsData.bricksDataHolder.Clear();
+        if (BuildingManager == null)
+        {
+            Debug.LogError("BuildingManager reference is null!");
+            return allBuildingsData;
+        }
+
+        // Initialize or clear existing data
+        allBuildingsData = new AllBuildingsData
+        {
+            BuildingNumber = BuildingNo,
+            BuildingPrefab = this,
+            bricksDataHolder = new List<BrickData>()
+        };
+
         BuildingManager.BuildingInfoNumber = BuildingNo;
-        allBuildingsData.BuildingPrefab = this;
         allBuildingsData.TotalBuildingBricks = BuildingManager.TotalBricksInBuilding;
 
-
+        // Process all building info
         for (int i = 0; i < BuildingManager.building_Infos.Count; i++)
         {
-            BrickData brickType = new BrickData(
-                BuildingManager.building_Infos[i].GetFloorBrick(),
-                BuildingManager.building_Infos[i].GetBricks()
+            var buildingInfo = BuildingManager.building_Infos[i];
+
+            // Create new brick data
+            var brickData = new BrickData(
+                buildingInfo.GetFloorBrick(),
+                buildingInfo.GetBricks()
             );
 
-            allBuildingsData.bricksDataHolder.Add(brickType);
-
-            for (int j = 0; j < BuildingManager.building_Infos[i].individualBrick.Count; j++)
+            // Process individual bricks
+            for (int j = 0; j < buildingInfo.individualBrick.Count; j++)
             {
-                var sourceBrick = BuildingManager.building_Infos[i].individualBrick[j];
-                var newBrick = new IndividualBrick(
-                    sourceBrick.RequriedBrickType,
-                    sourceBrick.TotalBrick,
-                    sourceBrick.RemainingBrick,
-                    sourceBrick.BrickPlaced
-                );
-
-                allBuildingsData.bricksDataHolder[i].individualBricks.Add(newBrick);
+                var sourceBrick = buildingInfo.individualBrick[j];
+                brickData.individualBricks.Add(new IndividualBrick(sourceBrick));
             }
+
+            allBuildingsData.bricksDataHolder.Add(brickData);
         }
+
+        // Calculate remaining bricks
+        allBuildingsData.BuildingRemainingBrick = allBuildingsData.TotalBuildingBricks -
+            allBuildingsData.bricksDataHolder.Sum(b => b.BrickPlaced);
 
         return allBuildingsData;
     }
-
 }

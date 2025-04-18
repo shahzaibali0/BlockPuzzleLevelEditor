@@ -17,12 +17,12 @@ MonoBehaviour:
     BuildingPrefab: {fileID: 3376020451307690041, guid: d215d9174b07ec74ab7fdd8dab73eda4,
       type: 3}
     TotalBuildingBricks: 8309
-    BuildingRemainingBrick: 0
+    BuildingRemainingBrick: 8309
     bricksDataHolder:
     - brickIcon: {fileID: 0}
       floortype: BASE
       TotalBricks: 940
-      RemainingBrick: 0
+      RemainingBrick: 940
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 6
@@ -32,7 +32,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: Ground Floor
       TotalBricks: 1061
-      RemainingBrick: 0
+      RemainingBrick: 1061
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -54,7 +54,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 1st Floor
       TotalBricks: 700
-      RemainingBrick: 0
+      RemainingBrick: 700
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -72,7 +72,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 2nd Floor
       TotalBricks: 714
-      RemainingBrick: 0
+      RemainingBrick: 714
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -90,7 +90,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 3rd Floor
       TotalBricks: 702
-      RemainingBrick: 0
+      RemainingBrick: 702
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -108,7 +108,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 4th Floor
       TotalBricks: 692
-      RemainingBrick: 0
+      RemainingBrick: 692
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -126,7 +126,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 5th Floor
       TotalBricks: 670
-      RemainingBrick: 0
+      RemainingBrick: 670
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -144,7 +144,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 6th Floor
       TotalBricks: 808
-      RemainingBrick: 0
+      RemainingBrick: 808
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -162,7 +162,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 7th Floor
       TotalBricks: 751
-      RemainingBrick: 0
+      RemainingBrick: 751
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -180,7 +180,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 8th Floor
       TotalBricks: 646
-      RemainingBrick: 0
+      RemainingBrick: 646
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
@@ -198,7 +198,7 @@ MonoBehaviour:
     - brickIcon: {fileID: 0}
       floortype: 9th Floor
       TotalBricks: 260
-      RemainingBrick: 0
+      RemainingBrick: 260
       BrickPlaced: 0
       individualBricks:
       - RequriedBrickType: 8
