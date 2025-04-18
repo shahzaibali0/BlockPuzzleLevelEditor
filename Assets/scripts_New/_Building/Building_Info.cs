@@ -18,40 +18,39 @@ public class Building_Info : MonoBehaviour
     public int currentActive = 0;
     public int TotalBricks;
     public bool IsBuilding = false;
-
     [Button(ButtonSizes.Medium)]
     public void ProcessActiveBricks()
     {
         individualBrick.Clear(); // Reset the list
 
-        // First filter for only ACTIVE and valid objects
-        var activeBricks = Objs.Where(obj =>
+        // Filter for valid objects (no active/inactive check)
+        var allBricks = Objs.Where(obj =>
             obj != null &&
-            obj.gameObject.activeInHierarchy && // Only include ACTIVE bricks
             obj.BrickType != null
         );
 
-        // Group by brick type and count ACTIVE bricks only
-        var brickGroups = activeBricks
+        // Group by brick type and count all bricks
+        var brickGroups = allBricks
             .GroupBy(obj => obj.BrickType)
-            .Select(group => new {
+            .Select(group => new
+            {
                 Type = group.Key,
                 Count = group.Count()
             });
 
-        // Create IndividualBrick entries only for ACTIVE brick types
+        // Create IndividualBrick entries for each type
         foreach (var group in brickGroups)
         {
             individualBrick.Add(new IndividualBrick()
             {
                 RequriedBrickType = group.Type,
-                TotalBrick = group.Count,    // Only counts ACTIVE bricks
+                TotalBrick = group.Count,    // Counts all bricks
                 RemainingBrick = group.Count, // All are remaining initially
                 BrickPlaced = 0
             });
         }
 
-        Debug.Log($"Processed {activeBricks.Count()} active bricks of {brickGroups.Count()} types");
+        Debug.Log($"Processed {allBricks.Count()} bricks of {brickGroups.Count()} types");
     }
 
     // Call this when a brick is placed to update counts
@@ -77,19 +76,14 @@ public class Building_Info : MonoBehaviour
     }
 
 
-public int GetAppliedBrickCount()
+    public int GetAppliedBrickCount()
     {
-
         return PlayerPrefs.GetInt(BuildingManager.instance.BuildingPref + "_" + "CurrentBrick", 0);
-
     }
 
     private void SetAppliedBrickCount(int BrickCount)
     {
-
         PlayerPrefs.SetInt(BuildingManager.instance.BuildingPref + "_" + "CurrentBrick", BrickCount);
-
-
     }
 
     public string GetFloorBrick()
@@ -107,9 +101,6 @@ public int GetAppliedBrickCount()
         GameObject CurrentObj = Objs[currentActive].gameObject;
         CurrentObj.SetActive(true);
 
-
-
-
         if (currentActive < Objs.Count)
         {
             currentActive++;
@@ -120,23 +111,16 @@ public int GetAppliedBrickCount()
                 isCompleted = true;
                 IsBuilding = false;
 
-
                 Debug.Log("Building Step Completed.");
                 if (comp_CallBack != null)
                 {
                     comp_CallBack.Invoke();
                 }
             }
-
-
             SetAppliedBrickCount(currentActive);
-
-
             CurrentObj.transform.DOPunchPosition(Vector3.up * 0.25f, 0.25f).OnComplete(() => CurrentObj.transform.DOPunchScale(Vector3.one * 1.5f, 0.25f));
 
         }
-
-
 
         if (currentActive >= Objs.Count)
         {
@@ -147,8 +131,6 @@ public int GetAppliedBrickCount()
     }
     public void ForceActivate_Next()
     {
-
-
         if (currentActive < Objs.Count)
         {
             GameObject CurrentObj = Objs[currentActive].gameObject;
@@ -176,8 +158,6 @@ public int GetAppliedBrickCount()
     public Transform GetNextBrickPos_Increment()
     {
         Transform dummyTran = Objs[CurrentPosCount].transform;
-
-
         CurrentPosCount++;
 
         if (CurrentPosCount >= Objs.Count - 1)
@@ -257,8 +237,6 @@ public int GetAppliedBrickCount()
     {
         IsBuilding = true;
     }
-
-
 
 }
 

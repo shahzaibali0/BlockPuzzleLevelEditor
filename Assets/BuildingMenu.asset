@@ -18,70 +18,190 @@ MonoBehaviour:
       type: 3}
     TotalBuildingBricks: 8309
     BuildingRemainingBrick: 0
-    brickTypes:
+    bricksDataHolder:
     - brickIcon: {fileID: 0}
       floortype: BASE
       TotalBricks: 940
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 6
+        TotalBrick: 940
+        RemainingBrick: 940
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: Ground Floor
       TotalBricks: 1061
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 533
+        RemainingBrick: 533
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 157
+        RemainingBrick: 157
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 159
+        RemainingBrick: 159
+        BrickPlaced: 0
+      - RequriedBrickType: 1
+        TotalBrick: 212
+        RemainingBrick: 212
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 1st Floor
       TotalBricks: 700
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 245
+        RemainingBrick: 245
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 297
+        RemainingBrick: 297
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 158
+        RemainingBrick: 158
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 2nd Floor
       TotalBricks: 714
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 320
+        RemainingBrick: 320
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 220
+        RemainingBrick: 220
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 174
+        RemainingBrick: 174
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 3rd Floor
       TotalBricks: 702
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 332
+        RemainingBrick: 332
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 102
+        RemainingBrick: 102
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 268
+        RemainingBrick: 268
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 4th Floor
       TotalBricks: 692
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 244
+        RemainingBrick: 244
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 167
+        RemainingBrick: 167
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 281
+        RemainingBrick: 281
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 5th Floor
       TotalBricks: 670
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 304
+        RemainingBrick: 304
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 147
+        RemainingBrick: 147
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 219
+        RemainingBrick: 219
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 6th Floor
       TotalBricks: 808
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 323
+        RemainingBrick: 323
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 280
+        RemainingBrick: 280
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 205
+        RemainingBrick: 205
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 7th Floor
       TotalBricks: 751
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 268
+        RemainingBrick: 268
+        BrickPlaced: 0
+      - RequriedBrickType: 5
+        TotalBrick: 272
+        RemainingBrick: 272
+        BrickPlaced: 0
+      - RequriedBrickType: 4
+        TotalBrick: 211
+        RemainingBrick: 211
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 8th Floor
       TotalBricks: 646
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 218
+        RemainingBrick: 218
+        BrickPlaced: 0
+      - RequriedBrickType: 6
+        TotalBrick: 112
+        RemainingBrick: 112
+        BrickPlaced: 0
+      - RequriedBrickType: 0
+        TotalBrick: 73
+        RemainingBrick: 73
+        BrickPlaced: 0
     - brickIcon: {fileID: 0}
       floortype: 9th Floor
       TotalBricks: 260
       RemainingBrick: 0
       BrickPlaced: 0
-      RequriedBrickType: 0
+      individualBricks:
+      - RequriedBrickType: 8
+        TotalBrick: 260
+        RemainingBrick: 260
+        BrickPlaced: 0

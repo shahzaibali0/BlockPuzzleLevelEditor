@@ -16,7 +16,14 @@ public class BuildingsData : ScriptableObject
 
         for (int i = 0; i < allBuildingsDatas.Count; i++)
         {
-            allBuildingsDatas[i].brickTypes.Clear();
+            // First clear all individualBricks lists
+            for (int j = 0; j < allBuildingsDatas[i].bricksDataHolder.Count; j++)
+            {
+                allBuildingsDatas[i].bricksDataHolder[j].individualBricks.Clear();
+            }
+
+            // Then clear the main brickTypes list
+            allBuildingsDatas[i].bricksDataHolder.Clear();
         }
         for (int i = 0; i < allBuildingsDatas.Count; i++)
         {
@@ -38,7 +45,7 @@ public class AllBuildingsData
 
     public int BuildingRemainingBrick;
 
-    public List<BrickData> brickTypes = new List<BrickData>();
+    public List<BrickData> bricksDataHolder = new List<BrickData>();
 }
 
 [Serializable]

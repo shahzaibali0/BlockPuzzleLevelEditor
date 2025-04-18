@@ -14,13 +14,13 @@ public class BuildingDataCollector : MonoBehaviour
 
     public void CollectData()
     {
-        allBuildingsData.brickTypes.Clear();
+        allBuildingsData.bricksDataHolder.Clear();
         GetDataOfBuildings();
     }
 
     public AllBuildingsData GetDataOfBuildings()
     {
-        allBuildingsData.brickTypes.Clear();
+        allBuildingsData.bricksDataHolder.Clear();
         BuildingManager.BuildingInfoNumber = BuildingNo;
         allBuildingsData.BuildingPrefab = this;
         allBuildingsData.TotalBuildingBricks = BuildingManager.TotalBricksInBuilding;
@@ -33,7 +33,7 @@ public class BuildingDataCollector : MonoBehaviour
                 BuildingManager.building_Infos[i].GetBricks()
             );
 
-            allBuildingsData.brickTypes.Add(brickType);
+            allBuildingsData.bricksDataHolder.Add(brickType);
 
             for (int j = 0; j < BuildingManager.building_Infos[i].individualBrick.Count; j++)
             {
@@ -45,7 +45,7 @@ public class BuildingDataCollector : MonoBehaviour
                     sourceBrick.BrickPlaced
                 );
 
-                allBuildingsData.brickTypes[i].individualBricks.Add(newBrick);
+                allBuildingsData.bricksDataHolder[i].individualBricks.Add(newBrick);
             }
         }
 
