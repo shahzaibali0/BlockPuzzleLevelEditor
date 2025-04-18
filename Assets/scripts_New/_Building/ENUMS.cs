@@ -10,6 +10,7 @@ public class ENUMS
 
 public enum BrickType
 {
+    None,
     WaterBlue,
     Red,
     yellow,

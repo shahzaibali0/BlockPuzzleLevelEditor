@@ -24,10 +24,29 @@ public class BuildingDataCollector : MonoBehaviour
         BuildingManager.BuildingInfoNumber = BuildingNo;
         allBuildingsData.BuildingPrefab = this;
         allBuildingsData.TotalBuildingBricks = BuildingManager.TotalBricksInBuilding;
+
+
         for (int i = 0; i < BuildingManager.building_Infos.Count; i++)
         {
-            BrickData brickType = new BrickData(BuildingManager.building_Infos[i].GetFloorBrick(), BuildingManager.building_Infos[i].GetBricks());
+            BrickData brickType = new BrickData(
+                BuildingManager.building_Infos[i].GetFloorBrick(),
+                BuildingManager.building_Infos[i].GetBricks()
+            );
+
             allBuildingsData.brickTypes.Add(brickType);
+
+            for (int j = 0; j < BuildingManager.building_Infos[i].individualBrick.Count; j++)
+            {
+                var sourceBrick = BuildingManager.building_Infos[i].individualBrick[j];
+                var newBrick = new IndividualBrick(
+                    sourceBrick.RequriedBrickType,
+                    sourceBrick.TotalBrick,
+                    sourceBrick.RemainingBrick,
+                    sourceBrick.BrickPlaced
+                );
+
+                allBuildingsData.brickTypes[i].individualBricks.Add(newBrick);
+            }
         }
 
         return allBuildingsData;

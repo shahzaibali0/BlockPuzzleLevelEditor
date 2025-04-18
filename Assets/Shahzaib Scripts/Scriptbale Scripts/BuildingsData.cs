@@ -83,4 +83,30 @@ public class IndividualBrick
     public int RemainingBrick;
     public int BrickPlaced;
 
+    // Default constructor
+    public IndividualBrick()
+    {
+        RequriedBrickType = BrickType.None; // Assuming BrickType has a None value
+        TotalBrick = 0;
+        RemainingBrick = 0;
+        BrickPlaced = 0;
+    }
+
+    // Parameterized constructor
+    public IndividualBrick(BrickType brickType, int totalBrick, int remainingBrick, int brickPlaced)
+    {
+        RequriedBrickType = brickType;
+        TotalBrick = totalBrick;
+        RemainingBrick = remainingBrick;
+        BrickPlaced = brickPlaced;
+    }
+
+    // Copy constructor
+    public IndividualBrick(IndividualBrick other)
+    {
+        RequriedBrickType = other.RequriedBrickType;
+        TotalBrick = other.TotalBrick;
+        RemainingBrick = other.RemainingBrick;
+        BrickPlaced = other.BrickPlaced;
+    }
 }
