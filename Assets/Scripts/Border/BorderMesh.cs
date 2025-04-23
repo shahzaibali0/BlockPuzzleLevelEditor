@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace PuzzleLevelEditor.BorderLogic
 {
@@ -15,6 +16,18 @@ namespace PuzzleLevelEditor.BorderLogic
 
             _renderer.sharedMaterials = materialInfo.Materials;
         }
+
+        public void SetBorderMaterial(Material material)
+        {
+            Material[] materials = _renderer.sharedMaterials; // Get a copy
+            for (int i = 0; i < materials.Length; i++)
+            {
+                materials[i] = material;
+            }
+            _renderer.sharedMaterials = materials; // Assign back
+        }
+
+
 
         private void Start()
         {

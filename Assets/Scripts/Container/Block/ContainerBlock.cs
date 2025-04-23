@@ -12,6 +12,8 @@ namespace PuzzleLevelEditor.Container.Block
     [SelectionBase]
     public class ContainerBlock : BaseGridItem
     {
+        public BrickType MyBrickType;
+        [Space(20)]
         [Header("BorderParents")]
         [SerializeField] private GameObject _lidsBorderParent;
         [SerializeField] private MovementConstraint _movementConstraint;
@@ -21,11 +23,12 @@ namespace PuzzleLevelEditor.Container.Block
         [SerializeField, ReadOnly] private BlockType _blockType;
         [SerializeField] private List<Container> _subContainers;
         [SerializeField] private List<BorderMesh> _Borders;
+        [SerializeField] private List<BorderMesh> _BordersLit;
 
-        public List<Transform> RightDirRays = new List<Transform>();
-        public List<Transform> LeftDirRays = new List<Transform>();
-        public List<Transform> FrontDirRays = new List<Transform>();
-        public List<Transform> DownDirRays = new List<Transform>();
+        private List<Transform> RightDirRays = new List<Transform>();
+        private List<Transform> LeftDirRays = new List<Transform>();
+        private List<Transform> FrontDirRays = new List<Transform>();
+        private List<Transform> DownDirRays = new List<Transform>();
         public LayerMask LayerMask;
         public Transform LidsBorderParent => _lidsBorderParent.transform;
         public MovementConstraint MovementConstraint => _movementConstraint;
@@ -419,7 +422,7 @@ namespace PuzzleLevelEditor.Container.Block
             {
                 Debug.Log("Move Object To Where it should");
                 NotFound = true;
-
+                extrationSide.AddBrick();
                 MoveOutfromGrid();
             }
             else
@@ -479,6 +482,37 @@ namespace PuzzleLevelEditor.Container.Block
 
             gameObject.SetActive(false);
             //transform.position = targetPosition; // Ensure it reaches exactly
+        }
+
+
+        public void SetContainerMaterials(Material material)
+        {
+            CollectBorderMeshesFromLidParent(gameObject.transform);
+            for (int i = 0; i < _Borders.Count; i++)
+            {
+                _Borders[i].SetBorderMaterial(material);
+                _BordersLit[i].SetBorderMaterial(material);
+            }
+        }
+
+        public void CollectBorderMeshesFromLidParent(Transform lidParent)
+        {
+            _BordersLit.Clear(); // Clear the list before adding new items
+
+            if (lidParent == null)
+            {
+                Debug.LogWarning("Lid parent is null!");
+                return;
+            }
+
+            BorderMesh[] borderMeshes = lidParent.GetComponentsInChildren<BorderMesh>(includeInactive: true);
+
+            foreach (var border in borderMeshes)
+            {
+                _BordersLit.Add(border);
+            }
+
+            Debug.Log($"Collected {_BordersLit.Count} BorderMesh components from parent '{lidParent.name}'.");
         }
 
     }

@@ -6,16 +6,11 @@ using Sirenix.OdinInspector;
 
 public class BrickTypeAutoAssigner : MonoBehaviour
 {
-    [System.Serializable]
-    public class MaterialBrickTypePair
-    {
-        public Material material;
-        public BrickType brickType;
-    }
+
 
     [Tooltip("Drag materials here and assign their corresponding BrickTypes")]
     public List<MaterialBrickTypePair> materialTypeMappings = new List<MaterialBrickTypePair>();
-
+    public List<MaterialBrickTypePair> PuzzleMat = new List<MaterialBrickTypePair>();
 #if ODIN_INSPECTOR
     [Button("Auto Assign Brick Types", ButtonSizes.Large)]
 #endif
@@ -96,5 +91,20 @@ public class BrickTypeAutoAssigner : MonoBehaviour
         //}
 
         Debug.Log($"Found {uniqueMaterials.Count} unique materials. Please assign BrickTypes to them.");
+    }
+
+
+}
+[System.Serializable]
+public class MaterialBrickTypePair
+{
+    public Material material;
+    public BrickType brickType;
+
+
+    public MaterialBrickTypePair(Material material, BrickType brickType)
+    {
+        this.material = material;
+        this.brickType = brickType;
     }
 }

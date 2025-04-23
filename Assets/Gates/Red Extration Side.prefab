@@ -119,3 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockColor: 2
+  BrickExtrationColor: 0
+  Multipler: 2

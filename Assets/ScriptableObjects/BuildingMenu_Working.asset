@@ -1,0 +1,355 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a420942b336667b4fa3a20dece392c34, type: 3}
+  m_Name: BuildingMenu_Working
+  m_EditorClassIdentifier: 
+  allBuildingsDatas:
+  - BuildingNumber: 0
+    BuildingPrefab: {fileID: 3606018785997966037, guid: 6744c5891f9345e4c8fdbda6f2e56a58,
+      type: 3}
+    TotalBuildingBricks: 1061
+    BuildingRemainingBrick: 1061
+    FloorDatahHolder:
+    - floortype: base
+      TotalBricks: 162
+      RemainingBrick: 162
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 9
+        TotalBrick: 162
+        RemainingBrick: 162
+        BrickPlaced: 0
+    - floortype: 1-Walls Bricks
+      TotalBricks: 235
+      RemainingBrick: 235
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 1
+        TotalBrick: 235
+        RemainingBrick: 235
+        BrickPlaced: 0
+    - floortype: 1-Walls Bricks-1
+      TotalBricks: 424
+      RemainingBrick: 424
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 10
+        TotalBrick: 424
+        RemainingBrick: 424
+        BrickPlaced: 0
+    - floortype: 2-Roof Outline
+      TotalBricks: 120
+      RemainingBrick: 120
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 2
+        TotalBrick: 120
+        RemainingBrick: 120
+        BrickPlaced: 0
+    - floortype: 2-Roof
+      TotalBricks: 112
+      RemainingBrick: 112
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 3
+        TotalBrick: 112
+        RemainingBrick: 112
+        BrickPlaced: 0
+    - floortype: 2-Roof Chimni
+      TotalBricks: 8
+      RemainingBrick: 8
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 9
+        TotalBrick: 8
+        RemainingBrick: 8
+        BrickPlaced: 0
+    BrickColorInfos:
+    - BrickType: 9
+      TotalBricksPerColor: 170
+      RemaingBricksPerColor: 170
+    - BrickType: 1
+      TotalBricksPerColor: 235
+      RemaingBricksPerColor: 235
+    - BrickType: 10
+      TotalBricksPerColor: 424
+      RemaingBricksPerColor: 424
+    - BrickType: 2
+      TotalBricksPerColor: 120
+      RemaingBricksPerColor: 120
+    - BrickType: 3
+      TotalBricksPerColor: 112
+      RemaingBricksPerColor: 112
+    CurrentUseBricksColors: 
+    bricksMats:
+    - BrickType: 1
+      Material: {fileID: 2100000, guid: f038cb94dc1a8c142a80e62b646fc40a, type: 2}
+    - BrickType: 9
+      Material: {fileID: 2100000, guid: 605c1219ca47ba2468a843d2ca96a266, type: 2}
+    - BrickType: 10
+      Material: {fileID: 2100000, guid: 08ec63f6f126edb40a06d46c07e8af55, type: 2}
+    - BrickType: 2
+      Material: {fileID: 2100000, guid: 1b8a1ed5c5d82ca448204f18f80fea03, type: 2}
+    - BrickType: 3
+      Material: {fileID: 2100000, guid: 0ee817683dfbd0e42bc8cadf6aba606a, type: 2}
+  - BuildingNumber: 1
+    BuildingPrefab: {fileID: 3376020451307690041, guid: d215d9174b07ec74ab7fdd8dab73eda4,
+      type: 3}
+    TotalBuildingBricks: 8309
+    BuildingRemainingBrick: 8309
+    FloorDatahHolder:
+    - floortype: BASE
+      TotalBricks: 940
+      RemainingBrick: 940
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 7
+        TotalBrick: 940
+        RemainingBrick: 940
+        BrickPlaced: 0
+    - floortype: Ground Floor
+      TotalBricks: 1061
+      RemainingBrick: 1061
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 533
+        RemainingBrick: 533
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 157
+        RemainingBrick: 157
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 159
+        RemainingBrick: 159
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 1
+        TotalBrick: 212
+        RemainingBrick: 212
+        BrickPlaced: 0
+    - floortype: 1st Floor
+      TotalBricks: 700
+      RemainingBrick: 700
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 245
+        RemainingBrick: 245
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 297
+        RemainingBrick: 297
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 158
+        RemainingBrick: 158
+        BrickPlaced: 0
+    - floortype: 2nd Floor
+      TotalBricks: 714
+      RemainingBrick: 714
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 320
+        RemainingBrick: 320
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 220
+        RemainingBrick: 220
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 174
+        RemainingBrick: 174
+        BrickPlaced: 0
+    - floortype: 3rd Floor
+      TotalBricks: 702
+      RemainingBrick: 702
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 332
+        RemainingBrick: 332
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 102
+        RemainingBrick: 102
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 268
+        RemainingBrick: 268
+        BrickPlaced: 0
+    - floortype: 4th Floor
+      TotalBricks: 692
+      RemainingBrick: 692
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 244
+        RemainingBrick: 244
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 167
+        RemainingBrick: 167
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 281
+        RemainingBrick: 281
+        BrickPlaced: 0
+    - floortype: 5th Floor
+      TotalBricks: 670
+      RemainingBrick: 670
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 304
+        RemainingBrick: 304
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 147
+        RemainingBrick: 147
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 219
+        RemainingBrick: 219
+        BrickPlaced: 0
+    - floortype: 6th Floor
+      TotalBricks: 808
+      RemainingBrick: 808
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 323
+        RemainingBrick: 323
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 280
+        RemainingBrick: 280
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 205
+        RemainingBrick: 205
+        BrickPlaced: 0
+    - floortype: 7th Floor
+      TotalBricks: 751
+      RemainingBrick: 751
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 268
+        RemainingBrick: 268
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 5
+        TotalBrick: 272
+        RemainingBrick: 272
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 4
+        TotalBrick: 211
+        RemainingBrick: 211
+        BrickPlaced: 0
+    - floortype: 8th Floor
+      TotalBricks: 646
+      RemainingBrick: 646
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 7
+        TotalBrick: 196
+        RemainingBrick: 196
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 338
+        RemainingBrick: 338
+        BrickPlaced: 0
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 6
+        TotalBrick: 112
+        RemainingBrick: 112
+        BrickPlaced: 0
+    - floortype: 9th Floor
+      TotalBricks: 260
+      RemainingBrick: 260
+      BrickPlaced: 0
+      individualBricks:
+      - brickIcon: {fileID: 0}
+        RequriedBrickType: 8
+        TotalBrick: 260
+        RemainingBrick: 260
+        BrickPlaced: 0
+    BrickColorInfos:
+    - BrickType: 7
+      TotalBricksPerColor: 1136
+      RemaingBricksPerColor: 1136
+    - BrickType: 8
+      TotalBricksPerColor: 3167
+      RemaingBricksPerColor: 3167
+    - BrickType: 4
+      TotalBricksPerColor: 1698
+      RemaingBricksPerColor: 1698
+    - BrickType: 5
+      TotalBricksPerColor: 1619
+      RemaingBricksPerColor: 1619
+    - BrickType: 1
+      TotalBricksPerColor: 212
+      RemaingBricksPerColor: 212
+    - BrickType: 6
+      TotalBricksPerColor: 112
+      RemaingBricksPerColor: 112
+    CurrentUseBricksColors: 
+    bricksMats:
+    - BrickType: 6
+      Material: {fileID: 2100000, guid: 17f3e02d22700804380d4888dbb47274, type: 2}
+    - BrickType: 5
+      Material: {fileID: 2100000, guid: 11da005c6e54ec04294f879dcd211427, type: 2}
+    - BrickType: 9
+      Material: {fileID: 2100000, guid: 938d058c39570e24aa98aaaa8d666895, type: 2}
+    - BrickType: 4
+      Material: {fileID: 2100000, guid: 90d451a9abe6201458af38eb632a7c19, type: 2}
+    - BrickType: 1
+      Material: {fileID: 2100000, guid: d8b4f49bf26a83947bb2710a7b1d7298, type: 2}
+    - BrickType: 8
+      Material: {fileID: 2100000, guid: 86c2b916c6bd4e044b0f98ef643de6d0, type: 2}
+  UserBrickInfo: []
+  ExtrabricksType: 060000000800000002000000050000000a0000000300000009000000040000000700000005000000

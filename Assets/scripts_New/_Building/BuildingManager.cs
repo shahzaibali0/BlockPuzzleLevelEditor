@@ -29,7 +29,6 @@ public class BuildingManager : MonoBehaviour
 
     public GameObject OutterEnvironment;
     public int TotalBricksInBuilding;
-    public Vector3 CameraEndPos;
     public Transform MyParentObj;
 
 
@@ -51,6 +50,20 @@ public class BuildingManager : MonoBehaviour
         PlayerPrefs.SetInt(BuildingManager.instance.BuildingPref + "_" + "Currentbuilding_Infos", Building_InfosCount);
 
 
+    }
+    [Button(ButtonSizes.Medium)]
+    public void InilizeBuildingdata()
+    {
+        Debug.Log("InilizeBuildingdata__A");
+        for (int i = 0; i < building_Infos.Count; i++)
+        {
+            BuildingDataCollector.Instance.Activate_FloorBrick_Placed(building_Infos[i].FloorType, (building_Infos[i].Objs));
+        }
+
+        if (BuildingDataCollector.Instance.allBuildingsData.BuildingRemainingBrick == 0)
+        {
+            Debug.Log("Building Complete");
+        }
     }
 
 
@@ -79,11 +92,7 @@ public class BuildingManager : MonoBehaviour
         {
             ornaments_Infos.Add(item);
         }
-    }
 
-    [Button(ButtonSizes.Medium)]
-    public void TotalBricks()
-    {
         TotalBricksInBuilding = 0;
 
         for (int i = 0; i < building_Infos.Count; i++)
@@ -91,16 +100,18 @@ public class BuildingManager : MonoBehaviour
             TotalBricksInBuilding += building_Infos[i].GetComponent<Building_Info>().Objs.Count;
         }
     }
+
+
     [Button(ButtonSizes.Medium)]
-    public void startBuilding()
+    public void StartBuilding()
     {
         IsBuilding = true;
     }
 
     [Button(ButtonSizes.Medium)]
-    public void startOrnamentBuilding()
+    public void StopBuilding()
     {
-        IsOrnamentBuilding = true;
+        IsBuilding = false;
     }
 
     [Button(ButtonSizes.Medium)]
@@ -122,7 +133,6 @@ public class BuildingManager : MonoBehaviour
     }
 
 
-    [Button(ButtonSizes.Medium)]
     public void OnCurrentBuilding()
     {
         //PlayerPrefs.DeleteAll();
@@ -177,9 +187,6 @@ public class BuildingManager : MonoBehaviour
 
     }
 
-
-
-
     public void BuilingStepComplete_CallBack()
     {
         if (CurrentBuildingStep < building_Infos.Count)
@@ -195,6 +202,9 @@ public class BuildingManager : MonoBehaviour
                 Debug.Log("BuildingIsCompleted");
                 PlayerPrefs.DeleteKey(BuildingManager.instance.BuildingPref + "_" + "Currentbuilding_Infos");
                 PlayerPrefs.DeleteKey(BuildingManager.instance.BuildingPref + "_" + "CurrentBrick");
+
+
+                DataManager.BuildingNo++;
             }
             else
             {
@@ -246,29 +256,20 @@ public class BuildingManager : MonoBehaviour
 
     public Transform getCurrentBrick()
     {
-
-  
-
         return building_Infos[CurrentBuildingStep].GetNextBrickPos();
     }
 
     public Transform getCurrentBrick_Increment()
     {
-
-
-
         return building_Infos[CurrentBuildingStep].GetNextBrickPos_Increment();
     }
 
     public Material GetCurrentBrickMat()
     {
-
-
         return building_Infos[CurrentBuildingStep].GetBrickMat();
-
-
     }
 
+    [Button(ButtonSizes.Medium)]
     public void InilizeBuilding()
     {
         BuildingInfoNumber = GetAppliedBuilding_InfosCount();
@@ -277,53 +278,29 @@ public class BuildingManager : MonoBehaviour
             SetAppliedBuilding_InfosCount(0);
             return;
         }
-        //Debug.Log("BuildingInfoNumber_" + BuildingInfoNumber);
         if (BuildingInfoNumber >= building_Infos.Count)
         {
             BuildingInfoNumber = building_Infos.Count - 1;
         }
-
+        Debug.Log("Shahzaib_BuildingInfoNumber" + BuildingInfoNumber);
         CurrentBuildingStep = BuildingInfoNumber;
-
-        //for (int i = 0; i < BuildingInfoNumber - 1; i++)
-        //{
-        //    Building_Info building_Info = building_Infos[i];
-        //    Debug.Log("building_Info" + building_Infos.Count);
-        //    for (int j = 0; j < building_Info.Objs.Count; j++)
-        //    {
-        //        building_Info.ForceActivate_Next();
-        //        Debug.Log("building_Info.Objs" + building_Info.Objs.Count);
-        //    }
-        //}
-
-
-
         Building_Info building_Info1 = building_Infos[BuildingInfo_BrickNumber];
+
         BuildingInfo_BrickNumber = building_Info1.GetAppliedBrickCount();
-
-
-
+        Debug.Log("Shahzaib_BuildingInfo_BrickNumber" + BuildingInfo_BrickNumber);
 
         if (BuildingInfo_BrickNumber >= building_Info1.Objs.Count)
         {
             BuildingInfo_BrickNumber = building_Info1.Objs.Count - 1;
         }
-
         OnCurrentBuilding();
-
         TotalBrickActive = BuildingInfo_BrickNumber;
-
-
-        //for (int j = 0; j < BuildingInfo_BrickNumber; j++)
-        //{
-        //    building_Info1.ForceActivate_Next();
-        //}
-
-
-
     }
-
-
+    [Button(ButtonSizes.Medium)]
+    public void Build()
+    {
+        building_Infos[CurrentBuildingStep].Activate_Next(BuilingStepComplete_CallBack);
+    }
 
     private void FixedUpdate()
     {
@@ -358,7 +335,7 @@ public class BuildingManager : MonoBehaviour
     {
         Transform brick = BuildingManager.instance.getCurrentBrick();
 
-    
+
     }
 
     void AdujestBuildingPos()

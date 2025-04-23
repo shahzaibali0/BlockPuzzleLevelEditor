@@ -29,8 +29,28 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(LevelInfo.gameObject);
         }
+        if (BuildingsMainManger.Instance.Obj != null)
+        {
 
-        LevelInfo = Instantiate(Levels[curlvl], transform);
+            Destroy(BuildingsMainManger.Instance.Obj);
+        }
+
+        if (UserBricksManager.instance.IsBuildingEnable())
+        {
+            BuildingsMainManger.Instance.SpawnCurrentBuilding();
+            Debug.Log("My nigga can Upgrade Building");
+        }
+        else
+        {
+            Debug.Log("Nigga Play Some more levels");
+
+            if (LevelInfo != null)
+            {
+                Destroy(LevelInfo.gameObject);
+            }
+
+            LevelInfo = Instantiate(Levels[curlvl], transform);
+        }
     }
 
     [Button(ButtonSizes.Medium)]

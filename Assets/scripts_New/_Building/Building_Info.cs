@@ -53,25 +53,19 @@ public class Building_Info : MonoBehaviour
         Debug.Log($"Processed {allBricks.Count()} bricks of {brickGroups.Count()} types");
     }
 
-    // Call this when a brick is placed to update counts
     public void OnBrickPlaced(BrickType brickType)
     {
+        BuildingDataCollector.Instance.FloorBrick_Placed(FloorType);
+        BuildingDataCollector.Instance.FloorBrick_Remained(FloorType);
         var individualBrick = this.individualBrick.FirstOrDefault(b => b.RequriedBrickType == brickType);
         if (individualBrick != null)
         {
+     
             individualBrick.BrickPlaced++;
             individualBrick.RemainingBrick = individualBrick.TotalBrick - individualBrick.BrickPlaced;
-        }
-    }
+            BuildingDataCollector.Instance.FloorIndividualBricks_Placed(FloorType, brickType);
+            BuildingDataCollector.Instance.FloorIndividualBricks_Remained(FloorType, brickType);
 
-    // Call this when a brick is removed to update counts
-    public void OnBrickRemoved(BrickType brickType)
-    {
-        var individualBrick = this.individualBrick.FirstOrDefault(b => b.RequriedBrickType == brickType);
-        if (individualBrick != null && individualBrick.BrickPlaced > 0)
-        {
-            individualBrick.BrickPlaced--;
-            individualBrick.RemainingBrick = individualBrick.TotalBrick - individualBrick.BrickPlaced;
         }
     }
 
@@ -99,8 +93,13 @@ public class Building_Info : MonoBehaviour
         if (isCompleted) return;
 
         GameObject CurrentObj = Objs[currentActive].gameObject;
-        CurrentObj.SetActive(true);
+        BuildingSinglePiece piece = CurrentObj.GetComponent<BuildingSinglePiece>();
+        UserBricksManager.instance.SetCurrentBrick(piece.BrickType);
+        UserBricksManager.instance.DecreseBricks();
 
+        CurrentObj.SetActive(true);
+        BuildingDataCollector.Instance.TotalRemainingBricks();
+        OnBrickPlaced(Objs[currentActive].GetComponent<BuildingSinglePiece>().BrickType);
         if (currentActive < Objs.Count)
         {
             currentActive++;
@@ -127,6 +126,8 @@ public class Building_Info : MonoBehaviour
 
 
         }
+
+
 
     }
     public void ForceActivate_Next()

@@ -285,6 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockColor: 2
+  BrickExtrationColor: 0
 --- !u!1 &4555151227163262588
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockColor: 1
+  BrickExtrationColor: 0
 --- !u!1 &4669683763698447716
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +634,12 @@ MonoBehaviour:
   - {fileID: 720730410659139441}
   - {fileID: 4967312475795291281}
   - {fileID: 4602297179564763606}
+  ExtrationSides:
+  - {fileID: 5968280353077000586}
+  - {fileID: 7652113149807709147}
+  - {fileID: 1634989361405260882}
+  - {fileID: 6009221467277770809}
+  - {fileID: 2162226926256942185}
   WidthBlocks: 5
   HeightBlocks: 6
 --- !u!1 &5379264089298133631
@@ -753,6 +761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockColor: 4
+  BrickExtrationColor: 0
 --- !u!1 &6030940181125995608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockColor: 5
+  BrickExtrationColor: 0
 --- !u!1 &7673832580981513437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,6 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BlockColor: 3
+  BrickExtrationColor: 0
 --- !u!1 &8418306813251249293
 GameObject:
   m_ObjectHideFlags: 0

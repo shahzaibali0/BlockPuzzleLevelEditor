@@ -18,7 +18,9 @@ public enum BrickType
     Green,
     Brown,
     DarkBlue,
-    White
+    White,
+    LightGrey,
+    Purple
 
 }
 
