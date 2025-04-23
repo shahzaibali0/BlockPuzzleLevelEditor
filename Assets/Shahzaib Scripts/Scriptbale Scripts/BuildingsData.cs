@@ -11,6 +11,8 @@ public class BuildingsData : ScriptableObject
     public List<AllBuildingsData> allBuildingsDatas = new List<AllBuildingsData>();
     public List<UserBrickData> UserBrickInfo = new List<UserBrickData>();
     public List<BrickType> ExtrabricksType = new List<BrickType>();
+    public List<PuzzleBrickReserveMats> brickReserveMats = new List<PuzzleBrickReserveMats>();
+    public AllBuildingsData ReserveData;
     public void UpdateCurrentUseBricks()
     {
         for (int i = 0; i < allBuildingsDatas.Count; i++)
@@ -48,18 +50,55 @@ public class BuildingsData : ScriptableObject
         {
             allBuildingsDatas[i].FloorDatahHolder.Clear();
         }
-
+        brickReserveMats.Clear();
         for (int i = 0; i < allBuildingsDatas.Count; i++)
         {
-            if (allBuildingsDatas[i].BuildingPrefab != null)
+            var prefab = allBuildingsDatas[i].BuildingPrefab;
+
+            if (prefab != null)
             {
-                allBuildingsDatas[i] = allBuildingsDatas[i].BuildingPrefab.GetDataOfBuildings();
+                var data = prefab.GetDataOfBuildings();
+
+                if (data != null)
+                {
+                    allBuildingsDatas[i] = data;
+                    if (data.bricksMats != null)
+                    {
+                        foreach (var matData in data.bricksMats)
+                        {
+                            if (matData != null && matData.Material != null)
+                            {
+                                var bricksMat = new BricksMats(matData.BrickType, matData.Material);
+                                bool alreadyExists = brickReserveMats.Any(r => r.bricksMatsCollections.BrickType == bricksMat.BrickType);
+
+                                if (!alreadyExists)
+                                {
+                                    var reserveMat = new PuzzleBrickReserveMats { bricksMatsCollections = bricksMat };
+                                    brickReserveMats.Add(reserveMat);
+                                }
+                            }
+                            else
+                            {
+                                Debug.Log($"Null material or brick mat at Building index {i}.");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"bricksMats is null for BuildingPrefab at index {i}.");
+                    }
+                }
+                else
+                {
+                    Debug.Log($"GetDataOfBuildings returned null at index {i}.");
+                }
             }
             else
             {
-                Debug.LogWarning($"BuildingPrefab at index {i} is null!");
+                Debug.Log($"BuildingPrefab at index {i} is null!");
             }
         }
+
     }
 
 
@@ -218,10 +257,9 @@ public class BrickInfo
 #endregion
 
 [Serializable]
-public class PuzzleBrickMat
+public class PuzzleBrickReserveMats
 {
-    public int LevelNo;
-    public List<BricksMats> bricksMatsCollections = new List<BricksMats>();
+    public BricksMats bricksMatsCollections;
 
 }
 [Serializable]

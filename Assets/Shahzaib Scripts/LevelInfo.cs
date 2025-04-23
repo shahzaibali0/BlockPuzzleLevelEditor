@@ -28,53 +28,71 @@ public class LevelInfo : MonoBehaviour
 
     public List<BrickType> brickTypes = new List<BrickType>();
 
-    public void SetExtrationsSides()
+    public void SetExtrationsSides_Old()
     {
         DataManager.Instance.buildingsData.UpdateCurrentUseBricks();
 
-
-        //for (int i = 0; i < ExtrationSides.Count; i++)
-        //{
-        //    var buildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo];
-        //    var extraBricksTypes = DataManager.Instance.buildingsData.ExtrabricksType;
-
-        //    if (i >= buildingData.CurrentUseBricksColors.Count)
-        //    {
-        //        BrickType extraType = buildingData.CurrentUseBricksColors[i];
-        //        var matchedMat = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == extraType);
-        //        ExtrationSides[i].UpdateMat(matchedMat.Material);
-        //        ExtrationSides[i].BrickExtrationColor = extraType;
-        //    }
-        //    else
-        //    {
-        //        BrickType extraType = buildingData.CurrentUseBricksColors[i];
-        //        var matchedMat = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == extraType);
-        //        ExtrationSides[i].UpdateMat(matchedMat.Material);
-        //        ExtrationSides[i].BrickExtrationColor = buildingData.CurrentUseBricksColors[i];
-        //    }
-        //}
         var buildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo];
-        var extraBricksTypes = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo + 1];
+        var extraBuildingData = new AllBuildingsData();
+        if (DataManager.BuildingNo < DataManager.Instance.buildingsData.allBuildingsDatas.Count)
+        {
+            extraBuildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo + 1];
+        }
+        else
+        {
+            foreach (BrickType brickType in Enum.GetValues(typeof(BrickType)))
+            {
+                if (brickType == BrickType.None)
+                    continue;
+
+                if (!DataManager.Instance.buildingsData.ReserveData.CurrentUseBricksColors.Contains(brickType))
+                {
+                    DataManager.Instance.buildingsData.ReserveData.CurrentUseBricksColors.Add(brickType);
+                }
+            }
+
+            extraBuildingData = DataManager.Instance.buildingsData.ReserveData;
+        }
+        // Set container materials and brick types
         for (int i = 0; i < container.Count; i++)
         {
-
+            BrickType currentType;
 
             if (i >= buildingData.CurrentUseBricksColors.Count)
             {
-                BrickType extraType = buildingData.CurrentUseBricksColors[i];
-                var matchedMat = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == extraType);
-                container[i].ContainerBlock.SetContainerMaterials(matchedMat.Material);
-                container[i].ContainerBlock.MyBrickType = extraType;
+                currentType = extraBuildingData.CurrentUseBricksColors[i];
+                var matchedMat = extraBuildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == currentType);
+
+                if (matchedMat != null)
+                {
+                    container[i].ContainerBlock.SetContainerMaterials(matchedMat.Material);
+                }
+                else
+                {
+                    Debug.LogWarning($"Extra Material not found for BrickType: {currentType}");
+                }
+
+                container[i].ContainerBlock.MyBrickType = currentType;
             }
             else
             {
-                BrickType extraType = buildingData.CurrentUseBricksColors[i];
-                var matchedMat = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == extraType);
-                container[i].ContainerBlock.SetContainerMaterials(matchedMat.Material);
-                container[i].ContainerBlock.MyBrickType = extraType;
+                currentType = buildingData.CurrentUseBricksColors[i];
+                var matchedMat = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == currentType);
+
+                if (matchedMat != null)
+                {
+                    container[i].ContainerBlock.SetContainerMaterials(matchedMat.Material);
+                }
+                else
+                {
+                    Debug.LogWarning($"Material not found for BrickType: {currentType}");
+                }
+
+                container[i].ContainerBlock.MyBrickType = currentType;
             }
         }
 
+        // Match ExtrationSides with container and update materials
         for (int i = 0; i < ExtrationSides.Count; i++)
         {
             var matchingContainer = container.FirstOrDefault(c =>
@@ -86,12 +104,122 @@ public class LevelInfo : MonoBehaviour
             {
                 ExtrationSides[i].BrickExtrationColor = matchingContainer.ContainerBlock.MyBrickType;
 
-                var matchedMat_ = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == ExtrationSides[i].BrickExtrationColor);
+                var matchedMat = buildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == ExtrationSides[i].BrickExtrationColor)
+                                ?? extraBuildingData.bricksMats.FirstOrDefault(mat => mat.BrickType == ExtrationSides[i].BrickExtrationColor);
 
-                ExtrationSides[i].UpdateMat(matchedMat_.Material);
+                if (matchedMat != null)
+                {
+                    ExtrationSides[i].UpdateMat(matchedMat.Material);
+                }
+                else
+                {
+                    Debug.LogWarning($"Material not found for ExtrationSide BrickType: {ExtrationSides[i].BrickExtrationColor}");
+                }
             }
         }
     }
+    public void SetExtrationsSides()
+    {
+        DataManager.Instance.buildingsData.UpdateCurrentUseBricks();
+
+        var buildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo];
+        AllBuildingsData extraBuildingData;
+
+        // Determine extra building data or fallback to reserve
+        if (DataManager.BuildingNo + 1 < DataManager.Instance.buildingsData.allBuildingsDatas.Count)
+        {
+            extraBuildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo + 1];
+        }
+        else
+        {
+            // Add any missing brick types to the reserve data
+            foreach (BrickType brickType in Enum.GetValues(typeof(BrickType)))
+            {
+                if (brickType == BrickType.None)
+                    continue;
+
+                if (!DataManager.Instance.buildingsData.ReserveData.CurrentUseBricksColors.Contains(brickType))
+                {
+                    DataManager.Instance.buildingsData.ReserveData.CurrentUseBricksColors.Add(brickType);
+                }
+            }
+
+            extraBuildingData = DataManager.Instance.buildingsData.ReserveData;
+        }
+
+        // Set container materials and brick types
+        for (int i = 0; i < container.Count; i++)
+        {
+            BrickType currentType;
+
+            // Use extra building data if index exceeds current use bricks
+            if (i >= buildingData.CurrentUseBricksColors.Count)
+            {
+                if (i >= extraBuildingData.CurrentUseBricksColors.Count)
+                {
+                    Debug.LogWarning($"No extra brick type found at index {i}.");
+                    continue;
+                }
+
+                currentType = extraBuildingData.CurrentUseBricksColors[i];
+                var matchedMat = extraBuildingData.bricksMats?.FirstOrDefault(mat => mat.BrickType == currentType);
+
+                if (matchedMat != null)
+                {
+                    container[i].ContainerBlock.SetContainerMaterials(matchedMat.Material);
+                }
+                else
+                {
+                    Debug.LogWarning($"Extra Material not found for BrickType: {currentType}");
+                }
+
+                container[i].ContainerBlock.MyBrickType = currentType;
+            }
+            else
+            {
+                currentType = buildingData.CurrentUseBricksColors[i];
+                var matchedMat = buildingData.bricksMats?.FirstOrDefault(mat => mat.BrickType == currentType);
+
+                if (matchedMat != null)
+                {
+                    container[i].ContainerBlock.SetContainerMaterials(matchedMat.Material);
+                }
+                else
+                {
+                    Debug.LogWarning($"Material not found for BrickType: {currentType}");
+                }
+
+                container[i].ContainerBlock.MyBrickType = currentType;
+            }
+        }
+
+        // Match ExtrationSides with container and update materials
+        for (int i = 0; i < ExtrationSides.Count; i++)
+        {
+            var matchingContainer = container.FirstOrDefault(c =>
+                c != null &&
+                c.ContainerBlock != null &&
+                c.ContainerBlock.Color == ExtrationSides[i].BlockColor);
+
+            if (matchingContainer != null)
+            {
+                ExtrationSides[i].BrickExtrationColor = matchingContainer.ContainerBlock.MyBrickType;
+
+                var matchedMat = buildingData.bricksMats?.FirstOrDefault(mat => mat.BrickType == ExtrationSides[i].BrickExtrationColor)
+                              ?? extraBuildingData.bricksMats?.FirstOrDefault(mat => mat.BrickType == ExtrationSides[i].BrickExtrationColor);
+
+                if (matchedMat != null)
+                {
+                    ExtrationSides[i].UpdateMat(matchedMat.Material);
+                }
+                else
+                {
+                    Debug.LogWarning($"Material not found for ExtrationSide BrickType: {ExtrationSides[i].BrickExtrationColor}");
+                }
+            }
+        }
+    }
+
 
 
 

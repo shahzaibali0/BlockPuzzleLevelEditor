@@ -353,3 +353,40 @@ MonoBehaviour:
       Material: {fileID: 2100000, guid: 86c2b916c6bd4e044b0f98ef643de6d0, type: 2}
   UserBrickInfo: []
   ExtrabricksType: 060000000800000002000000050000000a0000000300000009000000040000000700000005000000
+  brickReserveMats:
+  - bricksMatsCollections:
+      BrickType: 1
+      Material: {fileID: 2100000, guid: f038cb94dc1a8c142a80e62b646fc40a, type: 2}
+  - bricksMatsCollections:
+      BrickType: 9
+      Material: {fileID: 2100000, guid: 605c1219ca47ba2468a843d2ca96a266, type: 2}
+  - bricksMatsCollections:
+      BrickType: 10
+      Material: {fileID: 2100000, guid: 08ec63f6f126edb40a06d46c07e8af55, type: 2}
+  - bricksMatsCollections:
+      BrickType: 2
+      Material: {fileID: 2100000, guid: 1b8a1ed5c5d82ca448204f18f80fea03, type: 2}
+  - bricksMatsCollections:
+      BrickType: 3
+      Material: {fileID: 2100000, guid: 0ee817683dfbd0e42bc8cadf6aba606a, type: 2}
+  - bricksMatsCollections:
+      BrickType: 6
+      Material: {fileID: 2100000, guid: 17f3e02d22700804380d4888dbb47274, type: 2}
+  - bricksMatsCollections:
+      BrickType: 5
+      Material: {fileID: 2100000, guid: 11da005c6e54ec04294f879dcd211427, type: 2}
+  - bricksMatsCollections:
+      BrickType: 4
+      Material: {fileID: 2100000, guid: 90d451a9abe6201458af38eb632a7c19, type: 2}
+  - bricksMatsCollections:
+      BrickType: 8
+      Material: {fileID: 2100000, guid: 86c2b916c6bd4e044b0f98ef643de6d0, type: 2}
+  ReserveData:
+    BuildingNumber: 0
+    BuildingPrefab: {fileID: 0}
+    TotalBuildingBricks: 0
+    BuildingRemainingBrick: 0
+    FloorDatahHolder: []
+    BrickColorInfos: []
+    CurrentUseBricksColors: 
+    bricksMats: []
