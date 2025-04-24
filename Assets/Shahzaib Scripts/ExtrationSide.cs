@@ -7,12 +7,11 @@ public class ExtrationSide : MonoBehaviour
 {
     public BlockColor BlockColor;
     public BrickType BrickExtrationColor;
-    public float Multipler = 2;
+    public float BricksValue = 2;
     public void AddBrick()
     {
-        float Value = Random.Range(50, 100) * Multipler;
-        Debug.Log("Value" + Value);
-        UserBricksManager.instance.AddBrickonExtrationPoint(BrickExtrationColor, (int)Value);
+        Debug.Log("Current Value " + BricksValue);
+        UserBricksManager.instance.AddBrickonExtrationPoint(BrickExtrationColor, (int)BricksValue);
     }
 
     public void UpdateMat(Material material)

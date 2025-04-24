@@ -17,28 +17,28 @@ MonoBehaviour:
     BuildingPrefab: {fileID: 3606018785997966037, guid: 6744c5891f9345e4c8fdbda6f2e56a58,
       type: 3}
     TotalBuildingBricks: 1061
-    BuildingRemainingBrick: 1061
+    BuildingRemainingBrick: 893
     FloorDatahHolder:
     - floortype: base
       TotalBricks: 162
-      RemainingBrick: 162
-      BrickPlaced: 0
+      RemainingBrick: 0
+      BrickPlaced: 162
       individualBricks:
       - brickIcon: {fileID: 0}
         RequriedBrickType: 9
         TotalBrick: 162
-        RemainingBrick: 162
-        BrickPlaced: 0
+        RemainingBrick: 0
+        BrickPlaced: 162
     - floortype: 1-Walls Bricks
       TotalBricks: 235
-      RemainingBrick: 235
-      BrickPlaced: 0
+      RemainingBrick: 229
+      BrickPlaced: 6
       individualBricks:
       - brickIcon: {fileID: 0}
         RequriedBrickType: 1
         TotalBrick: 235
-        RemainingBrick: 235
-        BrickPlaced: 0
+        RemainingBrick: 229
+        BrickPlaced: 6
     - floortype: 1-Walls Bricks-1
       TotalBricks: 424
       RemainingBrick: 424
@@ -82,10 +82,10 @@ MonoBehaviour:
     BrickColorInfos:
     - BrickType: 9
       TotalBricksPerColor: 170
-      RemaingBricksPerColor: 170
+      RemaingBricksPerColor: 8
     - BrickType: 1
       TotalBricksPerColor: 235
-      RemaingBricksPerColor: 235
+      RemaingBricksPerColor: 229
     - BrickType: 10
       TotalBricksPerColor: 424
       RemaingBricksPerColor: 424
@@ -388,5 +388,5 @@ MonoBehaviour:
     BuildingRemainingBrick: 0
     FloorDatahHolder: []
     BrickColorInfos: []
-    CurrentUseBricksColors: 
+    CurrentUseBricksColors: 0100000002000000030000000400000005000000060000000700000008000000090000000a000000
     bricksMats: []

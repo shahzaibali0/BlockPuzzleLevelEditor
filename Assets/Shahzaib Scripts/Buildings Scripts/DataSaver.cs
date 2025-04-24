@@ -3,6 +3,7 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class DataSaver : MonoBehaviour
@@ -82,6 +83,33 @@ public class DataSaver : MonoBehaviour
             // If file doesn't exist, create new empty user data
             UserData = new UserData();
         }
+    }
+
+    public BuildingsData buildingsData;
+
+
+    [Button(ButtonSizes.Medium)]
+    public void ResetData()
+    {
+        buildingsData.SetAllBuildingsData();
+        PlayerPrefs.DeleteAll();
+
+        string fileName = "UserBrickDatas";
+        string filePath = Path.Combine(Application.dataPath, fileName);
+
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+            Debug.Log($"Deleted file: {filePath}");
+        }
+        else
+        {
+            Debug.LogWarning($"File not found: {filePath}");
+        }
+
+#if UNITY_EDITOR
+        UnityEditor.AssetDatabase.Refresh(); // Refresh editor to reflect deletion
+#endif
     }
 
     #endregion

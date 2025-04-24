@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using UnityEngine;
 
 public class BuildingsMainManger : MonoBehaviour
@@ -28,5 +29,10 @@ public class BuildingsMainManger : MonoBehaviour
             Obj.transform.localPosition = Vector3.zero;
         }
 
+    }
+
+    public void BuildBuilding()
+    {
+        BuildingManager.instance.Build();
     }
 }

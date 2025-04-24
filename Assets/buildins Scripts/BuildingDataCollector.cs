@@ -17,6 +17,8 @@ public class BuildingDataCollector : MonoBehaviour
     public int BuildingNo = 0;
     public AllBuildingsData allBuildingsData;
     public BuildingManager BuildingManager;
+
+    public GameObject BuildingCam;
     private void Start()
     {
         BuildingManager.OffBuilding();
@@ -40,7 +42,7 @@ public class BuildingDataCollector : MonoBehaviour
     }
 
     [Button(ButtonSizes.Medium)]
-    public void CollectInertnalData()
+    public void CollectInternalData()
     {
         allBuildingsData = GetDataOfBuildings();
     }
@@ -156,6 +158,14 @@ public class BuildingDataCollector : MonoBehaviour
                         allBuildingsData.FloorDatahHolder[i].individualBricks[j].BrickPlaced++;
                     }
                 }
+            }
+        }
+
+        for (int i = 0; i < allBuildingsData.BrickColorInfos.Count; i++)
+        {
+            if (allBuildingsData.BrickColorInfos[i].BrickType == brickType)
+            {
+                allBuildingsData.BrickColorInfos[i].RemaingBricksPerColor--;
             }
         }
     }

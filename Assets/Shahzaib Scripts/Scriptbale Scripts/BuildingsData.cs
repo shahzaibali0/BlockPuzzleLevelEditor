@@ -252,6 +252,18 @@ public class BrickInfo
 {
     public BrickType BrickType;
     public int TotalBricksPerColor, RemaingBricksPerColor;
+    public BrickInfo(BrickType brickType, int totalBricksPerColor)
+    {
+        BrickType = brickType;
+        TotalBricksPerColor = totalBricksPerColor;
+
+    }
+
+    public BrickInfo()
+    {
+     
+
+    }
 }
 
 #endregion
