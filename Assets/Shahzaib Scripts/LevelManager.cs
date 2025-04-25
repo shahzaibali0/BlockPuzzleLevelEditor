@@ -16,7 +16,19 @@ public class LevelManager : MonoBehaviour
     public List<LevelInfo> Levels = new List<LevelInfo>();
     public LevelInfo LevelInfo;
     public GameObject PuzzelLevelCam;
-    int curlvl = 0;
+
+
+    private const string _LevelNo = "BuildingNo";
+
+    public static int LevelNo
+    {
+        get => PlayerPrefs.GetInt(_LevelNo, 0); // Default is 0 if not set
+        set
+        {
+            PlayerPrefs.SetInt(_LevelNo, value);
+            PlayerPrefs.Save(); // Optional but ensures immediate save
+        }
+    }
 
     private void Start()
     {
@@ -38,7 +50,7 @@ public class LevelManager : MonoBehaviour
 
         if (UserBricksManager.instance.IsBuildingEnable())
         {
-        
+
 
             StartCoroutine(EnableRespectiveCam(1.5f, false, true));
 
@@ -54,7 +66,7 @@ public class LevelManager : MonoBehaviour
                 Destroy(LevelInfo.gameObject);
             }
 
-            LevelInfo = Instantiate(Levels[curlvl], transform);
+            LevelInfo = Instantiate(Levels[LevelNo], transform);
 
         }
 
@@ -64,12 +76,12 @@ public class LevelManager : MonoBehaviour
     [Button(ButtonSizes.Medium)]
     public void StartNextLevel()
     {
-        curlvl++;
+        LevelNo++;
 
-        if (curlvl >= Levels.Count)
+        if (LevelNo >= Levels.Count)
         {
 
-            curlvl = 0;
+            LevelNo = 0;
         }
 
 

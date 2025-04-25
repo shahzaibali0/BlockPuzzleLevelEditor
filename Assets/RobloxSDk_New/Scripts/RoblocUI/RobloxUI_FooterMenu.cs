@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 using TMPro;
+using DG.Tweening;
+using Sirenix.OdinInspector;
 
 
 
 public class RobloxUI_FooterMenu : MonoBehaviour
 {
+
+
+
     [SerializeField]
     private Button ProfileBtn,
         CheckoutBtn,
@@ -16,8 +21,6 @@ public class RobloxUI_FooterMenu : MonoBehaviour
         RewardBtn,
         SettingsBtn,
         DTOfferWallBtn;
-
-    public ScrollRect scrollRect;
 
     [SerializeField]
     GameObject RobloxRewardAmountObj;
@@ -49,12 +52,18 @@ public class RobloxUI_FooterMenu : MonoBehaviour
         CheckoutBtn_checkUnlockStatus();
     }
 
-    private void Update()
+    [Button(ButtonSizes.Medium)]
+    public void SlideDown()
     {
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        rectTransform.DOAnchorPosY(rectTransform.anchoredPosition.y - 196f, 0.5f).SetEase(Ease.OutCubic);
     }
-
-    #region Buttons
-
+    [Button(ButtonSizes.Medium)]
+    public void SlideUp()
+    {
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        rectTransform.DOAnchorPosY(rectTransform.anchoredPosition.y + 196, 0.5f).SetEase(Ease.OutCubic);
+    }
     private void MarlAllUnselected()
     {
         ProfileBtn.GetComponent<Image>().sprite = UnSelected;
@@ -102,12 +111,9 @@ public class RobloxUI_FooterMenu : MonoBehaviour
         RewardBtn.onClick.AddListener(RewardBtn_Clicked);
         SettingsBtn.onClick.AddListener(SettingsBtn_Clicked);
 
-#if RB_DT_OFFERWALL
-            DTOfferWallBtn.gameObject.SetActive(false);
-            DTOfferWallBtn.onClick.AddListener(DTOfferWallBtn_Clicked);
-#else
+
         DTOfferWallBtn.gameObject.SetActive(false);
-#endif
+
     }
 
     public void checkForUnlockStatus() { }
@@ -115,10 +121,6 @@ public class RobloxUI_FooterMenu : MonoBehaviour
     private void ProfileBtn_Clicked()
     {
         MarlAllUnselected();
-        //RobloxUIManager.UpdateRobloxScreen(
-        //    RobloxScreen.Profile,
-        //    RobloxScreenOverlayType.Overlay
-        //);
         MarkAsSelected(ProfileBtn);
     }
 
@@ -127,43 +129,17 @@ public class RobloxUI_FooterMenu : MonoBehaviour
         if (CheckoutBtn_checkUnlockStatus())
         {
             MarlAllUnselected();
-            //RobloxUIManager.UpdateRobloxScreen(
-            //    RobloxScreen.CheckOut,
-            //    RobloxScreenOverlayType.Overlay
-            //);
+
             MarkAsSelected(CheckoutBtn);
         }
         else
         {
-         
+
         }
     }
 
     private bool CheckoutBtn_checkUnlockStatus()
     {
-        //if (
-        //    RobloxTasksManager.instance.robloxData.robloxAdTaskData.robloxTasksAdsCompleted > 0
-        //    || RobloxTasksManager
-        //        .instance
-        //        .robloxData
-        //        .robloxLevelTaskData
-        //        .robloxTasksLevelsCompleted > 0
-        //    || RobloxTasksManager.instance.robloxData.user_data.robux > 0
-        //)
-        //{
-        //    //CheckoutBtn.interactable = true;
-        //    CheckoutBtnIcon.color = UnLockedColor;
-        //    CheckoutBtn.GetComponent<Image>().color = UnLockedColor;
-        //    return true;
-        //}
-        //else
-        //{
-        //    //CheckoutBtn.interactable = false;
-        //    CheckoutBtnIcon.color = LockedColor;
-        //    CheckoutBtn.GetComponent<Image>().color = LockedColor;
-        //    return false;
-        //}
-
         return true;
     }
 
@@ -186,34 +162,6 @@ public class RobloxUI_FooterMenu : MonoBehaviour
     private void SettingsBtn_Clicked()
     {
         MarlAllUnselected();
-        //RobloxUIManager.UpdateRobloxScreen(
-        //    RobloxScreen.Settings,
-        //    RobloxScreenOverlayType.Overlay
-        //);
         MarkAsSelected(SettingsBtn);
     }
-
-    private static bool oneTime = true;
-
-    private void DTOfferWallBtn_Clicked()
-    {
-#if RB_DT_OFFERWALL
-            RBDebug.Log("DTOfferWallBtn_Clicked");
-            MarlAllUnselected();
-            // RobloxUIManager.UpdateRobloxScreen(RobloxScreen.Settings, RobloxScreenOverlayType.Overlay);
-            // DT_Offerwall_Manager.instance.initiaize_DT();
-            DT_Offerwall_Manager.instance.ShowOfferWall_FromCurrentSelectedPlacementID();
-
-            //if (oneTime)
-            //{
-            //    oneTime = false;
-            //    UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-            //}
-
-            MarkAsSelected(DTOfferWallBtn);
-#endif
-    }
-
-    #endregion
 }
-
