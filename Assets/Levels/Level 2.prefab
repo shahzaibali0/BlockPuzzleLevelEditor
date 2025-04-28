@@ -722,6 +722,7 @@ MonoBehaviour:
   - {fileID: 6030188855116107828}
   WidthBlocks: 5
   HeightBlocks: 6
+  Timer: 120
   brickTypes: 
 --- !u!1001 &349375407531988609
 PrefabInstance:

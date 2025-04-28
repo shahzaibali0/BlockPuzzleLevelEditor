@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,7 +12,7 @@ public class BrickInfoUI : MonoBehaviour
     public Image Icon;
     public Slider Fillbar;
     public TextMeshProUGUI TotalBricksText;
-    public TextMeshProUGUI RemainingBricksText;
+    public TextMeshProUGUI RemainingBricksText, BrickName;
 
     private int _totalBricks;
     private int _remainingBricks;
@@ -25,31 +26,30 @@ public class BrickInfoUI : MonoBehaviour
         }
     }
 
-    public void Initialize(BrickType type/*, Sprite icon*/, int totalBricks)
+    public void Initialize(BrickType type, int totalBricks)
     {
         BrickType = type;
-        //Icon.sprite = icon;
+        BrickName.text = BrickType.ToString() + " " + "Brick";
+
+        for (int j = 0; j < DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos.Count;)
+        {
+            BrickInfo brickInfo = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos.FirstOrDefault(x => x.BrickType == BrickType);
+            Icon.sprite = brickInfo.Icon;
+            break;
+        }
+
         _totalBricks = totalBricks;
-        _remainingBricks = totalBricks;
+        UserBrickData userBrickData = UserBricksManager.instance.UserBrickDatas.FirstOrDefault(x => x.BrickType == BrickType);
+        _remainingBricks = userBrickData.UserTotalBrick;
+
 
         UpdateUI();
         IsTrue = true;
     }
 
-    public void BrickPlaced()
-    {
-        if (_remainingBricks > 0)
-        {
-            _remainingBricks--;
-            UpdateUI();
-
-            UpdateDataManager();
-        }
-    }
-
     private void UpdateUI()
     {
-        Fillbar.value = 1f - ((float)_remainingBricks / _totalBricks);
+        Fillbar.value = ((float)_remainingBricks / _totalBricks);
 
         // Update text displays
         TotalBricksText.text = _totalBricks.ToString();
@@ -76,7 +76,8 @@ public class BrickInfoUI : MonoBehaviour
         if (brickInfo != null)
         {
             _totalBricks = brickInfo.TotalBricksPerColor;
-            _remainingBricks = brickInfo.RemaingBricksPerColor;
+            UserBrickData userBrickData = UserBricksManager.instance.UserBrickDatas.FirstOrDefault(x => x.BrickType == BrickType);
+            _remainingBricks = userBrickData.UserTotalBrick;
             UpdateUI();
         }
     }

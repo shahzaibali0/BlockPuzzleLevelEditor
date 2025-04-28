@@ -14,37 +14,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allBuildingsDatas:
   - BuildingNumber: 0
+    BuildingIcon: {fileID: 21300000, guid: 8319b07c2293a7143b34879a2c736cc6, type: 3}
     BuildingPrefab: {fileID: 3606018785997966037, guid: 6744c5891f9345e4c8fdbda6f2e56a58,
       type: 3}
     TotalBuildingBricks: 1061
-    BuildingRemainingBrick: 893
+    BuildingRemainingBrick: 1061
     FloorDatahHolder:
     - floortype: base
       TotalBricks: 162
-      RemainingBrick: 0
-      BrickPlaced: 162
+      RemainingBrick: 162
+      BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2d514a8fe84823142b3ecb9340a8a20f, type: 3}
         RequriedBrickType: 9
         TotalBrick: 162
-        RemainingBrick: 0
-        BrickPlaced: 162
+        RemainingBrick: 162
+        BrickPlaced: 0
     - floortype: 1-Walls Bricks
       TotalBricks: 235
-      RemainingBrick: 229
-      BrickPlaced: 6
+      RemainingBrick: 235
+      BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
         RequriedBrickType: 1
         TotalBrick: 235
-        RemainingBrick: 229
-        BrickPlaced: 6
+        RemainingBrick: 235
+        BrickPlaced: 0
     - floortype: 1-Walls Bricks-1
       TotalBricks: 424
       RemainingBrick: 424
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 70b8c0229b1dd5a438d64418bca5a644, type: 3}
         RequriedBrickType: 10
         TotalBrick: 424
         RemainingBrick: 424
@@ -54,7 +55,7 @@ MonoBehaviour:
       RemainingBrick: 120
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: f35ee3abd9e963941b9b21d3b2fe421e, type: 3}
         RequriedBrickType: 2
         TotalBrick: 120
         RemainingBrick: 120
@@ -64,7 +65,7 @@ MonoBehaviour:
       RemainingBrick: 112
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 6546135cb8acbc84580ec0da7541e1f2, type: 3}
         RequriedBrickType: 3
         TotalBrick: 112
         RemainingBrick: 112
@@ -74,7 +75,7 @@ MonoBehaviour:
       RemainingBrick: 8
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2d514a8fe84823142b3ecb9340a8a20f, type: 3}
         RequriedBrickType: 9
         TotalBrick: 8
         RemainingBrick: 8
@@ -82,20 +83,25 @@ MonoBehaviour:
     BrickColorInfos:
     - BrickType: 9
       TotalBricksPerColor: 170
-      RemaingBricksPerColor: 8
+      RemaingBricksPerColor: 170
+      Icon: {fileID: 21300000, guid: 2d514a8fe84823142b3ecb9340a8a20f, type: 3}
     - BrickType: 1
       TotalBricksPerColor: 235
-      RemaingBricksPerColor: 229
+      RemaingBricksPerColor: 235
+      Icon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
     - BrickType: 10
       TotalBricksPerColor: 424
       RemaingBricksPerColor: 424
+      Icon: {fileID: 21300000, guid: 70b8c0229b1dd5a438d64418bca5a644, type: 3}
     - BrickType: 2
       TotalBricksPerColor: 120
       RemaingBricksPerColor: 120
+      Icon: {fileID: 21300000, guid: f35ee3abd9e963941b9b21d3b2fe421e, type: 3}
     - BrickType: 3
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
-    CurrentUseBricksColors: 
+      Icon: {fileID: 21300000, guid: 6546135cb8acbc84580ec0da7541e1f2, type: 3}
+    CurrentUseBricksColors: 09000000010000000a0000000200000003000000
     bricksMats:
     - BrickType: 1
       Material: {fileID: 2100000, guid: f038cb94dc1a8c142a80e62b646fc40a, type: 2}
@@ -108,6 +114,7 @@ MonoBehaviour:
     - BrickType: 3
       Material: {fileID: 2100000, guid: 0ee817683dfbd0e42bc8cadf6aba606a, type: 2}
   - BuildingNumber: 1
+    BuildingIcon: {fileID: 21300000, guid: 34d4de2aa5995314d9ba43dfbe2d10fa, type: 3}
     BuildingPrefab: {fileID: 3376020451307690041, guid: d215d9174b07ec74ab7fdd8dab73eda4,
       type: 3}
     TotalBuildingBricks: 8309
@@ -118,7 +125,7 @@ MonoBehaviour:
       RemainingBrick: 940
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: a6f9753ff269954469ab0a8e0c610841, type: 3}
         RequriedBrickType: 7
         TotalBrick: 940
         RemainingBrick: 940
@@ -128,22 +135,22 @@ MonoBehaviour:
       RemainingBrick: 1061
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 533
         RemainingBrick: 533
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 157
         RemainingBrick: 157
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 159
         RemainingBrick: 159
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
         RequriedBrickType: 1
         TotalBrick: 212
         RemainingBrick: 212
@@ -153,17 +160,17 @@ MonoBehaviour:
       RemainingBrick: 700
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 245
         RemainingBrick: 245
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 297
         RemainingBrick: 297
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 158
         RemainingBrick: 158
@@ -173,17 +180,17 @@ MonoBehaviour:
       RemainingBrick: 714
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 320
         RemainingBrick: 320
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 220
         RemainingBrick: 220
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 174
         RemainingBrick: 174
@@ -193,17 +200,17 @@ MonoBehaviour:
       RemainingBrick: 702
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 332
         RemainingBrick: 332
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 102
         RemainingBrick: 102
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 268
         RemainingBrick: 268
@@ -213,17 +220,17 @@ MonoBehaviour:
       RemainingBrick: 692
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 244
         RemainingBrick: 244
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 167
         RemainingBrick: 167
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 281
         RemainingBrick: 281
@@ -233,17 +240,17 @@ MonoBehaviour:
       RemainingBrick: 670
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 304
         RemainingBrick: 304
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 147
         RemainingBrick: 147
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 219
         RemainingBrick: 219
@@ -253,17 +260,17 @@ MonoBehaviour:
       RemainingBrick: 808
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 323
         RemainingBrick: 323
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 280
         RemainingBrick: 280
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 205
         RemainingBrick: 205
@@ -273,17 +280,17 @@ MonoBehaviour:
       RemainingBrick: 751
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 268
         RemainingBrick: 268
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
         RequriedBrickType: 5
         TotalBrick: 272
         RemainingBrick: 272
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
         RequriedBrickType: 4
         TotalBrick: 211
         RemainingBrick: 211
@@ -293,17 +300,17 @@ MonoBehaviour:
       RemainingBrick: 646
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: a6f9753ff269954469ab0a8e0c610841, type: 3}
         RequriedBrickType: 7
         TotalBrick: 196
         RemainingBrick: 196
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 338
         RemainingBrick: 338
         BrickPlaced: 0
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: d0f0eac743557f74fb3258f1b9ce0397, type: 3}
         RequriedBrickType: 6
         TotalBrick: 112
         RemainingBrick: 112
@@ -313,7 +320,7 @@ MonoBehaviour:
       RemainingBrick: 260
       BrickPlaced: 0
       individualBricks:
-      - brickIcon: {fileID: 0}
+      - brickIcon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
         RequriedBrickType: 8
         TotalBrick: 260
         RemainingBrick: 260
@@ -322,22 +329,28 @@ MonoBehaviour:
     - BrickType: 7
       TotalBricksPerColor: 1136
       RemaingBricksPerColor: 1136
+      Icon: {fileID: 21300000, guid: a6f9753ff269954469ab0a8e0c610841, type: 3}
     - BrickType: 8
       TotalBricksPerColor: 3167
       RemaingBricksPerColor: 3167
+      Icon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
     - BrickType: 4
       TotalBricksPerColor: 1698
       RemaingBricksPerColor: 1698
+      Icon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
     - BrickType: 5
       TotalBricksPerColor: 1619
       RemaingBricksPerColor: 1619
+      Icon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
     - BrickType: 1
       TotalBricksPerColor: 212
       RemaingBricksPerColor: 212
+      Icon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
     - BrickType: 6
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
-    CurrentUseBricksColors: 
+      Icon: {fileID: 21300000, guid: d0f0eac743557f74fb3258f1b9ce0397, type: 3}
+    CurrentUseBricksColors: 070000000800000004000000050000000100000006000000
     bricksMats:
     - BrickType: 6
       Material: {fileID: 2100000, guid: 17f3e02d22700804380d4888dbb47274, type: 2}
@@ -351,38 +364,76 @@ MonoBehaviour:
       Material: {fileID: 2100000, guid: d8b4f49bf26a83947bb2710a7b1d7298, type: 2}
     - BrickType: 8
       Material: {fileID: 2100000, guid: 86c2b916c6bd4e044b0f98ef643de6d0, type: 2}
-  UserBrickInfo: []
   ExtrabricksType: 060000000800000002000000050000000a0000000300000009000000040000000700000005000000
-  brickReserveMats:
-  - bricksMatsCollections:
-      BrickType: 1
-      Material: {fileID: 2100000, guid: f038cb94dc1a8c142a80e62b646fc40a, type: 2}
-  - bricksMatsCollections:
-      BrickType: 9
-      Material: {fileID: 2100000, guid: 605c1219ca47ba2468a843d2ca96a266, type: 2}
-  - bricksMatsCollections:
-      BrickType: 10
-      Material: {fileID: 2100000, guid: 08ec63f6f126edb40a06d46c07e8af55, type: 2}
-  - bricksMatsCollections:
-      BrickType: 2
-      Material: {fileID: 2100000, guid: 1b8a1ed5c5d82ca448204f18f80fea03, type: 2}
-  - bricksMatsCollections:
-      BrickType: 3
-      Material: {fileID: 2100000, guid: 0ee817683dfbd0e42bc8cadf6aba606a, type: 2}
-  - bricksMatsCollections:
-      BrickType: 6
-      Material: {fileID: 2100000, guid: 17f3e02d22700804380d4888dbb47274, type: 2}
-  - bricksMatsCollections:
-      BrickType: 5
-      Material: {fileID: 2100000, guid: 11da005c6e54ec04294f879dcd211427, type: 2}
-  - bricksMatsCollections:
-      BrickType: 4
-      Material: {fileID: 2100000, guid: 90d451a9abe6201458af38eb632a7c19, type: 2}
-  - bricksMatsCollections:
-      BrickType: 8
-      Material: {fileID: 2100000, guid: 86c2b916c6bd4e044b0f98ef643de6d0, type: 2}
+  bricksIcons:
+  - BrickType: 1
+    Icon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
+  - BrickType: 2
+    Icon: {fileID: 21300000, guid: f35ee3abd9e963941b9b21d3b2fe421e, type: 3}
+  - BrickType: 3
+    Icon: {fileID: 21300000, guid: 6546135cb8acbc84580ec0da7541e1f2, type: 3}
+  - BrickType: 4
+    Icon: {fileID: 21300000, guid: 2ffa175b137662046bea12b12e60731d, type: 3}
+  - BrickType: 5
+    Icon: {fileID: 21300000, guid: cae5cfde293cc654dbbbb4deb4e3e976, type: 3}
+  - BrickType: 6
+    Icon: {fileID: 21300000, guid: d0f0eac743557f74fb3258f1b9ce0397, type: 3}
+  - BrickType: 7
+    Icon: {fileID: 21300000, guid: a6f9753ff269954469ab0a8e0c610841, type: 3}
+  - BrickType: 8
+    Icon: {fileID: 21300000, guid: 81b2fe7f884c83d42b4dffb2b2648d6b, type: 3}
+  - BrickType: 9
+    Icon: {fileID: 21300000, guid: 2d514a8fe84823142b3ecb9340a8a20f, type: 3}
+  - BrickType: 10
+    Icon: {fileID: 21300000, guid: 70b8c0229b1dd5a438d64418bca5a644, type: 3}
+  buildingNames:
+  - Name: Basic House
+    Icon: {fileID: 21300000, guid: 8319b07c2293a7143b34879a2c736cc6, type: 3}
+  - Name: Mayfair flat
+    Icon: {fileID: 21300000, guid: 359606457f507be4c8d377dd856a976c, type: 3}
+  - Name: Capitol Building DC
+    Icon: {fileID: 21300000, guid: ab33db942bec4b846b0bab88932559be, type: 3}
+  - Name: Empire State Building
+    Icon: {fileID: 21300000, guid: 048c315e58f233f4581545e529759827, type: 3}
+  - Name: Windmill
+    Icon: {fileID: 21300000, guid: 9d65f3873a8a07841a60e8f9ca1eef24, type: 3}
+  - Name: USA School
+    Icon: {fileID: 21300000, guid: c587b0b5b6815dd40bac55a70e87af0f, type: 3}
+  - Name: Chichen Itza
+    Icon: {fileID: 21300000, guid: 7941c265b30b5384197a574cc457115c, type: 3}
+  - Name: Fairy Castle
+    Icon: {fileID: 21300000, guid: 3e631ad26b2ceed4c84e86cdeb63d986, type: 3}
+  - Name: Burj Al Arab
+    Icon: {fileID: 21300000, guid: 34d4de2aa5995314d9ba43dfbe2d10fa, type: 3}
+  - Name: Pisa tower
+    Icon: {fileID: 21300000, guid: fe4eea357ecfb1845818a03cb60939c5, type: 3}
+  - Name: Japanese pagoda
+    Icon: {fileID: 21300000, guid: fa12c203755c60f41b3f75a192123486, type: 3}
+  - Name: Temple of heaven
+    Icon: {fileID: 21300000, guid: efe62d9294dc9384683c0efbab4ca1ef, type: 3}
+  - Name: Taj Mehal
+    Icon: {fileID: 21300000, guid: 2a5f7fedaf251a54c85050e7b31da6f6, type: 3}
+  - Name: Eifel Tower
+    Icon: {fileID: 21300000, guid: 8863f3aed8ea20b448804d72c0d490e4, type: 3}
+  - Name: Parthenon
+    Icon: {fileID: 21300000, guid: a423eb2aa3e7e984780afc01d9f81222, type: 3}
+  - Name: Big Ben Tower london
+    Icon: {fileID: 21300000, guid: 6968d75cd1888184ba169e05c3ee014e, type: 3}
+  - Name: Brandenberg
+    Icon: {fileID: 21300000, guid: ce31f48094ca45d4ab76fa52eb36d8c1, type: 3}
+  - Name: Ziggurat
+    Icon: {fileID: 21300000, guid: 6c9fdb9ce03c31b48a57b932f613f90c, type: 3}
+  - Name: Opera house sydney
+    Icon: {fileID: 21300000, guid: 8de4b405d96b4db478a7571f32b1b9f8, type: 3}
+  - Name: Abraj al bait hotel
+    Icon: {fileID: 21300000, guid: fa07d6bf959796741a40405743c85b01, type: 3}
+  - Name: St. Basil's Cathedral
+    Icon: {fileID: 21300000, guid: 32ce66cb4154e2e419576b2e4c03a6fd, type: 3}
+  - Name: Floence cathedral
+    Icon: {fileID: 21300000, guid: 973cf686f1be0724489af5fe73f7f4f0, type: 3}
   ReserveData:
     BuildingNumber: 0
+    BuildingIcon: {fileID: 0}
     BuildingPrefab: {fileID: 0}
     TotalBuildingBricks: 0
     BuildingRemainingBrick: 0

@@ -13,6 +13,8 @@ public class LevelInfo : MonoBehaviour
 
     public Action BlockPass;
     public float WidthBlocks, HeightBlocks;
+
+    public float PuzzleTime = 120f;
     private void OnEnable()
     {
         BlockPass += AllBlockspassed;
@@ -25,8 +27,18 @@ public class LevelInfo : MonoBehaviour
         yield return null;
         SetExtrationsSides();
         SetExtrationsSides_Old();
+
+        yield return new WaitForSeconds(0.5f);
+        CanvasManger.Instance.StartPuzzleTimer(PuzzleTime);
+        SpawnUI();
+
     }
 
+    public void SpawnUI()
+    {
+        CanvasManger.Instance.bricksMenuManger.SpawnUiMenus();
+
+    }
     public List<BrickType> brickTypes = new List<BrickType>();
 
     public void SetExtrationsSides_Old()
@@ -47,7 +59,7 @@ public class LevelInfo : MonoBehaviour
 
         for (int i = 0; i < container.Count; i++)
         {
-            
+
         }
 
     }

@@ -15,6 +15,7 @@ public class BuildingDataCollector : MonoBehaviour
     }
 
     public int BuildingNo = 0;
+    public Sprite Icon;
     public AllBuildingsData allBuildingsData;
     public BuildingManager BuildingManager;
 
@@ -63,10 +64,9 @@ public class BuildingDataCollector : MonoBehaviour
             FloorDatahHolder = new List<BrickData>(),
             BrickColorInfos = new List<BrickInfo>()
         };
-
         BuildingManager.BuildingInfoNumber = BuildingNo;
         allBuildingsData.TotalBuildingBricks = BuildingManager.TotalBricksInBuilding;
-
+        allBuildingsData.BuildingIcon = Icon;
         // Dictionary to aggregate brick counts by type
         Dictionary<BrickType, BrickInfo> colorInfoDict = new Dictionary<BrickType, BrickInfo>();
 

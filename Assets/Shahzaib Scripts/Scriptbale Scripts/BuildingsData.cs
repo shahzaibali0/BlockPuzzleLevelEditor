@@ -9,9 +9,9 @@ using System.Linq;
 public class BuildingsData : ScriptableObject
 {
     public List<AllBuildingsData> allBuildingsDatas = new List<AllBuildingsData>();
-    public List<UserBrickData> UserBrickInfo = new List<UserBrickData>();
     public List<BrickType> ExtrabricksType = new List<BrickType>();
-    public List<PuzzleBrickReserveMats> brickReserveMats = new List<PuzzleBrickReserveMats>();
+    public List<BricksIcons> bricksIcons = new List<BricksIcons>();
+    public List<BuildingNames> buildingNames = new List<BuildingNames>();
     public AllBuildingsData ReserveData;
     public void UpdateCurrentUseBricks()
     {
@@ -50,7 +50,6 @@ public class BuildingsData : ScriptableObject
         {
             allBuildingsDatas[i].FloorDatahHolder.Clear();
         }
-        brickReserveMats.Clear();
         for (int i = 0; i < allBuildingsDatas.Count; i++)
         {
             var prefab = allBuildingsDatas[i].BuildingPrefab;
@@ -62,30 +61,27 @@ public class BuildingsData : ScriptableObject
                 if (data != null)
                 {
                     allBuildingsDatas[i] = data;
-                    if (data.bricksMats != null)
-                    {
-                        foreach (var matData in data.bricksMats)
-                        {
-                            if (matData != null && matData.Material != null)
-                            {
-                                var bricksMat = new BricksMats(matData.BrickType, matData.Material);
-                                bool alreadyExists = brickReserveMats.Any(r => r.bricksMatsCollections.BrickType == bricksMat.BrickType);
 
-                                if (!alreadyExists)
-                                {
-                                    var reserveMat = new PuzzleBrickReserveMats { bricksMatsCollections = bricksMat };
-                                    brickReserveMats.Add(reserveMat);
-                                }
-                            }
-                            else
+                    for (int k = 0; k < allBuildingsDatas[i].FloorDatahHolder.Count; k++)
+                    {
+                        for (int i1 = 0; i1 < allBuildingsDatas[i].FloorDatahHolder[k].individualBricks.Count; i1++)
+                        {
+                            var requiredType = allBuildingsDatas[i].FloorDatahHolder[k].individualBricks[i1].RequriedBrickType;
+
+                            BricksIcons bricksIcons1 = bricksIcons.FirstOrDefault(x => x.BrickType == requiredType);
+
+                            if (bricksIcons1 != null)
                             {
-                                Debug.Log($"Null material or brick mat at Building index {i}.");
+                                allBuildingsDatas[i].FloorDatahHolder[k].individualBricks[i1].brickIcon = bricksIcons1.Icon;
                             }
                         }
                     }
-                    else
+
+                    for (int k = 0; k < allBuildingsDatas[i].BrickColorInfos.Count; k++)
                     {
-                        Debug.Log($"bricksMats is null for BuildingPrefab at index {i}.");
+                        var reqbrick = allBuildingsDatas[i].BrickColorInfos[k].BrickType;
+                        BricksIcons bricksIcons1 = bricksIcons.FirstOrDefault(x => x.BrickType == reqbrick);
+                        allBuildingsDatas[i].BrickColorInfos[k].Icon = bricksIcons1.Icon;
                     }
                 }
                 else
@@ -100,8 +96,6 @@ public class BuildingsData : ScriptableObject
         }
 
     }
-
-
     public void AddOrUpdateBuildingData(int id, AllBuildingsData newBuildingData)
     {
         // Find existing entry based on a unique identifier
@@ -134,6 +128,7 @@ public class BuildingsData : ScriptableObject
 public class AllBuildingsData
 {
     public int BuildingNumber;
+    public Sprite BuildingIcon;
     public BuildingDataCollector BuildingPrefab;
     public int TotalBuildingBricks;
     public int BuildingRemainingBrick;
@@ -178,7 +173,7 @@ public class BrickData
 [System.Serializable]
 public class IndividualBrick
 {
-    public Image brickIcon;
+    public Sprite brickIcon;
     public BrickType RequriedBrickType;
     public int TotalBrick;
     public int RemainingBrick;
@@ -252,8 +247,16 @@ public class BrickInfo
 {
     public BrickType BrickType;
     public int TotalBricksPerColor, RemaingBricksPerColor;
+    public Sprite Icon;
     public BrickInfo(BrickType brickType, int totalBricksPerColor)
     {
+        BrickType = brickType;
+        TotalBricksPerColor = totalBricksPerColor;
+
+    }
+    public BrickInfo(BrickType brickType, int totalBricksPerColor, Sprite Icon_)
+    {
+        Icon = Icon_;
         BrickType = brickType;
         TotalBricksPerColor = totalBricksPerColor;
 
@@ -261,19 +264,13 @@ public class BrickInfo
 
     public BrickInfo()
     {
-     
+
 
     }
 }
 
 #endregion
 
-[Serializable]
-public class PuzzleBrickReserveMats
-{
-    public BricksMats bricksMatsCollections;
-
-}
 [Serializable]
 public class BricksMats
 {
@@ -285,4 +282,17 @@ public class BricksMats
         BrickType = brickType;
         Material = material;
     }
+}
+[Serializable]
+public class BricksIcons
+{
+    public BrickType BrickType;
+    public Sprite Icon;
+}
+
+[Serializable]
+public class BuildingNames
+{
+    public String Name;
+    public Sprite Icon;
 }

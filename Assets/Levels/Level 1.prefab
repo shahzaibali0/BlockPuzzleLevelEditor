@@ -326,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlockColor: 3
   BrickExtrationColor: 0
-  Multipler: 2
+  BricksValue: 2
 --- !u!1 &3282989792449364201
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,6 +560,7 @@ MonoBehaviour:
   - {fileID: 4810847699843235222}
   WidthBlocks: 6
   HeightBlocks: 6
+  Timer: 120
   brickTypes: 
 --- !u!1 &5210620748643849311
 GameObject:
@@ -681,7 +682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlockColor: 5
   BrickExtrationColor: 0
-  Multipler: 2
+  BricksValue: 2
 --- !u!1 &6899529906034042409
 GameObject:
   m_ObjectHideFlags: 0

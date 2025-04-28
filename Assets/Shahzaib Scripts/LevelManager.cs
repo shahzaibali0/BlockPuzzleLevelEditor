@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     public GameObject PuzzelLevelCam;
 
 
-    private const string _LevelNo = "BuildingNo";
+    private const string _LevelNo = "LevelNo";
 
     public static int LevelNo
     {
@@ -30,12 +30,8 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SpaawnLevel();
-    }
 
-    private void SpaawnLevel()
+    public void SpaawnLevel()
     {
         if (LevelInfo != null)
         {
@@ -67,7 +63,6 @@ public class LevelManager : MonoBehaviour
             }
 
             LevelInfo = Instantiate(Levels[LevelNo], transform);
-
         }
 
 

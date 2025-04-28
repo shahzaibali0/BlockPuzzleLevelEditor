@@ -16,11 +16,10 @@ public class RobloxUI_FooterMenu : MonoBehaviour
 
     [SerializeField]
     private Button ProfileBtn,
-        CheckoutBtn,
+        BuildingBtn,
         HomeBtn,
         RewardBtn,
-        SettingsBtn,
-        DTOfferWallBtn;
+        SettingsBtn;
 
     [SerializeField]
     GameObject RobloxRewardAmountObj;
@@ -68,16 +67,15 @@ public class RobloxUI_FooterMenu : MonoBehaviour
     {
         ProfileBtn.GetComponent<Image>().sprite = UnSelected;
         ProfileBtn.GetComponent<Image>().SetNativeSize();
-        CheckoutBtn.GetComponent<Image>().sprite = UnSelected;
-        CheckoutBtn.GetComponent<Image>().SetNativeSize();
+        BuildingBtn.GetComponent<Image>().sprite = UnSelected;
+        BuildingBtn.GetComponent<Image>().SetNativeSize();
         HomeBtn.GetComponent<Image>().sprite = UnSelected;
         HomeBtn.GetComponent<Image>().SetNativeSize();
         RewardBtn.GetComponent<Image>().sprite = UnSelected;
         RewardBtn.GetComponent<Image>().SetNativeSize();
         SettingsBtn.GetComponent<Image>().sprite = UnSelected;
         SettingsBtn.GetComponent<Image>().SetNativeSize();
-        DTOfferWallBtn.GetComponent<Image>().sprite = UnSelected;
-        DTOfferWallBtn.GetComponent<Image>().SetNativeSize();
+
 
     }
 
@@ -106,13 +104,12 @@ public class RobloxUI_FooterMenu : MonoBehaviour
     private void InitializeAllButtons()
     {
         ProfileBtn.onClick.AddListener(ProfileBtn_Clicked);
-        CheckoutBtn.onClick.AddListener(CheckoutBtn_Clicked);
+        BuildingBtn.onClick.AddListener(buildingBtn_Clicked);
         HomeBtn.onClick.AddListener(HomeBtn_Clicked);
         RewardBtn.onClick.AddListener(RewardBtn_Clicked);
         SettingsBtn.onClick.AddListener(SettingsBtn_Clicked);
 
 
-        DTOfferWallBtn.gameObject.SetActive(false);
 
     }
 
@@ -124,16 +121,19 @@ public class RobloxUI_FooterMenu : MonoBehaviour
         MarkAsSelected(ProfileBtn);
     }
 
-    public void CheckoutBtn_Clicked()
+    public void buildingBtn_Clicked()
     {
         if (CheckoutBtn_checkUnlockStatus())
         {
-            MarlAllUnselected();
+            Debug.Log("buildingBtn_enable");
 
-            MarkAsSelected(CheckoutBtn);
+            CanvasManger.Instance.AnimateBuildingMenu(0);
+            MarlAllUnselected();
+            MarkAsSelected(BuildingBtn);
         }
         else
         {
+            Debug.Log("buildingBtn_Disable");
 
         }
     }
@@ -145,6 +145,9 @@ public class RobloxUI_FooterMenu : MonoBehaviour
 
     public void HomeBtn_Clicked()
     {
+        Debug.Log("HomeBtn_enable");
+        CanvasManger.Instance.AnimateBuildingMenu(-1500);
+
         MarlAllUnselected();
         MarkAsSelected(HomeBtn);
     }
