@@ -32,7 +32,7 @@ public class BuildingsData : ScriptableObject
                 Debug.Log("UpdateCurrentUseBricks__B" + userBrick.UserTotalBrick);
                 Debug.Log("UpdateCurrentUseBricks__C" + brickInfo.TotalBricksPerColor);
 
-                if (userBrick != null && userBrick.UserTotalBrick <= brickInfo.TotalBricksPerColor)
+                if (userBrick != null && userBrick.UserTotalBrick < brickInfo.TotalBricksPerColor)
                 {
 
                     Debug.Log("UpdateCurrentUseBricks__C");

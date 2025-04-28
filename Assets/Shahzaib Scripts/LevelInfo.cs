@@ -281,6 +281,8 @@ public class LevelInfo : MonoBehaviour
             if (container.All(item => item.ContainerBlock.BlockPass))
             {
                 Debug.Log("Level Complete");
+
+                CanvasManger.Instance.ShowLevelComplete();
             }
         }
 

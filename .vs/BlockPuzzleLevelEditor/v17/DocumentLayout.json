@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\shahzaib scripts\\canvasmanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\shahzaib scripts\\canvasmanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\canvasmanger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,11 +11,11 @@
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\shahzaib scripts\\levelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\houseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\houseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\houseinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|e:\\blockpuzzleleveleditor\\blockpuzzleleveleditor\\assets\\scripts_new\\brickinfoui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\assets\\scripts_new\\brickinfoui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B2C812CA-5987-5A45-064B-BFFCEC3A2FBD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts_new\\brickinfoui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -220,8 +220,7 @@
               "RelativeToolTip": "Assets\\HouseInfo.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwCgAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-28T12:51:02.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T12:51:02.728Z"
             },
             {
               "$type": "Document",
@@ -233,8 +232,7 @@
               "RelativeToolTip": "Assets\\scripts_New\\BrickInfoUI.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAADgvyEAAAB/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T08:19:58.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T08:19:58.442Z"
             },
             {
               "$type": "Document",
@@ -270,8 +268,7 @@
               "RelativeToolTip": "Assets\\Shahzaib Scripts\\Scriptbale Scripts\\BuildingsData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T06:24:02.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T06:24:02.695Z"
             },
             {
               "$type": "Document",
@@ -295,8 +292,7 @@
               "RelativeToolTip": "Assets\\Shahzaib Scripts\\LevelManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T11:47:51.033Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-21T11:47:51.033Z"
             },
             {
               "$type": "Document",
@@ -368,8 +364,7 @@
               "RelativeToolTip": "Assets\\RobloxSDk_New\\Scripts\\RoblocUI\\RobloxUI_FooterMenu.cs",
               "ViewState": "AgIAAGsAAAAAAAAAAIAwwIEAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T10:55:01.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T10:55:01.478Z"
             },
             {
               "$type": "Document",
@@ -379,7 +374,7 @@
               "RelativeDocumentMoniker": "Assets\\Shahzaib Scripts\\CanvasManger.cs",
               "ToolTip": "E:\\BlockPuzzleLevelEditor\\BlockPuzzleLevelEditor\\Assets\\Shahzaib Scripts\\CanvasManger.cs",
               "RelativeToolTip": "Assets\\Shahzaib Scripts\\CanvasManger.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAQwHsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAiwIgAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-25T06:28:30.864Z",
               "EditorCaption": ""

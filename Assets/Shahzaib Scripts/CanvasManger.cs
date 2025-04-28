@@ -23,6 +23,7 @@ public class CanvasManger : MonoBehaviour
     public RobloxUI_FooterMenu Footer;
     public TransitionEnd CloudsTransition;
     public BricksMenuManger bricksMenuManger;
+    public LevelComplete levelComplete;
     public GameObject AbilityBar;
     [Header("Brick Menus Buttons")]
     public Button BrickMenuBtn;
@@ -112,6 +113,12 @@ public class CanvasManger : MonoBehaviour
 
     #endregion
 
+
+    public void ShowLevelComplete()
+    {
+        levelComplete.gameObject.SetActive(true);
+    }
+
     public void AnimateBuildingMenu(float Value)
     {
         AnimateInX(BuildingMenu, Value);
@@ -134,7 +141,7 @@ public class CanvasManger : MonoBehaviour
 
     public void SetLevelNo()
     {
-        LevelNo.text = "Level " + LevelManager.LevelNo.ToString();
+        LevelNo.text = "Level " + LevelManager.LevelNo.ToString() + 1;
     }
     public void OnTimerFreez()
     {
