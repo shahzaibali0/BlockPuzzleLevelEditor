@@ -33,6 +33,10 @@ public class LevelManager : MonoBehaviour
 
     public void SpaawnLevel()
     {
+
+        if (DataSaver.Instance != null)
+            DataSaver.Instance.SaveData();
+
         if (LevelInfo != null)
         {
             Destroy(LevelInfo.gameObject);
@@ -65,6 +69,7 @@ public class LevelManager : MonoBehaviour
 
         }
         CanvasManger.Instance.bricksMenuManger.SpawnUiMenus();
+        CanvasManger.Instance.bricksBoxMenuManger.SpawnBox();
 
 
     }
@@ -86,6 +91,9 @@ public class LevelManager : MonoBehaviour
 
     public void MoveToMainMenu()
     {
+        if (DataSaver.Instance != null)
+            DataSaver.Instance.SaveData();
+
         if (LevelInfo != null)
         {
             Destroy(LevelInfo.gameObject);
@@ -99,7 +107,7 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(EnableRespectiveCam(0.25f, true, false));
         CanvasManger.Instance.CloudsOut();
 
-
+ 
     }
     public IEnumerator EnableRespectiveCam(float timer, bool PuzzelLevelCamStatus, bool buildCamStatus)
     {

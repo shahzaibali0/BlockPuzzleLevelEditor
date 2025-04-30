@@ -34,7 +34,6 @@ public class DataSaver : MonoBehaviour
     {
         UserBricksManager userBricksManager = UserBricksManager.instance;
 
-        // Clear previously saved bricks
         UserData.BrickDatas.Clear();
 
         for (int i = 0; i < userBricksManager.UserBrickDatas.Count; i++)

@@ -100,6 +100,9 @@ public class Building_Info : MonoBehaviour
         UserBricksManager.instance.DecreseBricks();
         BuildingDataCollector.Instance.TotalRemainingBricks();
         OnBrickPlaced(Objs[currentActive].GetComponent<BuildingSinglePiece>().BrickType);
+
+        if (DataSaver.Instance != null)
+            DataSaver.Instance.SaveData();
         if (currentActive < Objs.Count)
         {
             currentActive++;

@@ -18,28 +18,28 @@ MonoBehaviour:
     BuildingPrefab: {fileID: 3606018785997966037, guid: 6744c5891f9345e4c8fdbda6f2e56a58,
       type: 3}
     TotalBuildingBricks: 1061
-    BuildingRemainingBrick: 1061
+    BuildingRemainingBrick: 778
     FloorDatahHolder:
     - floortype: base
       TotalBricks: 162
-      RemainingBrick: 162
-      BrickPlaced: 0
+      RemainingBrick: 0
+      BrickPlaced: 162
       individualBricks:
       - brickIcon: {fileID: 21300000, guid: 2d514a8fe84823142b3ecb9340a8a20f, type: 3}
         RequriedBrickType: 9
         TotalBrick: 162
-        RemainingBrick: 162
-        BrickPlaced: 0
+        RemainingBrick: 0
+        BrickPlaced: 162
     - floortype: 1-Walls Bricks
       TotalBricks: 235
-      RemainingBrick: 235
-      BrickPlaced: 0
+      RemainingBrick: 114
+      BrickPlaced: 121
       individualBricks:
       - brickIcon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
         RequriedBrickType: 1
         TotalBrick: 235
-        RemainingBrick: 235
-        BrickPlaced: 0
+        RemainingBrick: 114
+        BrickPlaced: 121
     - floortype: 1-Walls Bricks-1
       TotalBricks: 424
       RemainingBrick: 424
@@ -83,11 +83,11 @@ MonoBehaviour:
     BrickColorInfos:
     - BrickType: 9
       TotalBricksPerColor: 170
-      RemaingBricksPerColor: 170
+      RemaingBricksPerColor: 8
       Icon: {fileID: 21300000, guid: 2d514a8fe84823142b3ecb9340a8a20f, type: 3}
     - BrickType: 1
       TotalBricksPerColor: 235
-      RemaingBricksPerColor: 235
+      RemaingBricksPerColor: 114
       Icon: {fileID: 21300000, guid: 91e85603fe351c64f953fcc7f228bb9e, type: 3}
     - BrickType: 10
       TotalBricksPerColor: 424
@@ -101,7 +101,7 @@ MonoBehaviour:
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
       Icon: {fileID: 21300000, guid: 6546135cb8acbc84580ec0da7541e1f2, type: 3}
-    CurrentUseBricksColors: 
+    CurrentUseBricksColors: 0a0000000200000003000000
     bricksMats:
     - BrickType: 1
       Material: {fileID: 2100000, guid: f038cb94dc1a8c142a80e62b646fc40a, type: 2}
@@ -350,7 +350,7 @@ MonoBehaviour:
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
       Icon: {fileID: 21300000, guid: d0f0eac743557f74fb3258f1b9ce0397, type: 3}
-    CurrentUseBricksColors: 
+    CurrentUseBricksColors: 0700000008000000040000000500000006000000
     bricksMats:
     - BrickType: 6
       Material: {fileID: 2100000, guid: 17f3e02d22700804380d4888dbb47274, type: 2}

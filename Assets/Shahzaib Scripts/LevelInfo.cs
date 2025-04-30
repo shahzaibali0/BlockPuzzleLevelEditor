@@ -16,7 +16,7 @@ public class LevelInfo : MonoBehaviour
 
     public float PuzzleTime = 120f;
 
-    public List<PerLevelbricks> perLevelbricks = new List<PerLevelbricks>();
+    //public List<PerLevelbricks> perLevelbricks = new List<PerLevelbricks>();
     private void OnEnable()
     {
         BlockPass += AllBlockspassed;
@@ -58,6 +58,7 @@ public class LevelInfo : MonoBehaviour
             BrickInfo brickInfo = new BrickInfo(currentBrickType, matchedInfo.TotalBricksPerColor);
             ExtrationSides[i].BrickExtrationColor = brickInfo.BrickType;
             ExtrationSides[i].BricksValue = brickInfo.TotalBricksPerColor;
+          
             if (MatInfo != null)
                 ExtrationSides[i].UpdateMat(MatInfo.Material);
             else
@@ -80,21 +81,21 @@ public class LevelInfo : MonoBehaviour
         BlockPass -= AllBlockspassed;
     }
 
-    public void SaveBricks(BrickType brickType, int value)
-    {
-        PerLevelbricks PerLevelbricks = new PerLevelbricks(brickType, value);
-        perLevelbricks.Add(PerLevelbricks);
+    //public void SaveBricks(BrickType brickType, int value)
+    //{
+    //    PerLevelbricks PerLevelbricks = new PerLevelbricks(brickType, value);
+    //    perLevelbricks.Add(PerLevelbricks);
 
-    }
+    //}
 
-    public void SetBricksData()
-    {
+    //public void SetBricksData()
+    //{
 
-        for (int i = 0; i < perLevelbricks.Count; i++)
-        {
-            UserBricksManager.instance.AddBrickonExtrationPoint(perLevelbricks[i].BrickType, perLevelbricks[i].BricksNo);
-        }
-    }
+    //    for (int i = 0; i < perLevelbricks.Count; i++)
+    //    {
+    //        UserBricksManager.instance.AddBrickonExtrationPoint(perLevelbricks[i].BrickType, perLevelbricks[i].BricksNo);
+    //    }
+    //}
 
     bool OneTime;
     public void AllBlockspassed()
@@ -107,7 +108,8 @@ public class LevelInfo : MonoBehaviour
                 if (!OneTime)
                 {
                     OneTime = true;
-                    SetBricksData();
+                    //SetBricksData();
+                   
                 }
                 CanvasManger.Instance.ShowLevelComplete();
             }

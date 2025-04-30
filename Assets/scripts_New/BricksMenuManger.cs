@@ -50,43 +50,4 @@ public class BricksMenuManger : MonoBehaviour
         }
     }
 
-    public void SpawnUiMenus_()
-    {
-        for (int i = 0; i < Bricks.Count; i++)
-        {
-            Destroy(Bricks[i].gameObject);
-        }
-        Bricks.Clear();
-        BuildingIcon.sprite = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BuildingIcon;
-        BuildingIcon.SetNativeSize();
-        for (int i = 0; i < DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos.Count; i++)
-        {
-
-            // Check if BrickColorInfos has any elements
-            if (DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos.Any())
-            {
-                // Check if any BrickInfoUI in Bricks list has a BrickType
-                if (Bricks.Any(b => b.BrickType != null))
-                {
-                    Debug.Log("Brick types exist in both BrickColorInfos and Bricks list");
-                }
-                else
-                {
-                    Debug.Log("BrickColorInfos has data but no BrickTypes found in Bricks list");
-                }
-            }
-            else
-            {
-                Debug.Log("No brick data found in BrickColorInfos");
-            }
-
-
-
-            Debug.Log("SpawnUiMenus__A" + i);
-            BrickInfoUI brick = Instantiate(brickPrefab, ParentObject);
-            Bricks.Add(brick);
-            brick.Initialize(DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos[i].BrickType,
-                DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos[i].TotalBricksPerColor);
-        }
-    }
 }

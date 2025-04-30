@@ -23,6 +23,7 @@ public class CanvasManger : MonoBehaviour
     public RobloxUI_FooterMenu Footer;
     public TransitionEnd CloudsTransition;
     public BricksMenuManger bricksMenuManger;
+    public BricksBoxMenuManger bricksBoxMenuManger;
     public LevelComplete levelComplete;
     public GameObject AbilityBar;
     [Header("Brick Menus Buttons")]
@@ -75,6 +76,7 @@ public class CanvasManger : MonoBehaviour
     private IEnumerator GameStart()
     {
         yield return new WaitForSeconds(0.4f);
+        bricksBoxMenuManger.gameObject.SetActive(true);
         AnimateInX(BrickMenuBtn.gameObject.GetComponent<RectTransform>(), -21);
         AnimateInX(HomeBtn.gameObject.GetComponent<RectTransform>(), -40);
         AnimateInY(GameLogo, 400);
@@ -91,6 +93,7 @@ public class CanvasManger : MonoBehaviour
     IEnumerator Spawnlevel()
     {
         yield return new WaitForSeconds(1.25f);
+ 
         LevelManager.Instance.SpaawnLevel();
 
     }
@@ -118,6 +121,7 @@ public class CanvasManger : MonoBehaviour
     IEnumerator BackToMainMenuDelay()
     {
         yield return new WaitForSeconds(0.4f);
+        bricksBoxMenuManger.gameObject.SetActive(false);
 
         AnimateInX(HomeBtn.gameObject.GetComponent<RectTransform>(), -370);
         AnimateInX(BrickMenuBtn.gameObject.GetComponent<RectTransform>(), 200);

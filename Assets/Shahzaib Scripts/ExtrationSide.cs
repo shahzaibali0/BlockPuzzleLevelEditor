@@ -12,7 +12,7 @@ public class ExtrationSide : MonoBehaviour
     {
         Debug.Log("Current Value " + BricksValue);
 
-        LevelManager.Instance.LevelInfo.SaveBricks(BrickExtrationColor, (int)BricksValue);
+        UserBricksManager.instance.AddBrickonExtrationPoint(BrickExtrationColor, (int)BricksValue);
 
     }
 

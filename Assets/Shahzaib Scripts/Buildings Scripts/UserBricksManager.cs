@@ -54,9 +54,8 @@ public class UserBricksManager : MonoBehaviour
 
     public bool IsBuildingEnable()
     {
-
-        bool IsTrue = false;
         CurrentBuildingbricksInfo.Clear();
+
         foreach (var item in DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos)
         {
             CurrentBuildingbricksInfo.Add(item);
@@ -68,17 +67,14 @@ public class UserBricksManager : MonoBehaviour
 
             if (userBrick == null || userBrick.UserTotalBrick < requiredBrick.TotalBricksPerColor)
             {
-                IsTrue = false;
-            }
-            else
-            {
-                IsTrue = true;
+
+                return false; // As soon as one is not enough, return false
             }
         }
 
-        return IsTrue;
-
+        return true; // All brick types are sufficient
     }
+
 
     public void SetCurrentBrick(BrickType brickType)
     {
@@ -149,8 +145,6 @@ public class UserBricksManager : MonoBehaviour
             Debug.Log("Shah newBrickType __B" + userBrickData);
             UserBrickDatas.Add(userBrickData);
         }
-        if (DataSaver.Instance != null)
-            DataSaver.Instance.SaveData();
     }
 
 }
