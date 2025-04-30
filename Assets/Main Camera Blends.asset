@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CustomBlends:
   - m_From: PuzzleCamera
-    m_To: Buildingcamera
+    m_To: '**ANY CAMERA**'
     m_Blend:
       m_Style: 2
-      m_Time: 0.5
+      m_Time: 0
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []
@@ -28,7 +28,7 @@ MonoBehaviour:
     m_To: PuzzleCamera
     m_Blend:
       m_Style: 1
-      m_Time: 1.5
+      m_Time: 0
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

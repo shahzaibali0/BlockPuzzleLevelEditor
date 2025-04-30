@@ -54,6 +54,8 @@ public class UserBricksManager : MonoBehaviour
 
     public bool IsBuildingEnable()
     {
+
+        bool IsTrue = false;
         CurrentBuildingbricksInfo.Clear();
         foreach (var item in DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo].BrickColorInfos)
         {
@@ -66,11 +68,15 @@ public class UserBricksManager : MonoBehaviour
 
             if (userBrick == null || userBrick.UserTotalBrick < requiredBrick.TotalBricksPerColor)
             {
-                return false;
+                IsTrue = false;
+            }
+            else
+            {
+                IsTrue = true;
             }
         }
 
-        return true;
+        return IsTrue;
 
     }
 
@@ -92,7 +98,6 @@ public class UserBricksManager : MonoBehaviour
             // Decrease count in current brick reference
             if (Currentbricks.UserTotalBrick > 0)
             {
-                value = Currentbricks.UserTotalBrick--;
 
                 // Update the count in the main list
                 var brickInList = UserBrickDatas.FirstOrDefault(b => b.BrickType == Currentbricks.BrickType);
@@ -126,6 +131,10 @@ public class UserBricksManager : MonoBehaviour
 
     public void bricksData(BrickType newBrickType, int newBrickCount)
     {
+
+        Debug.Log("Shah newBrickCount " + newBrickCount);
+        Debug.Log("Shah newBrickType " + newBrickType);
+
         UserBrickData existingData = UserBrickDatas.FirstOrDefault(data => data.BrickType == newBrickType);
 
         if (existingData != null)
@@ -135,6 +144,9 @@ public class UserBricksManager : MonoBehaviour
         else
         {
             UserBrickData userBrickData = new UserBrickData(newBrickType, newBrickCount);
+
+            Debug.Log("Shah newBrickCount __A" + userBrickData);
+            Debug.Log("Shah newBrickType __B" + userBrickData);
             UserBrickDatas.Add(userBrickData);
         }
         if (DataSaver.Instance != null)

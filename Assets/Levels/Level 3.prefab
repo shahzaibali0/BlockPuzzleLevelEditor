@@ -537,6 +537,8 @@ MonoBehaviour:
   - {fileID: 6647010248620158469}
   WidthBlocks: 5
   HeightBlocks: 5
+  PuzzleTime: 120
+  brickTypes: 
 --- !u!1 &5254445667010029483
 GameObject:
   m_ObjectHideFlags: 0

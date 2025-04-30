@@ -24,6 +24,9 @@ public class BuildingDataCollector : MonoBehaviour
     {
         BuildingManager.OffBuilding();
         GetDataFromDatabase();
+
+        CanvasManger.Instance.Taptap(true);
+
     }
 
 
@@ -38,6 +41,8 @@ public class BuildingDataCollector : MonoBehaviour
             }
         }
         Debug.Log("InilizeBuildingdata");
+        StartCoroutine(LevelManager.Instance.EnableRespectiveCam(0, false, true));
+
         BuildingManager.InilizeBuildingdata();
 
     }

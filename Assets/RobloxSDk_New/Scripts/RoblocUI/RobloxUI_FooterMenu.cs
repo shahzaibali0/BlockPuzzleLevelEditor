@@ -50,18 +50,21 @@ public class RobloxUI_FooterMenu : MonoBehaviour
     {
         CheckoutBtn_checkUnlockStatus();
     }
+    public void SlideDown(float targetValue)
+    {
 
-    [Button(ButtonSizes.Medium)]
-    public void SlideDown()
-    {
         RectTransform rectTransform = GetComponent<RectTransform>();
-        rectTransform.DOAnchorPosY(rectTransform.anchoredPosition.y - 196f, 0.5f).SetEase(Ease.OutCubic);
-    }
-    [Button(ButtonSizes.Medium)]
-    public void SlideUp()
-    {
-        RectTransform rectTransform = GetComponent<RectTransform>();
-        rectTransform.DOAnchorPosY(rectTransform.anchoredPosition.y + 196, 0.5f).SetEase(Ease.OutCubic);
+
+        float expectedX = targetValue;
+
+        if (Mathf.Approximately(rectTransform.anchoredPosition.y, expectedX))
+        {
+            Debug.Log("Already at target position. No animation needed.");
+            return;
+        }
+
+        // Otherwise, animate to the target position
+        rectTransform.DOAnchorPosY(expectedX, 0.5f).SetEase(Ease.OutCubic);
     }
     private void MarlAllUnselected()
     {

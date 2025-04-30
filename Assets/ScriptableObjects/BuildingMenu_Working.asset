@@ -101,7 +101,7 @@ MonoBehaviour:
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
       Icon: {fileID: 21300000, guid: 6546135cb8acbc84580ec0da7541e1f2, type: 3}
-    CurrentUseBricksColors: 09000000010000000a0000000200000003000000
+    CurrentUseBricksColors: 
     bricksMats:
     - BrickType: 1
       Material: {fileID: 2100000, guid: f038cb94dc1a8c142a80e62b646fc40a, type: 2}
@@ -350,7 +350,7 @@ MonoBehaviour:
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
       Icon: {fileID: 21300000, guid: d0f0eac743557f74fb3258f1b9ce0397, type: 3}
-    CurrentUseBricksColors: 070000000800000004000000050000000100000006000000
+    CurrentUseBricksColors: 
     bricksMats:
     - BrickType: 6
       Material: {fileID: 2100000, guid: 17f3e02d22700804380d4888dbb47274, type: 2}
@@ -364,6 +364,8 @@ MonoBehaviour:
       Material: {fileID: 2100000, guid: d8b4f49bf26a83947bb2710a7b1d7298, type: 2}
     - BrickType: 8
       Material: {fileID: 2100000, guid: 86c2b916c6bd4e044b0f98ef643de6d0, type: 2}
+    - BrickType: 7
+      Material: {fileID: 2100000, guid: 2ab7514fc5b6a414e98736692657d63c, type: 2}
   ExtrabricksType: 060000000800000002000000050000000a0000000300000009000000040000000700000005000000
   bricksIcons:
   - BrickType: 1
@@ -389,6 +391,8 @@ MonoBehaviour:
   buildingNames:
   - Name: Basic House
     Icon: {fileID: 21300000, guid: 8319b07c2293a7143b34879a2c736cc6, type: 3}
+  - Name: Burj Al Arab
+    Icon: {fileID: 21300000, guid: 34d4de2aa5995314d9ba43dfbe2d10fa, type: 3}
   - Name: Mayfair flat
     Icon: {fileID: 21300000, guid: 359606457f507be4c8d377dd856a976c, type: 3}
   - Name: Capitol Building DC
@@ -403,8 +407,6 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: 7941c265b30b5384197a574cc457115c, type: 3}
   - Name: Fairy Castle
     Icon: {fileID: 21300000, guid: 3e631ad26b2ceed4c84e86cdeb63d986, type: 3}
-  - Name: Burj Al Arab
-    Icon: {fileID: 21300000, guid: 34d4de2aa5995314d9ba43dfbe2d10fa, type: 3}
   - Name: Pisa tower
     Icon: {fileID: 21300000, guid: fe4eea357ecfb1845818a03cb60939c5, type: 3}
   - Name: Japanese pagoda

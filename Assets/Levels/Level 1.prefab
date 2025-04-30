@@ -560,7 +560,7 @@ MonoBehaviour:
   - {fileID: 4810847699843235222}
   WidthBlocks: 6
   HeightBlocks: 6
-  Timer: 120
+  PuzzleTime: 120
   brickTypes: 
 --- !u!1 &5210620748643849311
 GameObject:

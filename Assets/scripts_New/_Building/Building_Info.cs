@@ -95,9 +95,9 @@ public class Building_Info : MonoBehaviour
         GameObject CurrentObj = Objs[currentActive].gameObject;
         BuildingSinglePiece piece = CurrentObj.GetComponent<BuildingSinglePiece>();
         UserBricksManager.instance.SetCurrentBrick(piece.BrickType);
-        UserBricksManager.instance.DecreseBricks();
 
         CurrentObj.SetActive(true);
+        UserBricksManager.instance.DecreseBricks();
         BuildingDataCollector.Instance.TotalRemainingBricks();
         OnBrickPlaced(Objs[currentActive].GetComponent<BuildingSinglePiece>().BrickType);
         if (currentActive < Objs.Count)

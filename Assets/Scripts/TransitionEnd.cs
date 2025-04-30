@@ -24,7 +24,6 @@ public class TransitionEnd : MonoBehaviour
     private void OnLevelSpawn()
     {
 
-        LevelManager.Instance.SpaawnLevel();
     }
     public void markTransitionEnd()
     {
@@ -34,7 +33,6 @@ public class TransitionEnd : MonoBehaviour
     public void transitionEnd()
     {
 
-        CloudsOut();
         Debug.Log("transitionEnd");
         //GameManager.isTransitionEnd = true;
     }

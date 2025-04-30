@@ -55,19 +55,6 @@ public class BrickInfoUI : MonoBehaviour
         TotalBricksText.text = _totalBricks.ToString();
         RemainingBricksText.text = _remainingBricks.ToString();
     }
-
-    private void UpdateDataManager()
-    {
-        var buildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo];
-
-        var brickInfo = buildingData.BrickColorInfos.Find(x => x.BrickType == this.BrickType);
-        if (brickInfo != null)
-        {
-            brickInfo.RemaingBricksPerColor = _remainingBricks;
-            brickInfo.TotalBricksPerColor = _totalBricks;
-        }
-    }
-
     public void GetData()
     {
         var buildingData = DataManager.Instance.buildingsData.allBuildingsDatas[DataManager.BuildingNo];

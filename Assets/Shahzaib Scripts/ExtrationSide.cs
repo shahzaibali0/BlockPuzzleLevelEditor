@@ -11,7 +11,9 @@ public class ExtrationSide : MonoBehaviour
     public void AddBrick()
     {
         Debug.Log("Current Value " + BricksValue);
-        UserBricksManager.instance.AddBrickonExtrationPoint(BrickExtrationColor, (int)BricksValue);
+
+        LevelManager.Instance.LevelInfo.SaveBricks(BrickExtrationColor, (int)BricksValue);
+
     }
 
     public void UpdateMat(Material material)

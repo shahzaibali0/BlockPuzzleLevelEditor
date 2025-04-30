@@ -28,10 +28,10 @@ public class CanvasManger : MonoBehaviour
     [Header("Brick Menus Buttons")]
     public Button BrickMenuBtn;
     public Button BrickMenuCloseBtn;
-    public GameObject BrickMenu, Blocker;
+    public GameObject BrickMenu, Blocker, TapTap;
     public TextMeshProUGUI LevelNo;
 
-    public Button SettingBtn, closeBtn;
+    public Button SettingBtn, closeBtn, HomeBtn;
     public GameObject SettingMenu;
 
     public RectTransform GameLogo, LevelBar, Timerbar, StartBtn, BuildingMenu;
@@ -45,6 +45,11 @@ public class CanvasManger : MonoBehaviour
     private float currentTime;
     private bool isRunning = false;
     public Color YellowColor, SnowColor;
+
+    [Header("Building section")]
+    public GameObject BuildingOrmanetsMenu;
+    public GameObject _Speedup;
+    public Button NoThanks, Ornaments, SpeedUp;
     private void Start()
     {
         Inilize();
@@ -55,22 +60,40 @@ public class CanvasManger : MonoBehaviour
         BrickMenuCloseBtn.onClick.AddListener(DisbaleBrickMenu);
         StartGame.onClick.AddListener(OnGameStart);
         SettingBtn.onClick.AddListener(EnableSettings);
+        NoThanks.onClick.AddListener(NoThanks_Orna);
+        Ornaments.onClick.AddListener(BuildOrnaments);
+        SpeedUp.onClick.AddListener(SpeedUpBuilding);
+        HomeBtn.onClick.AddListener(BackToMainMenu);
     }
 
     [Button(ButtonSizes.Medium)]
     public void OnGameStart()
     {
+        EnableClouds();
+        StartCoroutine(GameStart());
+    }
+    private IEnumerator GameStart()
+    {
+        yield return new WaitForSeconds(0.4f);
         AnimateInX(BrickMenuBtn.gameObject.GetComponent<RectTransform>(), -21);
+        AnimateInX(HomeBtn.gameObject.GetComponent<RectTransform>(), -40);
         AnimateInY(GameLogo, 400);
-        AnimateInY(LevelBar, 300);
+        AnimateInY(LevelBar, -145);
         ScaleZoomIn(StartBtn.gameObject, 0);
         ScaleZoomOut(Timerbar.gameObject, 1);
         AbilityBar.SetActive(true);
-        Footer.SlideDown();
-        EnableClouds();
-    }
+        Footer.SlideDown(-196);
 
+        StartCoroutine(Spawnlevel());
+    }
     #region Clouds In-Out
+
+    IEnumerator Spawnlevel()
+    {
+        yield return new WaitForSeconds(1.25f);
+        LevelManager.Instance.SpaawnLevel();
+
+    }
 
     public void EnableClouds()
     {
@@ -80,7 +103,7 @@ public class CanvasManger : MonoBehaviour
 
     public void CloudsOut()
     {
-        CloudsTransition.gameObject.SetActive(false);
+        CloudsTransition.CloudsOut();
     }
 
     #endregion
@@ -88,14 +111,23 @@ public class CanvasManger : MonoBehaviour
     [Button(ButtonSizes.Medium)]
     public void BackToMainMenu()
     {
+        EnableClouds();
+        StartCoroutine(BackToMainMenuDelay());
+    }
+
+    IEnumerator BackToMainMenuDelay()
+    {
+        yield return new WaitForSeconds(0.4f);
+
+        AnimateInX(HomeBtn.gameObject.GetComponent<RectTransform>(), -370);
         AnimateInX(BrickMenuBtn.gameObject.GetComponent<RectTransform>(), 200);
-        AnimateInY(GameLogo, -400);
-        AnimateInY(LevelBar, -300);
+        AnimateInY(GameLogo, -216);
+        AnimateInY(LevelBar, -450);
         ScaleZoomIn(Timerbar.gameObject, 0);
         ScaleZoomOut(StartBtn.gameObject, 1);
         AbilityBar.SetActive(false);
-        Footer.SlideUp();
-
+        Footer.SlideDown(0);
+        LevelManager.Instance.MoveToMainMenu();
     }
 
     #region Settings
@@ -113,6 +145,51 @@ public class CanvasManger : MonoBehaviour
 
     #endregion
 
+
+    public void Taptap(bool Status)
+    {
+        TapTap.SetActive(Status);
+    }
+
+    public void BuildingOrmanetsMenu_(bool Status)
+    {
+        BuildingOrmanetsMenu.SetActive(Status);
+    }
+
+    public void BuildOrnaments()
+    {
+        BuildingsMainManger.Instance.BuildOrnaments(true);
+    }
+
+    public void SpeedUpBuildingsMenu_(bool Status)
+    {
+        _Speedup.SetActive(Status);
+    }
+    public void SpeedUpBuilding()
+    {
+        BuildingsMainManger.Instance.SpeedUpBuild();
+    }
+
+    public void NoThanks_Orna()
+    {
+        BuildingOrmanetsMenu_(false);
+        SpeedUpBuildingsMenu_(false);
+        StartCoroutine(BuildingComplete(3));
+
+    }
+    public IEnumerator BuildingComplete(float Delay)
+    {
+        DataManager.BuildingNo++;
+        yield return new WaitForSeconds(Delay);
+        OnGameStart();
+    }
+
+    public void DisbaleTimer()
+    {
+        ScaleZoomIn(Timerbar.gameObject, 0);
+        AbilityBar.SetActive(false);
+
+    }
 
     public void ShowLevelComplete()
     {
@@ -141,7 +218,7 @@ public class CanvasManger : MonoBehaviour
 
     public void SetLevelNo()
     {
-        LevelNo.text = "Level " + LevelManager.LevelNo.ToString() + 1;
+        LevelNo.text = "Level " + (LevelManager.LevelNo + 1).ToString();
     }
     public void OnTimerFreez()
     {
@@ -208,10 +285,21 @@ public class CanvasManger : MonoBehaviour
 
     #region Animations
 
-    public void AnimateInY(RectTransform rectTransform, float Value)
+
+    public void AnimateInY(RectTransform rectTransform, float targetValue)
     {
-        rectTransform.DOAnchorPosY(rectTransform.anchoredPosition.y + Value, 0.5f).SetEase(Ease.OutCubic);
+        float expectedX = targetValue;
+
+        if (Mathf.Approximately(rectTransform.anchoredPosition.y, expectedX))
+        {
+            Debug.Log("Already at target position. No animation needed.");
+            return;
+        }
+
+        // Otherwise, animate to the target position
+        rectTransform.DOAnchorPosY(expectedX, 0.5f).SetEase(Ease.OutCubic);
     }
+
     public void AnimateInX(RectTransform rectTransform, float targetValue)
     {
         float expectedX = targetValue;

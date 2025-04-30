@@ -19,8 +19,8 @@ namespace PuzzleLevelEditor.Container.Block
         [SerializeField] private MovementConstraint _movementConstraint;
 
         [Header("Set By Level Editor")]
-        [SerializeField, ReadOnly] private BlockColor _blockColor;
-        [SerializeField, ReadOnly] private BlockType _blockType;
+        [SerializeField] private BlockColor _blockColor;
+        [SerializeField] private BlockType _blockType;
         [SerializeField] private List<Container> _subContainers;
         [SerializeField] private List<BorderMesh> _Borders;
         [SerializeField] private List<BorderMesh> _BordersLit;

@@ -54,6 +54,7 @@ public class BuildingManager : MonoBehaviour
     [Button(ButtonSizes.Medium)]
     public void InilizeBuildingdata()
     {
+
         Debug.Log("InilizeBuildingdata__A");
         for (int i = 0; i < building_Infos.Count; i++)
         {
@@ -64,6 +65,9 @@ public class BuildingManager : MonoBehaviour
         {
             Debug.Log("Building Complete");
         }
+
+        CanvasManger.Instance.CloudsOut();
+
     }
 
 
@@ -203,8 +207,7 @@ public class BuildingManager : MonoBehaviour
                 PlayerPrefs.DeleteKey(BuildingManager.instance.BuildingPref + "_" + "Currentbuilding_Infos");
                 PlayerPrefs.DeleteKey(BuildingManager.instance.BuildingPref + "_" + "CurrentBrick");
 
-
-                DataManager.BuildingNo++;
+                CanvasManger.Instance.BuildingOrmanetsMenu_(true);
             }
             else
             {
@@ -214,6 +217,11 @@ public class BuildingManager : MonoBehaviour
 
         }
 
+    }
+
+    public void BuildOrnamentBuilding()
+    {
+        IsOrnamentBuilding = true;
     }
 
     public void ForceBuilding()
@@ -239,6 +247,8 @@ public class BuildingManager : MonoBehaviour
         {
             IsOrnamentBuilding = false;
             ShowWinPanel = true;
+
+            CanvasManger.Instance.NoThanks_Orna();
         }
     }
 
@@ -296,6 +306,17 @@ public class BuildingManager : MonoBehaviour
         OnCurrentBuilding();
         TotalBrickActive = BuildingInfo_BrickNumber;
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            CanvasManger.Instance.Taptap(false);
+            Build();
+        }
+    }
+
+
     [Button(ButtonSizes.Medium)]
     public void Build()
     {

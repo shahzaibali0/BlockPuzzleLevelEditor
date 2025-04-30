@@ -48,8 +48,6 @@ public class LevelManager : MonoBehaviour
         {
 
 
-            StartCoroutine(EnableRespectiveCam(1.5f, false, true));
-
             BuildingsMainManger.Instance.SpawnCurrentBuilding();
             Debug.Log("My nigga can Upgrade Building");
         }
@@ -63,7 +61,10 @@ public class LevelManager : MonoBehaviour
             }
 
             LevelInfo = Instantiate(Levels[LevelNo], transform);
+            CanvasManger.Instance.CloudsOut();
+
         }
+        CanvasManger.Instance.bricksMenuManger.SpawnUiMenus();
 
 
     }
@@ -83,7 +84,23 @@ public class LevelManager : MonoBehaviour
         SpaawnLevel();
     }
 
+    public void MoveToMainMenu()
+    {
+        if (LevelInfo != null)
+        {
+            Destroy(LevelInfo.gameObject);
+        }
 
+        if (BuildingsMainManger.Instance.Obj != null)
+        {
+
+            Destroy(BuildingsMainManger.Instance.Obj);
+        }
+        StartCoroutine(EnableRespectiveCam(0.25f, true, false));
+        CanvasManger.Instance.CloudsOut();
+
+
+    }
     public IEnumerator EnableRespectiveCam(float timer, bool PuzzelLevelCamStatus, bool buildCamStatus)
     {
         yield return new WaitForSeconds(timer);

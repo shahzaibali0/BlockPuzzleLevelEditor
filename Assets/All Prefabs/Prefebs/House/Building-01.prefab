@@ -108687,18 +108687,23 @@ MonoBehaviour:
     - BrickType: 9
       TotalBricksPerColor: 170
       RemaingBricksPerColor: 170
+      Icon: {fileID: 0}
     - BrickType: 1
       TotalBricksPerColor: 235
       RemaingBricksPerColor: 235
+      Icon: {fileID: 0}
     - BrickType: 10
       TotalBricksPerColor: 424
       RemaingBricksPerColor: 424
+      Icon: {fileID: 0}
     - BrickType: 2
       TotalBricksPerColor: 120
       RemaingBricksPerColor: 120
+      Icon: {fileID: 0}
     - BrickType: 3
       TotalBricksPerColor: 112
       RemaingBricksPerColor: 112
+      Icon: {fileID: 0}
     CurrentUseBricksColors: 
     bricksMats: []
   BuildingManager: {fileID: 7523840627658177485}
